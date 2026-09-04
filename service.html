@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Services | Fort-Royal Homes Limited</title>
+
+  <meta
+    name="description"
+    content="Explore Fort-Royal Homes' property buying, land sales, property development, estate management and real estate advisory services in Abuja, Nigeria."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* =========================================================
+       SERVICES PAGE
+    ========================================================= */
+
+    .services-hero {
+      min-height: 78vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .services-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.86) 0%,
+          rgba(0,0,0,.42) 48%,
+          rgba(0,0,0,.10) 100%
+        ),
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+    }
+
+    .services-hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 125px 0 80px;
+      color: #fff;
+    }
+
+    .services-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .services-kicker::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: #c7a76a;
+    }
+
+    .services-hero h1 {
+      max-width: 950px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(4rem, 8vw, 7.5rem);
+      line-height: .84;
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+
+    .services-hero-copy {
+      max-width: 620px;
+      margin: 30px 0 0;
+      font-size: .98rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.75);
+    }
+
+
+    /* INTRO */
+
+    .services-intro {
+      padding: 115px 0;
+      background: #f7f4ee;
+    }
+
+    .services-intro-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 90px;
+    }
+
+    .services-intro-label {
+      padding-top: 8px;
+    }
+
+    .services-intro-label span {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #96794a;
+    }
+
+    .services-intro-content h2 {
+      margin: 0 0 27px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      line-height: .93;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .services-intro-content p {
+      max-width: 730px;
+      margin: 0 0 18px;
+      font-size: .97rem;
+      line-height: 1.85;
+      color: #606060;
+    }
+
+
+    /* SERVICE CARDS */
+
+    .service-list {
+      padding: 115px 0 125px;
+      background: #fff;
+    }
+
+    .service-list-head {
+      width: min(1180px, 92%);
+      margin: 0 auto 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .service-list-head h2 {
+      margin: 16px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      line-height: .92;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .service-list-head p {
+      max-width: 390px;
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    .service-list-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      border-top: 1px solid #d9d3c9;
+    }
+
+    .service-large-card {
+      display: grid;
+      grid-template-columns: 110px 1fr 1fr;
+      gap: 45px;
+      padding: 48px 0;
+      border-bottom: 1px solid #d9d3c9;
+      transition: padding .3s ease;
+    }
+
+    .service-large-card:hover {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    .service-large-number {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      color: #aa8b56;
+    }
+
+    .service-large-title {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .service-large-copy {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+    .service-large-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: #111;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid #a98b58;
+      padding-bottom: 5px;
+    }
+
+
+    /* FEATURE STRIP */
+
+    .services-feature {
+      padding: 115px 0;
+      background: #f3efe7;
+    }
+
+    .services-feature-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 85px;
+      align-items: center;
+    }
+
+    .services-feature-image {
+      min-height: 620px;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.25),
+          transparent 55%
+        ),
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+    }
+
+    .services-feature-copy .section-label {
+      margin-bottom: 22px;
+    }
+
+    .services-feature-copy h2 {
+      margin: 0 0 25px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.1rem);
+      line-height: .91;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .services-feature-copy > p {
+      max-width: 510px;
+      margin: 0 0 32px;
+      font-size: .94rem;
+      line-height: 1.85;
+      color: #646464;
+    }
+
+    .feature-points {
+      border-top: 1px solid #d4cdc1;
+    }
+
+    .feature-point {
+      display: flex;
+      gap: 20px;
+      padding: 18px 0;
+      border-bottom: 1px solid #d4cdc1;
+    }
+
+    .feature-point-number {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: #a1844e;
+    }
+
+    .feature-point span:last-child {
+      font-size: .83rem;
+      color: #444;
+    }
+
+
+    /* PROCESS */
+
+    .services-process {
+      padding: 120px 0;
+      background: #111;
+      color: #fff;
+    }
+
+    .services-process-head {
+      width: min(1180px, 92%);
+      margin: 0 auto 65px;
+    }
+
+    .services-process-head .section-label {
+      color: #c7a76a;
+    }
+
+    .services-process-head h2 {
+      max-width: 750px;
+      margin: 18px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .process-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,.17);
+    }
+
+    .process-card {
+      min-height: 270px;
+      padding: 30px 30px 30px 0;
+    }
+
+    .process-card + .process-card {
+      padding-left: 30px;
+      border-left: 1px solid rgba(255,255,255,.17);
+    }
+
+    .process-number {
+      display: block;
+      margin-bottom: 65px;
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      color: #c7a76a;
+    }
+
+    .process-card h3 {
+      margin: 0 0 13px;
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 500;
+    }
+
+    .process-card p {
+      margin: 0;
+      font-size: .82rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.58);
+    }
+
+
+    /* BUYER SUPPORT */
+
+    .services-support {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .services-support-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 90px;
+    }
+
+    .services-support-left h2 {
+      margin: 17px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.1rem);
+      line-height: .9;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .services-support-right {
+      padding-top: 5px;
+    }
+
+    .support-item {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 20px;
+      padding: 28px 0;
+      border-top: 1px solid #d9d3c9;
+    }
+
+    .support-item:last-child {
+      border-bottom: 1px solid #d9d3c9;
+    }
+
+    .support-item-number {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: #a1844e;
+    }
+
+    .support-item h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .support-item p {
+      margin: 0;
+      font-size: .84rem;
+      line-height: 1.7;
+      color: #666;
+    }
+
+
+    /* CTA */
+
+    .services-cta {
+      padding: 125px 0;
+      background: #171717;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-cta::after {
+      content: "SERVICES";
+      position: absolute;
+      left: 50%;
+      bottom: -90px;
+      transform: translateX(-50%);
+      font-family: var(--serif);
+      font-size: clamp(8rem, 19vw, 19rem);
+      line-height: .8;
+      white-space: nowrap;
+      color: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .services-cta-inner {
+      position: relative;
+      z-index: 2;
+      width: min(850px, 90%);
+      margin: 0 auto;
+    }
+
+    .services-cta .section-label {
+      color: #c7a76a;
+    }
+
+    .services-cta h2 {
+      margin: 18px auto 24px;
+      font-family: var(--serif);
+      font-size: clamp(3.3rem, 6vw, 6rem);
+      line-height: .88;
+      font-weight: 500;
+    }
+
+    .services-cta p {
+      max-width: 570px;
+      margin: 0 auto 35px;
+      font-size: .92rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.62);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .services-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .service-list-head {
+        display: block;
+      }
+
+      .service-list-head p {
+        margin-top: 25px;
+      }
+
+      .service-large-card {
+        grid-template-columns: 80px 1fr;
+        gap: 25px;
+      }
+
+      .service-large-copy-wrap {
+        grid-column: 2;
+      }
+
+      .services-feature-grid,
+      .services-support-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .services-feature-image {
+        min-height: 500px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-card:nth-child(3) {
+        border-left: 0;
+      }
+
+      .process-card:nth-child(n+3) {
+        border-top: 1px solid rgba(255,255,255,.17);
+      }
+    }
+
+
+    @media (max-width: 620px) {
+
+      .services-hero {
+        min-height: 70vh;
+      }
+
+      .services-hero-content {
+        padding: 110px 0 50px;
+      }
+
+      .services-hero h1 {
+        font-size: clamp(3.7rem, 17vw, 5.5rem);
+      }
+
+      .services-hero-copy {
+        font-size: .86rem;
+        line-height: 1.7;
+      }
+
+      .services-intro,
+      .service-list,
+      .services-feature,
+      .services-process,
+      .services-support {
+        padding: 80px 0;
+      }
+
+      .service-large-card {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        gap: 18px;
+        padding: 35px 0;
+      }
+
+      .service-large-title {
+        font-size: 2rem;
+      }
+
+      .service-large-copy-wrap {
+        grid-column: 2;
+      }
+
+      .service-large-copy {
+        font-size: .82rem;
+      }
+
+      .services-feature-image {
+        min-height: 410px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-card,
+      .process-card + .process-card {
+        padding: 30px 0;
+        border-left: 0;
+      }
+
+      .process-card + .process-card {
+        border-top: 1px solid rgba(255,255,255,.17);
+      }
+
+      .process-number {
+        margin-bottom: 35px;
+      }
+
+      .services-cta {
+        padding: 90px 0;
+      }
+
+      .services-cta h2 {
+        font-size: clamp(3rem, 14vw, 4.6rem);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+      <span class="brand-main">FORT-ROYAL</span>
+      <span class="brand-sub">HOMES LIMITED</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="properties.html">Properties</a>
+      <a href="estate.html">The Estate</a>
+      <a href="developments.html">Developments</a>
+      <a href="about.html">About</a>
+      <a href="journal.html">Journal</a>
+      <a href="inspection.html" class="nav-cta">Book Inspection</a>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+  ======================================================== -->
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+
+    <div class="mobile-menu-inner">
+
+      <div class="mobile-menu-top">
+        <span>MENU</span>
+
+        <button
+          type="button"
+          class="mobile-menu-close"
+          aria-label="Close navigation menu"
+        >
+          CLOSE
+        </button>
+      </div>
+
+      <nav class="mobile-menu-nav">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="estate.html">The Estate</a>
+        <a href="developments.html">Developments</a>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a href="inspection.html" class="mobile-menu-cta">
+        Book an Inspection
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="services-hero">
+
+      <div class="services-hero-bg"></div>
+
+      <div class="services-hero-content">
+
+        <div class="services-kicker">
+          What We Do
+        </div>
+
+        <h1>
+          Real estate,<br>
+          handled<br>
+          differently.
+        </h1>
+
+        <p class="services-hero-copy">
+          From finding the right residence to developing,
+          managing and investing in property, Fort-Royal Homes
+          brings the essential pieces of real estate together.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="services-intro">
+
+      <div class="services-intro-grid">
+
+        <div class="services-intro-label">
+          <span>01 — Our Approach</span>
+        </div>
+
+        <div class="services-intro-content">
+
+          <h2>
+            One relationship.
+            Every property need.
+          </h2>
+
+          <p>
+            Real estate decisions can involve much more than
+            choosing a building. They can involve location,
+            documentation, inspections, negotiation, development,
+            management and long-term care.
+          </p>
+
+          <p>
+            Fort-Royal Homes brings these areas together through
+            a range of property services designed to make the
+            process more straightforward for homeowners, investors,
+            developers and clients in the diaspora.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="service-list">
+
+      <div class="service-list-head">
+
+        <div>
+
+          <span class="section-label">
+            02 — Our Services
+          </span>
+
+          <h2>
+            Built around<br>
+            your goals.
+          </h2>
+
+        </div>
+
+        <p>
+          Whether you're buying a home, investing in land,
+          developing a project or managing an existing property,
+          our services are designed around the complete journey.
+        </p>
+
+      </div>
+
+
+      <div class="service-list-grid">
+
+        <!-- SERVICE 01 -->
+
+        <article class="service-large-card">
+
+          <div class="service-large-number">
+            01
+          </div>
+
+          <h3 class="service-large-title">
+            Property Buying
+          </h3>
+
+          <div class="service-large-copy-wrap">
+
+            <p class="service-large-copy">
+              Find and acquire the right property with support
+              through sourcing, selection, negotiation, due
+              diligence, inspection and handover.
+            </p>
+
+            <a href="inspection.html" class="service-large-link">
+              Begin Your Search
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- SERVICE 02 -->
+
+        <article class="service-large-card">
+
+          <div class="service-large-number">
+            02
+          </div>
+
+          <h3 class="service-large-title">
+            Land Sales
+          </h3>
+
+          <div class="service-large-copy-wrap">
+
+            <p class="service-large-copy">
+              Explore land opportunities within planned,
+              gated developments with documentation and
+              flexible payment arrangements depending on
+              the project.
+            </p>
+
+            <a href="contact.html" class="service-large-link">
+              Enquire About Land
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- SERVICE 03 -->
+
+        <article class="service-large-card">
+
+          <div class="service-large-number">
+            03
+          </div>
+
+          <h3 class="service-large-title">
+            Property Development
+          </h3>
+
+          <div class="service-large-copy-wrap">
+
+            <p class="service-large-copy">
+              From initial consultation and site analysis to
+              planning, design, approvals, construction and
+              final handover.
+            </p>
+
+            <a href="developments.html" class="service-large-link">
+              Explore Developments
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- SERVICE 04 -->
+
+        <article class="service-large-card">
+
+          <div class="service-large-number">
+            04
+          </div>
+
+          <h3 class="service-large-title">
+            Estate Management
+          </h3>
+
+          <div class="service-large-copy-wrap">
+
+            <p class="service-large-copy">
+              Professional property care including maintenance,
+              lease management, marketing, support and strategies
+              designed to help optimise rental income.
+            </p>
+
+            <a href="contact.html" class="service-large-link">
+              Discuss Management
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- SERVICE 05 -->
+
+        <article class="service-large-card">
+
+          <div class="service-large-number">
+            05
+          </div>
+
+          <h3 class="service-large-title">
+            Property Advisory
+          </h3>
+
+          <div class="service-large-copy-wrap">
+
+            <p class="service-large-copy">
+              Practical support with property sourcing, pricing,
+              negotiation, documentation, site visits, legal
+              advisory and post-sale assistance.
+            </p>
+
+            <a href="contact.html" class="service-large-link">
+              Speak With Us
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- SERVICE 06 -->
+
+        <article class="service-large-card">
+
+          <div class="service-large-number">
+            06
+          </div>
+
+          <h3 class="service-large-title">
+            Private Inspections
+          </h3>
+
+          <div class="service-large-copy-wrap">
+
+            <p class="service-large-copy">
+              Arrange an in-person or virtual viewing to discover
+              available residences and experience Fort-Royal
+              Homes Estate.
+            </p>
+
+            <a href="inspection.html" class="service-large-link">
+              Book Inspection
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURE
+    ====================================================== -->
+
+    <section class="services-feature">
+
+      <div class="services-feature-grid">
+
+        <div class="services-feature-image"></div>
+
+        <div class="services-feature-copy">
+
+          <span class="section-label">
+            03 — Property Buying
+          </span>
+
+          <h2>
+            Confidence
+            from search
+            to handover.
+          </h2>
+
+          <p>
+            Buying property is a major decision. Fort-Royal's
+            published buying service is designed to support clients
+            through the important stages of the process.
+          </p>
+
+          <div class="feature-points">
+
+            <div class="feature-point">
+              <span class="feature-point-number">01</span>
+              <span>Verified property sourcing</span>
+            </div>
+
+            <div class="feature-point">
+              <span class="feature-point-number">02</span>
+              <span>Price negotiation</span>
+            </div>
+
+            <div class="feature-point">
+              <span class="feature-point-number">03</span>
+              <span>Title verification & due diligence</span>
+            </div>
+
+            <div class="feature-point">
+              <span class="feature-point-number">04</span>
+              <span>Site inspections and reporting</span>
+            </div>
+
+            <div class="feature-point">
+              <span class="feature-point-number">05</span>
+              <span>Legal advisory and representation</span>
+            </div>
+
+            <div class="feature-point">
+              <span class="feature-point-number">06</span>
+              <span>Post-sale support</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESS
+    ====================================================== -->
+
+    <section class="services-process">
+
+      <div class="services-process-head">
+
+        <span class="section-label">
+          04 — The Process
+        </span>
+
+        <h2>
+          A clearer path from
+          intention to ownership.
+        </h2>
+
+      </div>
+
+
+      <div class="process-grid">
+
+        <article class="process-card">
+
+          <span class="process-number">
+            01
+          </span>
+
+          <h3>
+            Consultation
+          </h3>
+
+          <p>
+            Understand your goals, requirements, preferred
+            location and property needs.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">
+            02
+          </span>
+
+          <h3>
+            Selection
+          </h3>
+
+          <p>
+            Identify suitable properties or opportunities
+            based on your requirements.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">
+            03
+          </span>
+
+          <h3>
+            Inspection
+          </h3>
+
+          <p>
+            Visit the property in person or arrange a suitable
+            virtual viewing.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <span class="process-number">
+            04
+          </span>
+
+          <h3>
+            Completion
+          </h3>
+
+          <p>
+            Progress documentation, transaction requirements
+            and final handover with appropriate support.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SUPPORT
+    ====================================================== -->
+
+    <section class="services-support">
+
+      <div class="services-support-grid">
+
+        <div class="services-support-left">
+
+          <span class="section-label">
+            05 — Client Support
+          </span>
+
+          <h2>
+            Especially
+            for clients
+            buying from
+            a distance.
+          </h2>
+
+        </div>
+
+
+        <div class="services-support-right">
+
+          <article class="support-item">
+
+            <div class="support-item-number">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Remote Assistance
+              </h3>
+
+              <p>
+                Fort-Royal states that it works with Nigerians
+                in the diaspora and can support inspections and
+                documentation remotely.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="support-item">
+
+            <div class="support-item-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Site Reporting
+              </h3>
+
+              <p>
+                Site inspections can be supported with
+                photographic and video reporting where required.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="support-item">
+
+            <div class="support-item-number">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Documentation
+              </h3>
+
+              <p>
+                Property buying support includes documentation
+                and due-diligence assistance through the
+                acquisition process.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="support-item">
+
+            <div class="support-item-number">
+              04
+            </div>
+
+            <div>
+
+              <h3>
+                Post-Sale Support
+              </h3>
+
+              <p>
+                The relationship doesn't have to end at purchase.
+                Fort-Royal also provides post-sale support as
+                part of its published property buying service.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="services-cta">
+
+      <div class="services-cta-inner">
+
+        <span class="section-label">
+          Let's Talk Property
+        </span>
+
+        <h2>
+          Tell us what
+          you're looking for.
+        </h2>
+
+        <p>
+          Whether you're searching for a home, considering land,
+          planning a development or need property management,
+          let's start with a conversation.
+        </p>
+
+        <a href="contact.html" class="button button-light">
+          Contact Fort-Royal
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand">
+          <span class="brand-main">FORT-ROYAL</span>
+          <span class="brand-sub">HOMES LIMITED</span>
+        </a>
+
+        <p>
+          Exceptional homes. Thoughtful communities.
+          A better way to live.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <span class="footer-heading">
+          Explore
+        </span>
+
+        <a href="properties.html">Properties</a>
+        <a href="estate.html">The Estate</a>
+        <a href="developments.html">Developments</a>
+        <a href="about.html">About</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <span class="footer-heading">
+          Services
+        </span>
+
+        <a href="services.html">Our Services</a>
+        <a href="inspection.html">Book Inspection</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+
+      <div class="footer-contact">
+
+        <span class="footer-heading">
+          Get in Touch
+        </span>
+
+        <a href="tel:+2348078191111">
+          +234 807 819 1111
+        </a>
+
+        <a href="tel:+2349053927777">
+          +234 905 392 7777
+        </a>
+
+        <a href="mailto:info@fortroyalhomes.org">
+          info@fortroyalhomes.org
+        </a>
+
+        <p>
+          25 Waziri Ibrahim Crescent,<br>
+          Gudu District,<br>
+          Abuja, Nigeria.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Fort-Royal Homes Limited.
+        All rights reserved.
+      </span>
+
+      <div>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
