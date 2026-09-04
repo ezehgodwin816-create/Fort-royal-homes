@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Journal | Fort-Royal Homes Limited</title>
+
+  <meta
+    name="description"
+    content="The Fort-Royal Homes Journal — property insights, investment guides, community stories and perspectives on real estate in Nigeria."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* =========================================================
+       JOURNAL PAGE
+    ========================================================= */
+
+    .journal-hero {
+      min-height: 72vh;
+      display: flex;
+      align-items: flex-end;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .journal-hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.84) 0%,
+          rgba(0,0,0,.40) 50%,
+          rgba(0,0,0,.10) 100%
+        ),
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+    }
+
+    .journal-hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 125px 0 75px;
+      color: #fff;
+    }
+
+    .journal-kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .journal-kicker::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: #c7a76a;
+    }
+
+    .journal-hero h1 {
+      margin: 0;
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: clamp(4.2rem, 9vw, 8rem);
+      line-height: .83;
+      font-weight: 500;
+      letter-spacing: -.04em;
+    }
+
+    .journal-hero-copy {
+      max-width: 590px;
+      margin: 28px 0 0;
+      font-size: .96rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.72);
+    }
+
+
+    /* INTRO */
+
+    .journal-intro {
+      padding: 105px 0 75px;
+      background: #f7f4ee;
+    }
+
+    .journal-intro-inner {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 85px;
+    }
+
+    .journal-intro-label span {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #96794a;
+    }
+
+    .journal-intro-copy h2 {
+      margin: 0 0 24px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: .92;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .journal-intro-copy p {
+      max-width: 700px;
+      margin: 0;
+      font-size: .95rem;
+      line-height: 1.85;
+      color: #666;
+    }
+
+
+    /* FEATURED ARTICLE */
+
+    .journal-featured {
+      padding: 80px 0 120px;
+      background: #f7f4ee;
+    }
+
+    .journal-featured-inner {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      min-height: 610px;
+      background: #111;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .featured-image {
+      min-height: 610px;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.32),
+          transparent 55%
+        ),
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 55px;
+    }
+
+    .featured-category {
+      display: inline-block;
+      margin-bottom: auto;
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #c7a76a;
+    }
+
+    .featured-content h2 {
+      margin: 0 0 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.7rem, 4vw, 4.4rem);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .featured-content p {
+      margin: 0 0 28px;
+      font-size: .86rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,.62);
+    }
+
+    .journal-link-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      width: fit-content;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #c7a76a;
+      color: #fff;
+      text-decoration: none;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .journal-link-light::after {
+      content: "↗";
+      font-size: .9rem;
+    }
+
+
+    /* ARTICLES */
+
+    .journal-articles {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .journal-articles-head {
+      width: min(1180px, 92%);
+      margin: 0 auto 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .journal-articles-head h2 {
+      margin: 15px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      line-height: .9;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .journal-articles-head p {
+      max-width: 370px;
+      margin: 0;
+      font-size: .86rem;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    .article-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .article-card {
+      border-top: 1px solid #d8d2c8;
+      padding-top: 18px;
+    }
+
+    .article-image {
+      height: 300px;
+      margin-bottom: 25px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .article-image-inner {
+      width: 100%;
+      height: 100%;
+      background:
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+      transition: transform .5s ease;
+    }
+
+    .article-card:hover .article-image-inner {
+      transform: scale(1.04);
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 16px;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #9a7b48;
+    }
+
+    .article-card h3 {
+      margin: 0 0 13px;
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: .98;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .article-card p {
+      margin: 0 0 20px;
+      font-size: .82rem;
+      line-height: 1.7;
+      color: #666;
+    }
+
+    .article-link {
+      color: #111;
+      text-decoration: none;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #a1844e;
+      padding-bottom: 5px;
+    }
+
+
+    /* TOPICS */
+
+    .journal-topics {
+      padding: 110px 0;
+      background: #f3efe7;
+    }
+
+    .journal-topics-inner {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    .journal-topics-head {
+      margin-bottom: 45px;
+    }
+
+    .journal-topics-head h2 {
+      margin: 16px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: .92;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .topics-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #d6cfc3;
+      border-left: 1px solid #d6cfc3;
+    }
+
+    .topic {
+      min-height: 150px;
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      border-right: 1px solid #d6cfc3;
+      border-bottom: 1px solid #d6cfc3;
+      text-decoration: none;
+      color: #111;
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .topic:hover {
+      background: #fff;
+      transform: translateY(-3px);
+    }
+
+    .topic span {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1;
+    }
+
+
+    /* NEWSLETTER */
+
+    .journal-newsletter {
+      padding: 110px 0;
+      background: #111;
+      color: #fff;
+    }
+
+    .newsletter-inner {
+      width: min(850px, 90%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .newsletter-inner .section-label {
+      color: #c7a76a;
+    }
+
+    .newsletter-inner h2 {
+      margin: 18px auto 20px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: .88;
+      font-weight: 500;
+    }
+
+    .newsletter-inner p {
+      max-width: 550px;
+      margin: 0 auto 30px;
+      font-size: .88rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.6);
+    }
+
+    .newsletter-form {
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,.4);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 17px 0;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: #fff;
+      font-family: inherit;
+      font-size: .85rem;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255,255,255,.42);
+    }
+
+    .newsletter-form button {
+      border: 0;
+      background: transparent;
+      color: #c7a76a;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      padding: 17px 0 17px 20px;
+    }
+
+    .newsletter-note {
+      margin-top: 16px;
+      font-size: .65rem;
+      color: rgba(255,255,255,.35);
+    }
+
+
+    /* CTA */
+
+    .journal-cta {
+      padding: 120px 0;
+      text-align: center;
+      background: #f7f4ee;
+    }
+
+    .journal-cta-inner {
+      width: min(850px, 90%);
+      margin: 0 auto;
+    }
+
+    .journal-cta h2 {
+      margin: 18px auto 25px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      line-height: .88;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .journal-cta p {
+      max-width: 550px;
+      margin: 0 auto 32px;
+      font-size: .9rem;
+      line-height: 1.8;
+      color: #666;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .journal-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-image {
+        min-height: 470px;
+      }
+
+      .featured-content {
+        min-height: 430px;
+      }
+
+      .journal-articles-head {
+        display: block;
+      }
+
+      .journal-articles-head p {
+        margin-top: 25px;
+      }
+
+      .article-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .topics-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    @media (max-width: 620px) {
+
+      .journal-hero {
+        min-height: 68vh;
+      }
+
+      .journal-hero-content {
+        padding: 105px 0 50px;
+      }
+
+      .journal-hero h1 {
+        font-size: clamp(3.8rem, 17vw, 5.5rem);
+      }
+
+      .journal-hero-copy {
+        font-size: .86rem;
+        line-height: 1.7;
+      }
+
+      .journal-intro,
+      .journal-articles,
+      .journal-topics,
+      .journal-newsletter,
+      .journal-cta {
+        padding: 80px 0;
+      }
+
+      .journal-featured {
+        padding: 55px 0 80px;
+      }
+
+      .featured-image {
+        min-height: 350px;
+      }
+
+      .featured-content {
+        min-height: 410px;
+        padding: 35px;
+      }
+
+      .featured-content h2 {
+        font-size: 2.8rem;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .article-image {
+        height: 270px;
+      }
+
+      .topics-list {
+        grid-template-columns: 1fr;
+      }
+
+      .topic {
+        min-height: 125px;
+      }
+
+      .newsletter-form {
+        display: block;
+        border-bottom: 0;
+      }
+
+      .newsletter-form input {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,.4);
+      }
+
+      .newsletter-form button {
+        display: block;
+        width: 100%;
+        padding-left: 0;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+      <span class="brand-main">FORT-ROYAL</span>
+      <span class="brand-sub">HOMES LIMITED</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="properties.html">Properties</a>
+      <a href="estate.html">The Estate</a>
+      <a href="developments.html">Developments</a>
+      <a href="about.html">About</a>
+      <a href="journal.html" class="active">Journal</a>
+      <a href="inspection.html" class="nav-cta">Book Inspection</a>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+  ======================================================== -->
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+
+    <div class="mobile-menu-inner">
+
+      <div class="mobile-menu-top">
+
+        <span>MENU</span>
+
+        <button
+          type="button"
+          class="mobile-menu-close"
+          aria-label="Close navigation menu"
+        >
+          CLOSE
+        </button>
+
+      </div>
+
+      <nav class="mobile-menu-nav">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="estate.html">The Estate</a>
+        <a href="developments.html">Developments</a>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a href="inspection.html" class="mobile-menu-cta">
+        Book an Inspection
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="journal-hero">
+
+      <div class="journal-hero-bg"></div>
+
+      <div class="journal-hero-content">
+
+        <div class="journal-kicker">
+          Fort-Royal Journal
+        </div>
+
+        <h1>
+          Ideas for<br>
+          living<br>
+          well.
+        </h1>
+
+        <p class="journal-hero-copy">
+          Perspectives on property, investment, community and
+          the changing way people live in Nigeria.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="journal-intro">
+
+      <div class="journal-intro-inner">
+
+        <div class="journal-intro-label">
+          <span>01 — The Journal</span>
+        </div>
+
+        <div class="journal-intro-copy">
+
+          <h2>
+            Beyond the
+            front door.
+          </h2>
+
+          <p>
+            Property is about more than square metres and
+            buildings. It's about decisions, possibilities,
+            investment, family, community and the future.
+            The Fort-Royal Journal brings together insights
+            and stories around those ideas.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURED
+    ====================================================== -->
+
+    <section class="journal-featured">
+
+      <div class="journal-featured-inner">
+
+        <article class="featured-card">
+
+          <div class="featured-image"></div>
+
+          <div class="featured-content">
+
+            <span class="featured-category">
+              Community
+            </span>
+
+            <div>
+
+              <h2>
+                Creating connections:
+                the advantages of a
+                family-oriented community.
+              </h2>
+
+              <p>
+                Discover why thoughtful community planning can
+                shape more than where people live — it can shape
+                how they connect, grow and experience everyday life.
+              </p>
+
+              <a href="#" class="journal-link-light">
+                Read Article
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ARTICLES
+    ====================================================== -->
+
+    <section class="journal-articles">
+
+      <div class="journal-articles-head">
+
+        <div>
+
+          <span class="section-label">
+            02 — Latest Perspectives
+          </span>
+
+          <h2>
+            From the Journal.
+          </h2>
+
+        </div>
+
+        <p>
+          Practical ideas and perspectives for homeowners,
+          investors, families and anyone thinking about
+          property in Nigeria.
+        </p>
+
+      </div>
+
+
+      <div class="article-grid">
+
+        <!-- ARTICLE 01 -->
+
+        <article class="article-card">
+
+          <div class="article-image">
+            <div class="article-image-inner"></div>
+          </div>
+
+          <div class="article-meta">
+            <span>Sustainability</span>
+            <span>01</span>
+          </div>
+
+          <h3>
+            Building a greener future:
+            sustainable homes.
+          </h3>
+
+          <p>
+            How thoughtful planning, green spaces and
+            responsible development can contribute to
+            better residential environments.
+          </p>
+
+          <a href="#" class="article-link">
+            Read More
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 02 -->
+
+        <article class="article-card">
+
+          <div class="article-image">
+            <div class="article-image-inner"></div>
+          </div>
+
+          <div class="article-meta">
+            <span>Property Management</span>
+            <span>02</span>
+          </div>
+
+          <h3>
+            The essence of property
+            management in real estate.
+          </h3>
+
+          <p>
+            Why professional management matters for
+            protecting property value, improving experiences
+            and supporting long-term returns.
+          </p>
+
+          <a href="#" class="article-link">
+            Read More
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 03 -->
+
+        <article class="article-card">
+
+          <div class="article-image">
+            <div class="article-image-inner"></div>
+          </div>
+
+          <div class="article-meta">
+            <span>Buying Guide</span>
+            <span>03</span>
+          </div>
+
+          <h3>
+            What to consider before
+            buying a home in Abuja.
+          </h3>
+
+          <p>
+            From location and design to documentation,
+            inspections and long-term considerations,
+            here are the questions worth asking.
+          </p>
+
+          <a href="#" class="article-link">
+            Read More
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 04 -->
+
+        <article class="article-card">
+
+          <div class="article-image">
+            <div class="article-image-inner"></div>
+          </div>
+
+          <div class="article-meta">
+            <span>Investment</span>
+            <span>04</span>
+          </div>
+
+          <h3>
+            Thinking about property
+            as a long-term investment.
+          </h3>
+
+          <p>
+            A closer look at some of the fundamentals
+            investors should consider when evaluating
+            residential property opportunities.
+          </p>
+
+          <a href="#" class="article-link">
+            Read More
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 05 -->
+
+        <article class="article-card">
+
+          <div class="article-image">
+            <div class="article-image-inner"></div>
+          </div>
+
+          <div class="article-meta">
+            <span>Documentation</span>
+            <span>05</span>
+          </div>
+
+          <h3>
+            Property documentation:
+            why due diligence matters.
+          </h3>
+
+          <p>
+            Understanding the importance of documentation,
+            verification and professional guidance before
+            completing a property transaction.
+          </p>
+
+          <a href="#" class="article-link">
+            Read More
+          </a>
+
+        </article>
+
+
+        <!-- ARTICLE 06 -->
+
+        <article class="article-card">
+
+          <div class="article-image">
+            <div class="article-image-inner"></div>
+          </div>
+
+          <div class="article-meta">
+            <span>Fort-Royal News</span>
+            <span>06</span>
+          </div>
+
+          <h3>
+            Life at Fort-Royal
+            Homes Estate.
+          </h3>
+
+          <p>
+            Explore the community, amenities, residences and
+            ideas behind one of Fort-Royal's signature
+            residential environments.
+          </p>
+
+          <a href="#" class="article-link">
+            Read More
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TOPICS
+    ====================================================== -->
+
+    <section class="journal-topics">
+
+      <div class="journal-topics-inner">
+
+        <div class="journal-topics-head">
+
+          <span class="section-label">
+            03 — Explore Topics
+          </span>
+
+          <h2>
+            Find what matters
+            to you.
+          </h2>
+
+        </div>
+
+
+        <div class="topics-list">
+
+          <a href="#" class="topic">
+            <span>
+              Property Buying Guides
+            </span>
+          </a>
+
+          <a href="#" class="topic">
+            <span>
+              Investment Insights
+            </span>
+          </a>
+
+          <a href="#" class="topic">
+            <span>
+              Real Estate Trends
+            </span>
+          </a>
+
+          <a href="#" class="topic">
+            <span>
+              Legal & Documentation
+            </span>
+          </a>
+
+          <a href="#" class="topic">
+            <span>
+              Community & Lifestyle
+            </span>
+          </a>
+
+          <a href="#" class="topic">
+            <span>
+              Fort-Royal News
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NEWSLETTER
+    ====================================================== -->
+
+    <section class="journal-newsletter">
+
+      <div class="newsletter-inner">
+
+        <span class="section-label">
+          Stay Informed
+        </span>
+
+        <h2>
+          Property insights,
+          occasionally.
+        </h2>
+
+        <p>
+          Join the Fort-Royal mailing list for property news,
+          new residences, community updates and useful
+          real estate perspectives.
+        </p>
+
+        <form class="newsletter-form" id="newsletterForm">
+
+          <input
+            type="email"
+            name="email"
+            id="newsletterEmail"
+            placeholder="Your email address"
+            autocomplete="email"
+            required
+          >
+
+          <button type="submit">
+            Subscribe
+          </button>
+
+        </form>
+
+        <div class="newsletter-note">
+          No unnecessary emails. Unsubscribe whenever you choose.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="journal-cta">
+
+      <div class="journal-cta-inner">
+
+        <span class="section-label">
+          Explore Fort-Royal
+        </span>
+
+        <h2>
+          Sometimes the best
+          story is the one you live.
+        </h2>
+
+        <p>
+          Explore our residences or arrange a private inspection
+          to experience Fort-Royal Homes for yourself.
+        </p>
+
+        <a href="inspection.html" class="button">
+          Book an Inspection
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand">
+          <span class="brand-main">FORT-ROYAL</span>
+          <span class="brand-sub">HOMES LIMITED</span>
+        </a>
+
+        <p>
+          Exceptional homes. Thoughtful communities.
+          A better way to live.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <span class="footer-heading">
+          Explore
+        </span>
+
+        <a href="properties.html">Properties</a>
+        <a href="estate.html">The Estate</a>
+        <a href="developments.html">Developments</a>
+        <a href="about.html">About</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <span class="footer-heading">
+          Services
+        </span>
+
+        <a href="services.html">Our Services</a>
+        <a href="inspection.html">Book Inspection</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+
+      <div class="footer-contact">
+
+        <span class="footer-heading">
+          Get in Touch
+        </span>
+
+        <a href="tel:+2348078191111">
+          +234 807 819 1111
+        </a>
+
+        <a href="tel:+2349053927777">
+          +234 905 392 7777
+        </a>
+
+        <a href="mailto:info@fortroyalhomes.org">
+          info@fortroyalhomes.org
+        </a>
+
+        <p>
+          25 Waziri Ibrahim Crescent,<br>
+          Gudu District,<br>
+          Abuja, Nigeria.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Fort-Royal Homes Limited.
+        All rights reserved.
+      </span>
+
+      <div>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/main.js"></script>
+
+  <script>
+    /*
+      Newsletter form is intentionally left ready for backend
+      connection. We will connect this to Supabase/email later.
+    */
+
+    const newsletterForm = document.getElementById("newsletterForm");
+
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("newsletterEmail");
+
+        if (!email.value.trim()) {
+          return;
+        }
+
+        alert("Thank you. Newsletter subscription will be connected shortly.");
+        email.value = "";
+      });
+    }
+  </script>
+
+</body>
+</html>
