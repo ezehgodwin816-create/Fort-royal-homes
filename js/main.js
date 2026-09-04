@@ -8,7 +8,7 @@
    PAGE LOADER
 ========================================= */
 
-window.addEventListener("load", () => {
+window.addEventListener("load", function () {
 
     const loader = document.getElementById("pageLoader");
 
@@ -20,14 +20,14 @@ window.addEventListener("load", () => {
 
 
 /* =========================================
-   HEADER SCROLL EFFECT
+   HEADER SCROLL
 ========================================= */
 
 const header = document.getElementById("siteHeader");
 
 if (header) {
 
-    window.addEventListener("scroll", () => {
+    function handleHeaderScroll() {
 
         if (window.scrollY > 40) {
             header.classList.add("scrolled");
@@ -35,7 +35,11 @@ if (header) {
             header.classList.remove("scrolled");
         }
 
-    });
+    }
+
+    window.addEventListener("scroll", handleHeaderScroll);
+
+    handleHeaderScroll();
 
 }
 
@@ -51,49 +55,100 @@ const mobileMenu = document.getElementById("mobileMenu");
 
 function openMenu() {
 
-    if (mobileMenu) {
-        mobileMenu.classList.add("active");
-    }
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.add("active");
 
     document.body.classList.add("menu-open");
+
+    if (menuToggle) {
+        menuToggle.setAttribute("aria-expanded", "true");
+    }
 
 }
 
 
 function closeMenu() {
 
-    if (mobileMenu) {
-        mobileMenu.classList.remove("active");
-    }
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.remove("active");
 
     document.body.classList.remove("menu-open");
+
+    if (menuToggle) {
+        menuToggle.setAttribute("aria-expanded", "false");
+    }
 
 }
 
 
 if (menuToggle) {
-    menuToggle.addEventListener("click", openMenu);
+
+    menuToggle.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+        if (mobileMenu.classList.contains("active")) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+
+    });
+
 }
 
 
 if (menuClose) {
-    menuClose.addEventListener("click", closeMenu);
+
+    menuClose.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        closeMenu();
+
+    });
+
 }
 
 
 /* =========================================
-   CLOSE MOBILE MENU AFTER LINK CLICK
+   MOBILE MENU LINKS
 ========================================= */
 
-document.querySelectorAll(".mobile-menu a").forEach(link => {
+const mobileLinks = document.querySelectorAll(
+    ".mobile-menu nav a, .mobile-menu-cta"
+);
 
-    link.addEventListener("click", closeMenu);
+mobileLinks.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        closeMenu();
+
+    });
 
 });
 
 
 /* =========================================
-   SCROLL REVEAL ANIMATIONS
+   ESCAPE KEY CLOSES MENU
+========================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+        closeMenu();
+    }
+
+});
+
+
+/* =========================================
+   SCROLL REVEAL
 ========================================= */
 
 const revealElements = document.querySelectorAll(
@@ -104,9 +159,9 @@ const revealElements = document.querySelectorAll(
 if ("IntersectionObserver" in window) {
 
     const observer = new IntersectionObserver(
-        entries => {
+        function (entries) {
 
-            entries.forEach(entry => {
+            entries.forEach(function (entry) {
 
                 if (entry.isIntersecting) {
 
@@ -125,7 +180,7 @@ if ("IntersectionObserver" in window) {
     );
 
 
-    revealElements.forEach(element => {
+    revealElements.forEach(function (element) {
 
         element.classList.add("reveal");
 
@@ -135,7 +190,7 @@ if ("IntersectionObserver" in window) {
 
 } else {
 
-    revealElements.forEach(element => {
+    revealElements.forEach(function (element) {
 
         element.classList.add("revealed");
 
