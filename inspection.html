@@ -1,576 +1,1199 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Book an Inspection | Fort-Royal Homes</title>
 
-    <title>Book an Inspection | Fort-Royal Homes</title>
+<meta
+    name="description"
+    content="Book a private inspection or virtual tour of Fort-Royal Homes properties in Abuja."
+>
 
-    <meta
-        name="description"
-        content="Book a private inspection or virtual tour of Fort-Royal Homes properties in Abuja."
-    >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+<link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css">
+<style>
+    /* =========================================================
+       INSPECTION PAGE
+    ========================================================= */
 
-    <style>
-        /* =========================================================
-           INSPECTION PAGE
-        ========================================================= */
+    .inspection-hero {
+        min-height: 68vh;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        overflow: hidden;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.72) 0%,
+                rgba(0,0,0,.42) 48%,
+                rgba(0,0,0,.18) 100%
+            ),
+            url("https://fortroyalhomes.org/wp-content/uploads/revslider/video-media/FORT-ROYAL-AD-010_7.jpeg")
+            center / cover no-repeat;
+    }
 
-        .inspection-hero {
-            min-height: 68vh;
-            display: flex;
-            align-items: flex-end;
-            position: relative;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(0,0,0,.72) 0%,
-                    rgba(0,0,0,.42) 48%,
-                    rgba(0,0,0,.18) 100%
-                ),
-                url("https://fortroyalhomes.org/wp-content/uploads/revslider/video-media/FORT-ROYAL-AD-010_7.jpeg")
-                center / cover no-repeat;
-        }
+    .inspection-hero-inner {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 150px 0 80px;
+        color: #fff;
+    }
 
-        .inspection-hero-inner {
-            width: min(1180px, calc(100% - 48px));
-            margin: 0 auto;
-            padding: 150px 0 80px;
-            color: #fff;
-        }
+    .inspection-hero .eyebrow {
+        color: #d7c49a;
+    }
 
-        .inspection-hero .eyebrow {
-            color: #d7c49a;
-        }
+    .inspection-hero h1 {
+        max-width: 850px;
+        margin: 16px 0 20px;
+        font-family: var(--serif);
+        font-size: clamp(3.5rem, 7vw, 7rem);
+        font-weight: 500;
+        line-height: .9;
+        letter-spacing: -.035em;
+    }
 
-        .inspection-hero h1 {
-            max-width: 850px;
-            margin: 16px 0 20px;
-            font-family: var(--serif);
-            font-size: clamp(3.5rem, 7vw, 7rem);
-            font-weight: 500;
-            line-height: .9;
-            letter-spacing: -.035em;
-        }
+    .inspection-hero p {
+        max-width: 600px;
+        margin: 0;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: rgba(255,255,255,.82);
+    }
 
-        .inspection-hero p {
-            max-width: 600px;
-            margin: 0;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: rgba(255,255,255,.82);
-        }
+    .inspection-wrap {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 110px 0;
+    }
 
-        .inspection-wrap {
-            width: min(1180px, calc(100% - 48px));
-            margin: 0 auto;
-            padding: 110px 0;
-        }
+    .inspection-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 380px;
+        gap: 90px;
+        align-items: start;
+    }
 
+    .inspection-intro {
+        max-width: 720px;
+        margin-bottom: 52px;
+    }
+
+    .inspection-intro h2 {
+        margin: 14px 0 20px;
+        font-family: var(--serif);
+        font-size: clamp(2.7rem, 5vw, 4.5rem);
+        font-weight: 500;
+        line-height: .98;
+        letter-spacing: -.025em;
+    }
+
+    .inspection-intro p {
+        margin: 0;
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+
+    /* FORM */
+
+    .inspection-form {
+        display: grid;
+        gap: 30px;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-group.full {
+        grid-column: 1 / -1;
+    }
+
+    .form-group label {
+        font-size: .72rem;
+        font-weight: 700;
+        letter-spacing: .13em;
+        text-transform: uppercase;
+        color: #333;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        border: 1px solid #d7d3cc;
+        border-radius: 0;
+        background: #fff;
+        color: #151515;
+        padding: 17px 18px;
+        font-family: var(--sans, "DM Sans", sans-serif);
+        font-size: .95rem;
+        outline: none;
+        transition:
+            border-color .2s ease,
+            box-shadow .2s ease;
+    }
+
+    .form-group textarea {
+        min-height: 145px;
+        resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        border-color: #1a1a1a;
+        box-shadow: 0 0 0 3px rgba(0,0,0,.05);
+    }
+
+    .form-note {
+        margin-top: -8px;
+        color: #777;
+        font-size: .82rem;
+        line-height: 1.6;
+    }
+
+    .tour-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+
+    .tour-option {
+        position: relative;
+    }
+
+    .tour-option input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .tour-option label {
+        min-height: 120px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid #d7d3cc;
+        cursor: pointer;
+        transition: all .2s ease;
+    }
+
+    .tour-option label strong {
+        margin-bottom: 7px;
+        font-size: .95rem;
+        color: #161616;
+    }
+
+    .tour-option label span {
+        color: #777;
+        font-size: .78rem;
+        line-height: 1.5;
+    }
+
+    .tour-option input:checked + label {
+        border-color: #151515;
+        background: #151515;
+        color: #fff;
+    }
+
+    .tour-option input:checked + label strong {
+        color: #fff;
+    }
+
+    .tour-option input:checked + label span {
+        color: rgba(255,255,255,.7);
+    }
+
+    .submit-area {
+        padding-top: 8px;
+    }
+
+    .inspection-submit {
+        width: 100%;
+        border: 0;
+        cursor: pointer;
+        text-align: center;
+        justify-content: center;
+        transition: opacity .2s ease;
+    }
+
+    .inspection-submit:disabled {
+        opacity: .6;
+        cursor: wait;
+    }
+
+    .form-status {
+        display: none;
+        margin-top: 18px;
+        padding: 16px 18px;
+        border: 1px solid #d7d3cc;
+        background: #f7f5f1;
+        color: #333;
+        font-size: .88rem;
+        line-height: 1.6;
+    }
+
+    .form-status.show {
+        display: block;
+    }
+
+    .form-status.success {
+        border-color: #b9cdbb;
+        background: #f1f7f2;
+        color: #315c3a;
+    }
+
+    .form-status.error {
+        border-color: #d7bcbc;
+        background: #faf1f1;
+        color: #7a3636;
+    }
+
+    /* SIDE INFO */
+
+    .inspection-sidebar {
+        position: sticky;
+        top: 110px;
+    }
+
+    .info-card {
+        padding: 38px;
+        background: #171717;
+        color: #fff;
+    }
+
+    .info-card .section-label {
+        color: #cbb98e;
+    }
+
+    .info-card h3 {
+        margin: 15px 0 18px;
+        font-family: var(--serif);
+        font-size: 2.5rem;
+        line-height: 1;
+        font-weight: 500;
+    }
+
+    .info-card p {
+        color: rgba(255,255,255,.68);
+        font-size: .9rem;
+        line-height: 1.75;
+    }
+
+    .info-list {
+        margin: 34px 0 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .info-list li {
+        padding: 18px 0;
+        border-top: 1px solid rgba(255,255,255,.14);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: .83rem;
+    }
+
+    .info-list li:last-child {
+        border-bottom: 1px solid rgba(255,255,255,.14);
+    }
+
+    .info-list span:first-child {
+        color: rgba(255,255,255,.5);
+    }
+
+    .info-list span:last-child {
+        text-align: right;
+        color: #fff;
+    }
+
+    .contact-card {
+        padding: 32px 0;
+        border-bottom: 1px solid #ddd8d0;
+    }
+
+    .contact-card h4 {
+        margin: 0 0 10px;
+        font-family: var(--serif);
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .contact-card p {
+        margin: 0 0 18px;
+        color: #777;
+        font-size: .85rem;
+        line-height: 1.7;
+    }
+
+    .contact-number {
+        color: #171717;
+        font-size: .92rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    /* EXPERIENCE */
+
+    .inspection-experience {
+        background: #efede8;
+        padding: 110px 0;
+    }
+
+    .experience-inner {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+    }
+
+    .experience-heading {
+        max-width: 700px;
+        margin-bottom: 55px;
+    }
+
+    .experience-heading h2 {
+        margin: 14px 0 18px;
+        font-family: var(--serif);
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        line-height: .98;
+        font-weight: 500;
+    }
+
+    .experience-heading p {
+        margin: 0;
+        color: #666;
+        line-height: 1.8;
+    }
+
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid #ccc7bf;
+    }
+
+    .experience-item {
+        padding: 35px 30px 35px 0;
+        border-bottom: 1px solid #ccc7bf;
+    }
+
+    .experience-item:not(:last-child) {
+        border-right: 1px solid #ccc7bf;
+        padding-right: 35px;
+        margin-right: 35px;
+    }
+
+    .experience-number {
+        margin-bottom: 24px;
+        font-family: var(--serif);
+        font-size: 2.6rem;
+    }
+
+    .experience-item h3 {
+        margin: 0 0 10px;
+        font-size: 1rem;
+    }
+
+    .experience-item p {
+        margin: 0;
+        color: #707070;
+        font-size: .85rem;
+        line-height: 1.75;
+    }
+
+    /* CTA */
+
+    .inspection-cta {
+        padding: 110px 0;
+        background: #171717;
+        color: #fff;
+        text-align: center;
+    }
+
+    .inspection-cta-inner {
+        width: min(850px, calc(100% - 48px));
+        margin: 0 auto;
+    }
+
+    .inspection-cta .eyebrow {
+        color: #cbb98e;
+    }
+
+    .inspection-cta h2 {
+        margin: 16px 0 24px;
+        font-family: var(--serif);
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        font-weight: 500;
+        line-height: .95;
+    }
+
+    .inspection-cta p {
+        max-width: 620px;
+        margin: 0 auto 34px;
+        color: rgba(255,255,255,.68);
+        line-height: 1.8;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
         .inspection-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 380px;
-            gap: 90px;
-            align-items: start;
+            grid-template-columns: 1fr;
+            gap: 70px;
         }
-
-        .inspection-intro {
-            max-width: 720px;
-            margin-bottom: 52px;
-        }
-
-        .inspection-intro h2 {
-            margin: 14px 0 20px;
-            font-family: var(--serif);
-            font-size: clamp(2.7rem, 5vw, 4.5rem);
-            font-weight: 500;
-            line-height: .98;
-            letter-spacing: -.025em;
-        }
-
-        .inspection-intro p {
-            margin: 0;
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.85;
-        }
-
-        /* FORM */
-
-        .inspection-form {
-            display: grid;
-            gap: 30px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            font-size: .72rem;
-            font-weight: 700;
-            letter-spacing: .13em;
-            text-transform: uppercase;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            border: 1px solid #d7d3cc;
-            border-radius: 0;
-            background: #fff;
-            color: #151515;
-            padding: 17px 18px;
-            font-family: var(--sans, "DM Sans", sans-serif);
-            font-size: .95rem;
-            outline: none;
-            transition:
-                border-color .2s ease,
-                box-shadow .2s ease;
-        }
-
-        .form-group textarea {
-            min-height: 145px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: #1a1a1a;
-            box-shadow: 0 0 0 3px rgba(0,0,0,.05);
-        }
-
-        .form-note {
-            margin-top: -8px;
-            color: #777;
-            font-size: .82rem;
-            line-height: 1.6;
-        }
-
-        .tour-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .tour-option {
-            position: relative;
-        }
-
-        .tour-option input {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .tour-option label {
-            min-height: 120px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border: 1px solid #d7d3cc;
-            cursor: pointer;
-            transition: all .2s ease;
-        }
-
-        .tour-option label strong {
-            margin-bottom: 7px;
-            font-size: .95rem;
-            color: #161616;
-        }
-
-        .tour-option label span {
-            color: #777;
-            font-size: .78rem;
-            line-height: 1.5;
-        }
-
-        .tour-option input:checked + label {
-            border-color: #151515;
-            background: #151515;
-            color: #fff;
-        }
-
-        .tour-option input:checked + label strong {
-            color: #fff;
-        }
-
-        .tour-option input:checked + label span {
-            color: rgba(255,255,255,.7);
-        }
-
-        .submit-area {
-            padding-top: 8px;
-        }
-
-        .inspection-submit {
-            width: 100%;
-            border: 0;
-            cursor: pointer;
-            text-align: center;
-            justify-content: center;
-        }
-
-        .form-status {
-            display: none;
-            margin-top: 18px;
-            padding: 16px 18px;
-            border: 1px solid #d7d3cc;
-            background: #f7f5f1;
-            color: #333;
-            font-size: .88rem;
-            line-height: 1.6;
-        }
-
-        .form-status.show {
-            display: block;
-        }
-
-        /* SIDE INFO */
 
         .inspection-sidebar {
-            position: sticky;
-            top: 110px;
-        }
-
-        .info-card {
-            padding: 38px;
-            background: #171717;
-            color: #fff;
-        }
-
-        .info-card .section-label {
-            color: #cbb98e;
-        }
-
-        .info-card h3 {
-            margin: 15px 0 18px;
-            font-family: var(--serif);
-            font-size: 2.5rem;
-            line-height: 1;
-            font-weight: 500;
-        }
-
-        .info-card p {
-            color: rgba(255,255,255,.68);
-            font-size: .9rem;
-            line-height: 1.75;
-        }
-
-        .info-list {
-            margin: 34px 0 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .info-list li {
-            padding: 18px 0;
-            border-top: 1px solid rgba(255,255,255,.14);
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            font-size: .83rem;
-        }
-
-        .info-list li:last-child {
-            border-bottom: 1px solid rgba(255,255,255,.14);
-        }
-
-        .info-list span:first-child {
-            color: rgba(255,255,255,.5);
-        }
-
-        .info-list span:last-child {
-            text-align: right;
-            color: #fff;
-        }
-
-        .contact-card {
-            padding: 32px 0;
-            border-bottom: 1px solid #ddd8d0;
-        }
-
-        .contact-card h4 {
-            margin: 0 0 10px;
-            font-family: var(--serif);
-            font-size: 1.8rem;
-            font-weight: 500;
-        }
-
-        .contact-card p {
-            margin: 0 0 18px;
-            color: #777;
-            font-size: .85rem;
-            line-height: 1.7;
-        }
-
-        .contact-number {
-            color: #171717;
-            font-size: .92rem;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        /* EXPERIENCE */
-
-        .inspection-experience {
-            background: #efede8;
-            padding: 110px 0;
-        }
-
-        .experience-inner {
-            width: min(1180px, calc(100% - 48px));
-            margin: 0 auto;
-        }
-
-        .experience-heading {
-            max-width: 700px;
-            margin-bottom: 55px;
-        }
-
-        .experience-heading h2 {
-            margin: 14px 0 18px;
-            font-family: var(--serif);
-            font-size: clamp(2.8rem, 5vw, 4.5rem);
-            line-height: .98;
-            font-weight: 500;
-        }
-
-        .experience-heading p {
-            margin: 0;
-            color: #666;
-            line-height: 1.8;
+            position: static;
         }
 
         .experience-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid #ccc7bf;
-        }
-
-        .experience-item {
-            padding: 35px 30px 35px 0;
-            border-bottom: 1px solid #ccc7bf;
+            grid-template-columns: 1fr;
         }
 
         .experience-item:not(:last-child) {
-            border-right: 1px solid #ccc7bf;
-            padding-right: 35px;
-            margin-right: 35px;
+            border-right: 0;
+            padding-right: 0;
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: 680px) {
+        .inspection-hero {
+            min-height: 70vh;
         }
 
-        .experience-number {
-            margin-bottom: 24px;
-            font-family: var(--serif);
-            font-size: 2.6rem;
+        .inspection-hero-inner {
+            width: min(100% - 32px, 1180px);
+            padding: 120px 0 55px;
         }
 
-        .experience-item h3 {
-            margin: 0 0 10px;
-            font-size: 1rem;
+        .inspection-wrap {
+            width: min(100% - 32px, 1180px);
+            padding: 75px 0;
         }
 
-        .experience-item p {
-            margin: 0;
-            color: #707070;
-            font-size: .85rem;
-            line-height: 1.75;
+        .form-row {
+            grid-template-columns: 1fr;
+            gap: 30px;
         }
 
-        /* CTA */
+        .tour-options {
+            grid-template-columns: 1fr;
+        }
+
+        .info-card {
+            padding: 30px 24px;
+        }
+
+        .inspection-experience {
+            padding: 75px 0;
+        }
+
+        .experience-inner {
+            width: min(100% - 32px, 1180px);
+        }
 
         .inspection-cta {
-            padding: 110px 0;
-            background: #171717;
-            color: #fff;
-            text-align: center;
+            padding: 75px 0;
         }
 
         .inspection-cta-inner {
-            width: min(850px, calc(100% - 48px));
-            margin: 0 auto;
+            width: min(100% - 32px, 850px);
         }
+    }
+</style>
 
-        .inspection-cta .eyebrow {
-            color: #cbb98e;
-        }
+</head><body><!-- HEADER -->
+<header class="site-header">
+    <div class="header-inner">
 
-        .inspection-cta h2 {
-            margin: 16px 0 24px;
-            font-family: var(--serif);
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            font-weight: 500;
-            line-height: .95;
-        }
+        <a href="index.html" class="brand">
+            <span class="brand-main">FORT-ROYAL</span>
+            <span class="brand-sub">HOMES LIMITED</span>
+        </a>
 
-        .inspection-cta p {
-            max-width: 620px;
-            margin: 0 auto 34px;
-            color: rgba(255,255,255,.68);
-            line-height: 1.8;
-        }
+        <nav class="desktop-nav">
+            <a href="properties.html">Properties</a>
+            <a href="estate.html">The Estate</a>
+            <a href="developments.html">Developments</a>
+            <a href="about.html">About</a>
+            <a href="journal.html">Journal</a>
+            <a href="inspection.html" class="nav-cta active">Book Inspection</a>
+        </nav>
 
-        /* RESPONSIVE */
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+        >
+            <span></span>
+            <span></span>
+        </button>
 
-        @media (max-width: 900px) {
-            .inspection-grid {
-                grid-template-columns: 1fr;
-                gap: 70px;
-            }
+    </div>
+</header>
 
-            .inspection-sidebar {
-                position: static;
-            }
 
-            .experience-grid {
-                grid-template-columns: 1fr;
-            }
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
 
-            .experience-item:not(:last-child) {
-                border-right: 0;
-                padding-right: 0;
-                margin-right: 0;
-            }
-        }
+    <div class="mobile-menu-inner">
 
-        @media (max-width: 680px) {
-            .inspection-hero {
-                min-height: 70vh;
-            }
+        <div class="mobile-menu-top">
+            <span>MENU</span>
 
-            .inspection-hero-inner {
-                width: min(100% - 32px, 1180px);
-                padding: 120px 0 55px;
-            }
+            <button
+                type="button"
+                class="mobile-menu-close"
+                aria-label="Close menu"
+            >
+                ×
+            </button>
+        </div>
 
-            .inspection-wrap {
-                width: min(100% - 32px, 1180px);
-                padding: 75px 0;
-            }
+        <nav>
+            <a href="properties.html">Properties</a>
+            <a href="estate.html">The Estate</a>
+            <a href="developments.html">Developments</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+        <a href="inspection.html" class="mobile-menu-cta">
+            Book an Inspection
+        </a>
 
-            .tour-options {
-                grid-template-columns: 1fr;
-            }
+    </div>
 
-            .info-card {
-                padding: 30px 24px;
-            }
+</div>
 
-            .inspection-experience {
-                padding: 75px 0;
-            }
 
-            .experience-inner {
-                width: min(100% - 32px, 1180px);
-            }
+<main>
 
-            .inspection-cta {
-                padding: 75px 0;
-            }
+    <!-- HERO -->
+    <section class="inspection-hero">
 
-            .inspection-cta-inner {
-                width: min(100% - 32px, 850px);
-            }
-        }
-    </style>
-</head>
+        <div class="inspection-hero-inner">
 
-<body>
+            <div class="eyebrow">PRIVATE VIEWINGS · ABUJA</div>
 
-    <!-- HEADER -->
-    <header class="site-header">
-        <div class="header-inner">
+            <h1>
+                See the place<br>
+                for yourself.
+            </h1>
+
+            <p>
+                Step inside a Fort-Royal home and experience the architecture,
+                materials, space and community first-hand. Arrange a private
+                inspection or choose a virtual tour from wherever you are.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING -->
+    <section class="inspection-wrap">
+
+        <div class="inspection-grid">
+
+            <div>
+
+                <div class="inspection-intro">
+
+                    <div class="section-label">
+                        BOOK AN INSPECTION
+                    </div>
+
+                    <h2>
+                        Your next home deserves a closer look.
+                    </h2>
+
+                    <p>
+                        Tell us what you would like to see and our team will
+                        help arrange your visit. Whether you are buying for
+                        yourself, your family or as an investment, we can
+                        guide you through the available options.
+                    </p>
+
+                </div>
+
+
+                <form class="inspection-form" id="inspectionForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="fullName">Full name</label>
+
+                            <input
+                                type="text"
+                                id="fullName"
+                                name="fullName"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email address</label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+234..."
+                                autocomplete="tel"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="visitors">Number of visitors</label>
+
+                            <select id="visitors" name="visitors" required>
+                                <option value="">Select</option>
+                                <option value="1">1 person</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6+">6+ people</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="propertyType">
+                            Property type
+                        </label>
+
+                        <select
+                            id="propertyType"
+                            name="propertyType"
+                            required
+                        >
+                            <option value="">
+                                Select a property
+                            </option>
+
+                            <option value="Avalon De Royal">
+                                Avalon De Royal
+                            </option>
+
+                            <option value="Classic De Royal">
+                                Classic De Royal
+                            </option>
+
+                            <option value="Imperial Villa">
+                                Imperial Villa
+                            </option>
+
+                            <option value="Villa De Royal">
+                                Villa De Royal
+                            </option>
+
+                            <option value="Terrace De Royal">
+                                Terrace De Royal
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="visitDate">
+                                Preferred visit day
+                            </label>
+
+                            <input
+                                type="date"
+                                id="visitDate"
+                                name="visitDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="visitTime">
+                                Preferred time
+                            </label>
+
+                            <select
+                                id="visitTime"
+                                name="visitTime"
+                                required
+                            >
+                                <option value="">Select a time</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Tour type
+                        </label>
+
+                        <div class="tour-options">
+
+                            <div class="tour-option">
+
+                                <input
+                                    type="radio"
+                                    id="inPerson"
+                                    name="tourType"
+                                    value="in_person"
+                                    checked
+                                >
+
+                                <label for="inPerson">
+                                    <strong>
+                                        In-person tour
+                                    </strong>
+
+                                    <span>
+                                        Visit the estate and explore
+                                        the property with our team.
+                                    </span>
+                                </label>
+
+                            </div>
+
+
+                            <div class="tour-option">
+
+                                <input
+                                    type="radio"
+                                    id="virtual"
+                                    name="tourType"
+                                    value="virtual"
+                                >
+
+                                <label for="virtual">
+                                    <strong>
+                                        Virtual tour
+                                    </strong>
+
+                                    <span>
+                                        Explore the property remotely
+                                        with a guided virtual experience.
+                                    </span>
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="requirements">
+                            Special requirements
+                        </label>
+
+                        <textarea
+                            id="requirements"
+                            name="requirements"
+                            placeholder="Tell us anything we should know before your visit..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label for="source">
+                            How did you hear about Fort-Royal?
+                        </label>
+
+                        <select id="source" name="source">
+
+                            <option value="">
+                                Select an option
+                            </option>
+
+                            <option value="Google">
+                                Google
+                            </option>
+
+                            <option value="Instagram">
+                                Instagram
+                            </option>
+
+                            <option value="Facebook">
+                                Facebook
+                            </option>
+
+                            <option value="TikTok">
+                                TikTok
+                            </option>
+
+                            <option value="YouTube">
+                                YouTube
+                            </option>
+
+                            <option value="Friend or family">
+                                Friend or family
+                            </option>
+
+                            <option value="Referral">
+                                Referral
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="submit-area">
+
+                        <button
+                            type="submit"
+                            class="button inspection-submit"
+                            id="inspectionSubmit"
+                        >
+                            Request Inspection
+                        </button>
+
+                        <div
+                            class="form-status"
+                            id="formStatus"
+                            role="status"
+                            aria-live="polite"
+                        ></div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- SIDEBAR -->
+            <aside class="inspection-sidebar">
+
+                <div class="info-card">
+
+                    <div class="section-label">
+                        VISIT INFORMATION
+                    </div>
+
+                    <h3>
+                        Make time<br>
+                        to see it.
+                    </h3>
+
+                    <p>
+                        Private inspections are designed to give you
+                        enough time to understand the home, its details
+                        and the wider estate.
+                    </p>
+
+
+                    <ul class="info-list">
+
+                        <li>
+                            <span>Availability</span>
+                            <span>Daily</span>
+                        </li>
+
+                        <li>
+                            <span>Opening hours</span>
+                            <span>9 AM – 5 PM</span>
+                        </li>
+
+                        <li>
+                            <span>Typical duration</span>
+                            <span>1 – 2 hours</span>
+                        </li>
+
+                        <li>
+                            <span>Location</span>
+                            <span>Kyami District</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <h4>
+                        Need assistance?
+                    </h4>
+
+                    <p>
+                        Speak directly with the Fort-Royal team if you
+                        need help selecting a property or arranging a visit.
+                    </p>
+
+                    <a
+                        href="tel:+2348078191111"
+                        class="contact-number"
+                    >
+                        +234 807 819 1111
+                    </a>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section class="inspection-experience">
+
+        <div class="experience-inner">
+
+            <div class="experience-heading">
+
+                <div class="section-label">
+                    THE EXPERIENCE
+                </div>
+
+                <h2>
+                    More than a viewing.
+                </h2>
+
+                <p>
+                    An inspection gives you the opportunity to experience
+                    the homes as they were intended — with space to ask
+                    questions, explore details and understand the community.
+                </p>
+
+            </div>
+
+
+            <div class="experience-grid">
+
+                <div class="experience-item">
+
+                    <div class="experience-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Explore the home
+                    </h3>
+
+                    <p>
+                        Walk through the living spaces, bedrooms, kitchens,
+                        outdoor areas and key features of your selected property.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <div class="experience-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Discover the estate
+                    </h3>
+
+                    <p>
+                        See the wider Fort-Royal Homes Estate and understand
+                        the amenities and community environment around the property.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-item">
+
+                    <div class="experience-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Get clear answers
+                    </h3>
+
+                    <p>
+                        Discuss property details, documentation, buying options
+                        and the next steps with the Fort-Royal team.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="inspection-cta">
+
+        <div class="inspection-cta-inner">
+
+            <div class="eyebrow">
+                FORT-ROYAL HOMES
+            </div>
+
+            <h2>
+                Come see where<br>
+                you could live.
+            </h2>
+
+            <p>
+                Prefer to speak with someone first? Our team is available
+                to help you choose the right property and arrange your visit.
+            </p>
+
+            <a
+                href="tel:+2348078191111"
+                class="button button-light"
+            >
+                Call Fort-Royal
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
 
             <a href="index.html" class="brand">
                 <span class="brand-main">FORT-ROYAL</span>
                 <span class="brand-sub">HOMES LIMITED</span>
             </a>
 
-            <nav class="desktop-nav">
-                <a href="properties.html">Properties</a>
-                <a href="estate.html">The Estate</a>
-                <a href="developments.html">Developments</a>
-                <a href="about.html">About</a>
-                <a href="journal.html">Journal</a>
-                <a href="inspection.html" class="nav-cta active">Book Inspection</a>
-            </nav>
-
-            <button
-                class="menu-toggle"
-                type="button"
-                aria-label="Open menu"
-                aria-expanded="false"
-                aria-controls="mobileMenu"
-            >
-                <span></span>
-                <span></span>
-            </button>
+            <p>
+                Exceptional homes, thoughtful communities and
+                a better way to live in Abuja.
+            </p>
 
         </div>
-    </header>
 
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+        <div class="footer-column">
 
-        <div class="mobile-menu-inner">
+            <h4>Explore</h4>
 
-            <div class="mobile-menu-top">
-                <span>MENU</span>
+            <a href="properties.html">Properties</a>
+            <a href="estate.html">The Estate</a>
+            <a href="developments.html">Developments</a>
+            <a href="services.html">Services</a>
 
-                <button
-                    type="button"
-                    class="mobile-menu-close"
-                    aria-label="Close menu"
-                >
-                    ×
-                </button>
-            </div>
+        </div>
 
-            <nav>
-                <a href="properties.html">Properties</a>
-                <a href="estate.html">The Estate</a>
-                <a href="developments.html">Developments</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="journal.html">Journal</a>
-                <a href="contact.html">Contact</a>
-            </nav>
 
-            <a href="inspection.html" class="mobile-menu-cta">
-                Book an Inspection
+        <div class="footer-column">
+
+            <h4>Company</h4>
+
+            <a href="about.html">About</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+            <a href="inspection.html">Book Inspection</a>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <h4>Visit</h4>
+
+            <p>
+                25 Waziri Ibrahim Crescent,<br>
+                Gudu District,<br>
+                Abuja FCT, Nigeria.
+            </p>
+
+            <a href="tel:+2348078191111">
+                +234 807 819 1111
+            </a>
+
+            <a href="mailto:info@fortroyalhomes.org">
+                info@fortroyalhomes.org
             </a>
 
         </div>
@@ -578,685 +1201,348 @@
     </div>
 
 
-    <main>
-
-        <!-- HERO -->
-        <section class="inspection-hero">
-
-            <div class="inspection-hero-inner">
-
-                <div class="eyebrow">PRIVATE VIEWINGS · ABUJA</div>
-
-                <h1>
-                    See the place<br>
-                    for yourself.
-                </h1>
-
-                <p>
-                    Step inside a Fort-Royal home and experience the architecture,
-                    materials, space and community first-hand. Arrange a private
-                    inspection or choose a virtual tour from wherever you are.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- BOOKING -->
-        <section class="inspection-wrap">
-
-            <div class="inspection-grid">
-
-                <div>
-
-                    <div class="inspection-intro">
-
-                        <div class="section-label">
-                            BOOK AN INSPECTION
-                        </div>
-
-                        <h2>
-                            Your next home deserves a closer look.
-                        </h2>
-
-                        <p>
-                            Tell us what you would like to see and our team will
-                            help arrange your visit. Whether you are buying for
-                            yourself, your family or as an investment, we can
-                            guide you through the available options.
-                        </p>
-
-                    </div>
-
-
-                    <form class="inspection-form" id="inspectionForm">
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-                                <label for="fullName">Full name</label>
-
-                                <input
-                                    type="text"
-                                    id="fullName"
-                                    name="fullName"
-                                    placeholder="Your full name"
-                                    autocomplete="name"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email address</label>
-
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="you@example.com"
-                                    autocomplete="email"
-                                    required
-                                >
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-                                <label for="phone">Phone number</label>
-
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    placeholder="+234..."
-                                    autocomplete="tel"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="visitors">Number of visitors</label>
-
-                                <select id="visitors" name="visitors" required>
-                                    <option value="">Select</option>
-                                    <option value="1">1 person</option>
-                                    <option value="2">2 people</option>
-                                    <option value="3">3 people</option>
-                                    <option value="4">4 people</option>
-                                    <option value="5">5 people</option>
-                                    <option value="6+">6+ people</option>
-                                </select>
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group full">
-
-                            <label for="propertyType">
-                                Property type
-                            </label>
-
-                            <select
-                                id="propertyType"
-                                name="propertyType"
-                                required
-                            >
-                                <option value="">
-                                    Select a property
-                                </option>
-
-                                <option value="Avalon De Royal">
-                                    Avalon De Royal
-                                </option>
-
-                                <option value="Classic De Royal">
-                                    Classic De Royal
-                                </option>
-
-                                <option value="Imperial Villa">
-                                    Imperial Villa
-                                </option>
-
-                                <option value="Villa De Royal">
-                                    Villa De Royal
-                                </option>
-
-                                <option value="Terrace De Royal">
-                                    Terrace De Royal
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="form-row">
-
-                            <div class="form-group">
-
-                                <label for="visitDate">
-                                    Preferred visit day
-                                </label>
-
-                                <input
-                                    type="date"
-                                    id="visitDate"
-                                    name="visitDate"
-                                    required
-                                >
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="visitTime">
-                                    Preferred time
-                                </label>
-
-                                <select
-                                    id="visitTime"
-                                    name="visitTime"
-                                    required
-                                >
-                                    <option value="">Select a time</option>
-                                    <option value="09:00">9:00 AM</option>
-                                    <option value="10:00">10:00 AM</option>
-                                    <option value="11:00">11:00 AM</option>
-                                    <option value="12:00">12:00 PM</option>
-                                    <option value="13:00">1:00 PM</option>
-                                    <option value="14:00">2:00 PM</option>
-                                    <option value="15:00">3:00 PM</option>
-                                    <option value="16:00">4:00 PM</option>
-                                    <option value="17:00">5:00 PM</option>
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group full">
-
-                            <label>
-                                Tour type
-                            </label>
-
-                            <div class="tour-options">
-
-                                <div class="tour-option">
-
-                                    <input
-                                        type="radio"
-                                        id="inPerson"
-                                        name="tourType"
-                                        value="In-person guided tour"
-                                        checked
-                                    >
-
-                                    <label for="inPerson">
-                                        <strong>
-                                            In-person tour
-                                        </strong>
-
-                                        <span>
-                                            Visit the estate and explore
-                                            the property with our team.
-                                        </span>
-                                    </label>
-
-                                </div>
-
-
-                                <div class="tour-option">
-
-                                    <input
-                                        type="radio"
-                                        id="virtual"
-                                        name="tourType"
-                                        value="Virtual tour"
-                                    >
-
-                                    <label for="virtual">
-                                        <strong>
-                                            Virtual tour
-                                        </strong>
-
-                                        <span>
-                                            Explore the property remotely
-                                            with a guided virtual experience.
-                                        </span>
-                                    </label>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="form-group full">
-
-                            <label for="requirements">
-                                Special requirements
-                            </label>
-
-                            <textarea
-                                id="requirements"
-                                name="requirements"
-                                placeholder="Tell us anything we should know before your visit..."
-                            ></textarea>
-
-                        </div>
-
-
-                        <div class="form-group full">
-
-                            <label for="source">
-                                How did you hear about Fort-Royal?
-                            </label>
-
-                            <select id="source" name="source">
-
-                                <option value="">
-                                    Select an option
-                                </option>
-
-                                <option value="Google">
-                                    Google
-                                </option>
-
-                                <option value="Instagram">
-                                    Instagram
-                                </option>
-
-                                <option value="Facebook">
-                                    Facebook
-                                </option>
-
-                                <option value="TikTok">
-                                    TikTok
-                                </option>
-
-                                <option value="YouTube">
-                                    YouTube
-                                </option>
-
-                                <option value="Friend or family">
-                                    Friend or family
-                                </option>
-
-                                <option value="Referral">
-                                    Referral
-                                </option>
-
-                                <option value="Other">
-                                    Other
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="submit-area">
-
-                            <button
-                                type="submit"
-                                class="button inspection-submit"
-                            >
-                                Request Inspection
-                            </button>
-
-                            <div
-                                class="form-status"
-                                id="formStatus"
-                                role="status"
-                            ></div>
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-
-                <!-- SIDEBAR -->
-                <aside class="inspection-sidebar">
-
-                    <div class="info-card">
-
-                        <div class="section-label">
-                            VISIT INFORMATION
-                        </div>
-
-                        <h3>
-                            Make time<br>
-                            to see it.
-                        </h3>
-
-                        <p>
-                            Private inspections are designed to give you
-                            enough time to understand the home, its details
-                            and the wider estate.
-                        </p>
-
-
-                        <ul class="info-list">
-
-                            <li>
-                                <span>Availability</span>
-                                <span>Daily</span>
-                            </li>
-
-                            <li>
-                                <span>Opening hours</span>
-                                <span>9 AM – 5 PM</span>
-                            </li>
-
-                            <li>
-                                <span>Typical duration</span>
-                                <span>1 – 2 hours</span>
-                            </li>
-
-                            <li>
-                                <span>Location</span>
-                                <span>Kyami District</span>
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="contact-card">
-
-                        <h4>
-                            Need assistance?
-                        </h4>
-
-                        <p>
-                            Speak directly with the Fort-Royal team if you
-                            need help selecting a property or arranging a visit.
-                        </p>
-
-                        <a
-                            href="tel:+2348078191111"
-                            class="contact-number"
-                        >
-                            +234 807 819 1111
-                        </a>
-
-                    </div>
-
-                </aside>
-
-            </div>
-
-        </section>
-
-
-        <!-- EXPERIENCE -->
-        <section class="inspection-experience">
-
-            <div class="experience-inner">
-
-                <div class="experience-heading">
-
-                    <div class="section-label">
-                        THE EXPERIENCE
-                    </div>
-
-                    <h2>
-                        More than a viewing.
-                    </h2>
-
-                    <p>
-                        An inspection gives you the opportunity to experience
-                        the homes as they were intended — with space to ask
-                        questions, explore details and understand the community.
-                    </p>
-
-                </div>
-
-
-                <div class="experience-grid">
-
-                    <div class="experience-item">
-
-                        <div class="experience-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Explore the home
-                        </h3>
-
-                        <p>
-                            Walk through the living spaces, bedrooms, kitchens,
-                            outdoor areas and key features of your selected property.
-                        </p>
-
-                    </div>
-
-
-                    <div class="experience-item">
-
-                        <div class="experience-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Discover the estate
-                        </h3>
-
-                        <p>
-                            See the wider Fort-Royal Homes Estate and understand
-                            the amenities and community environment around the property.
-                        </p>
-
-                    </div>
-
-
-                    <div class="experience-item">
-
-                        <div class="experience-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Get clear answers
-                        </h3>
-
-                        <p>
-                            Discuss property details, documentation, buying options
-                            and the next steps with the Fort-Royal team.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CTA -->
-        <section class="inspection-cta">
-
-            <div class="inspection-cta-inner">
-
-                <div class="eyebrow">
-                    FORT-ROYAL HOMES
-                </div>
-
-                <h2>
-                    Come see where<br>
-                    you could live.
-                </h2>
-
-                <p>
-                    Prefer to speak with someone first? Our team is available
-                    to help you choose the right property and arrange your visit.
-                </p>
-
-                <a
-                    href="tel:+2348078191111"
-                    class="button button-light"
-                >
-                    Call Fort-Royal
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="footer-top">
-
-            <div class="footer-brand">
-
-                <a href="index.html" class="brand">
-                    <span class="brand-main">FORT-ROYAL</span>
-                    <span class="brand-sub">HOMES LIMITED</span>
-                </a>
-
-                <p>
-                    Exceptional homes, thoughtful communities and
-                    a better way to live in Abuja.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Explore</h4>
-
-                <a href="properties.html">Properties</a>
-                <a href="estate.html">The Estate</a>
-                <a href="developments.html">Developments</a>
-                <a href="services.html">Services</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Company</h4>
-
-                <a href="about.html">About</a>
-                <a href="journal.html">Journal</a>
-                <a href="contact.html">Contact</a>
-                <a href="inspection.html">Book Inspection</a>
-
-            </div>
-
-
-            <div class="footer-contact">
-
-                <h4>Visit</h4>
-
-                <p>
-                    25 Waziri Ibrahim Crescent,<br>
-                    Gudu District,<br>
-                    Abuja FCT, Nigeria.
-                </p>
-
-                <a href="tel:+2348078191111">
-                    +234 807 819 1111
-                </a>
-
-                <a href="mailto:info@fortroyalhomes.org">
-                    info@fortroyalhomes.org
-                </a>
-
-            </div>
-
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Fort-Royal Homes Limited.
+        </span>
+
+        <div>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
 
+    </div>
 
-        <div class="footer-bottom">
-
-            <span>
-                © 2026 Fort-Royal Homes Limited.
-            </span>
-
-            <div>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-            </div>
-
-        </div>
-
-    </footer>
+</footer>
 
 
-    <script src="js/main.js"></script>
+<!-- SHARED SITE JAVASCRIPT -->
+<script src="js/main.js"></script>
 
-    <script>
-        /*
-         * TEMPORARY FORM UX
-         *
-         * The form is intentionally NOT pretending to save data yet.
-         * We will connect it to Supabase/admin/email later.
-         */
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-        const inspectionForm =
-            document.getElementById("inspectionForm");
+<script>
+    /*
+     * =========================================================
+     * FORT-ROYAL HOMES
+     * INSPECTION FORM → SUPABASE
+     * =========================================================
+     *
+     * IMPORTANT:
+     * Only the public/publishable key belongs in this file.
+     * NEVER place a Supabase secret/service-role key here.
+     */
 
-        const formStatus =
-            document.getElementById("formStatus");
+    const SUPABASE_URL =
+        "https://hcawxwwkvwbtdemavfht.supabase.co";
 
-        const visitDate =
-            document.getElementById("visitDate");
-
-
-        // Prevent selecting dates in the past.
-        if (visitDate) {
-            const today = new Date();
-
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, "0");
-            const day = String(today.getDate()).padStart(2, "0");
-
-            visitDate.min = `${year}-${month}-${day}`;
-        }
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_bHS0rVIDGAcRk-IWEKI5wA_bbvAvmYx";
 
 
-        if (inspectionForm) {
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
 
-            inspectionForm.addEventListener("submit", function(event) {
+
+    /*
+     * =========================================================
+     * ELEMENTS
+     * =========================================================
+     */
+
+    const inspectionForm =
+        document.getElementById("inspectionForm");
+
+    const formStatus =
+        document.getElementById("formStatus");
+
+    const visitDate =
+        document.getElementById("visitDate");
+
+    const inspectionSubmit =
+        document.getElementById("inspectionSubmit");
+
+
+    /*
+     * =========================================================
+     * PREVENT PAST DATES
+     * =========================================================
+     */
+
+    if (visitDate) {
+
+        const today = new Date();
+
+        const year =
+            today.getFullYear();
+
+        const month =
+            String(today.getMonth() + 1)
+            .padStart(2, "0");
+
+        const day =
+            String(today.getDate())
+            .padStart(2, "0");
+
+        visitDate.min =
+            `${year}-${month}-${day}`;
+    }
+
+
+    /*
+     * =========================================================
+     * SHOW STATUS MESSAGE
+     * =========================================================
+     */
+
+    function showStatus(message, type) {
+
+        if (!formStatus) return;
+
+        formStatus.textContent = message;
+
+        formStatus.className =
+            "form-status show " + type;
+
+        formStatus.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+        });
+    }
+
+
+    /*
+     * =========================================================
+     * INSPECTION FORM SUBMISSION
+     * =========================================================
+     */
+
+    if (inspectionForm) {
+
+        inspectionForm.addEventListener(
+            "submit",
+            async function(event) {
 
                 event.preventDefault();
 
-                formStatus.classList.add("show");
 
-                formStatus.innerHTML =
-                    "Your inspection request has been prepared. " +
-                    "Online submission will be connected to the " +
-                    "Fort-Royal booking system in the next stage.";
+                /*
+                 * Make sure the Supabase client exists.
+                 */
 
-                formStatus.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest"
-                });
+                if (!supabaseClient) {
 
-            });
+                    showStatus(
+                        "The booking system is temporarily unavailable. Please call Fort-Royal Homes directly.",
+                        "error"
+                    );
 
-        }
-    </script>
+                    return;
+                }
+
+
+                /*
+                 * Disable the button while submitting.
+                 */
+
+                if (inspectionSubmit) {
+
+                    inspectionSubmit.disabled = true;
+
+                    inspectionSubmit.textContent =
+                        "Sending Request...";
+                }
+
+
+                /*
+                 * Read the form.
+                 */
+
+                const fullName =
+                    document.getElementById("fullName").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const phone =
+                    document.getElementById("phone").value.trim();
+
+                const visitorsValue =
+                    document.getElementById("visitors").value;
+
+                const propertyType =
+                    document.getElementById("propertyType").value;
+
+                const preferredDate =
+                    document.getElementById("visitDate").value;
+
+                const preferredTime =
+                    document.getElementById("visitTime").value;
+
+                const tourType =
+                    document.querySelector(
+                        'input[name="tourType"]:checked'
+                    )?.value || "in_person";
+
+                const requirements =
+                    document.getElementById("requirements").value.trim();
+
+                const source =
+                    document.getElementById("source").value;
+
+
+                /*
+                 * Convert "6+" into a database-safe integer.
+                 */
+
+                const visitors =
+                    visitorsValue === "6+"
+                        ? 6
+                        : Number(visitorsValue);
+
+
+                /*
+                 * Build database record.
+                 */
+
+                const inspectionData = {
+
+                    full_name: fullName,
+
+                    email: email,
+
+                    phone: phone,
+
+                    visitors: visitors,
+
+                    property_type: propertyType,
+
+                    preferred_date: preferredDate,
+
+                    preferred_time: preferredTime,
+
+                    tour_type: tourType,
+
+                    special_requirements:
+                        requirements || null,
+
+                    how_heard:
+                        source || null
+                };
+
+
+                try {
+
+                    /*
+                     * Send the inspection request
+                     * to Supabase.
+                     */
+
+                    const { error } =
+                        await supabaseClient
+                            .from("inspection_requests")
+                            .insert([inspectionData]);
+
+
+                    /*
+                     * Handle Supabase error.
+                     */
+
+                    if (error) {
+
+                        console.error(
+                            "Fort-Royal inspection error:",
+                            error
+                        );
+
+                        showStatus(
+                            "We couldn't submit your inspection request right now. Please try again or call Fort-Royal Homes on +234 807 819 1111.",
+                            "error"
+                        );
+
+                        return;
+                    }
+
+
+                    /*
+                     * SUCCESS
+                     */
+
+                    showStatus(
+                        "Your inspection request has been received. Fort-Royal Homes will contact you to confirm your visit.",
+                        "success"
+                    );
+
+
+                    /*
+                     * Clear the form.
+                     */
+
+                    inspectionForm.reset();
+
+
+                    /*
+                     * Keep today's minimum date
+                     * after resetting the form.
+                     */
+
+                    if (visitDate) {
+
+                        const today = new Date();
+
+                        const year =
+                            today.getFullYear();
+
+                        const month =
+                            String(today.getMonth() + 1)
+                            .padStart(2, "0");
+
+                        const day =
+                            String(today.getDate())
+                            .padStart(2, "0");
+
+                        visitDate.min =
+                            `${year}-${month}-${day}`;
+                    }
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Unexpected inspection error:",
+                        error
+                    );
+
+                    showStatus(
+                        "Something went wrong while sending your request. Please try again or contact Fort-Royal Homes directly.",
+                        "error"
+                    );
+
+                } finally {
+
+                    /*
+                     * Re-enable the button.
+                     */
+
+                    if (inspectionSubmit) {
+
+                        inspectionSubmit.disabled = false;
+
+                        inspectionSubmit.textContent =
+                            "Request Inspection";
+                    }
+                }
+
+            }
+        );
+
+    }
+</script>
 
 </body>
 </html>
