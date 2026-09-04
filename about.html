@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Fort-Royal Homes | Luxury Real Estate in Abuja</title>
+
+  <meta
+    name="description"
+    content="Discover Fort-Royal Homes Limited — a Nigerian real estate company creating exceptional homes, communities and property experiences in Abuja."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* =========================================================
+       ABOUT PAGE
+    ========================================================= */
+
+    .about-hero {
+      min-height: 82vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .about-hero-image {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.82) 0%,
+          rgba(0,0,0,.38) 48%,
+          rgba(0,0,0,.12) 100%
+        ),
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+      transform: scale(1.01);
+    }
+
+    .about-hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 130px 0 85px;
+      color: #fff;
+    }
+
+    .about-hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .about-hero-kicker::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: #c7a76a;
+    }
+
+    .about-hero h1 {
+      max-width: 900px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(4rem, 8vw, 7.8rem);
+      line-height: .86;
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+
+    .about-hero-copy {
+      max-width: 610px;
+      margin: 32px 0 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.78);
+    }
+
+    .about-hero-scroll {
+      position: absolute;
+      right: 4%;
+      bottom: 70px;
+      z-index: 3;
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.68);
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .about-hero-scroll::after {
+      content: "";
+      width: 1px;
+      height: 55px;
+      background: rgba(255,255,255,.45);
+    }
+
+
+    /* INTRO */
+
+    .about-intro {
+      padding: 120px 0;
+      background: #f7f4ee;
+    }
+
+    .about-intro-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .about-intro-label {
+      padding-top: 10px;
+    }
+
+    .about-intro-label span {
+      display: block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #8c7650;
+    }
+
+    .about-intro-main h2 {
+      margin: 0 0 30px;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      line-height: .96;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .about-intro-main p {
+      max-width: 760px;
+      margin: 0 0 20px;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #555;
+    }
+
+    .about-intro-main p:last-child {
+      margin-bottom: 0;
+    }
+
+
+    /* STATS */
+
+    .about-stats {
+      background: #111;
+      color: #fff;
+      padding: 75px 0;
+    }
+
+    .about-stats-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .about-stat {
+      min-height: 130px;
+      padding: 15px 35px;
+      border-left: 1px solid rgba(255,255,255,.15);
+    }
+
+    .about-stat:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .about-stat-number {
+      display: block;
+      margin-bottom: 9px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 4vw, 4.3rem);
+      line-height: 1;
+      color: #d0b276;
+    }
+
+    .about-stat-label {
+      font-size: .73rem;
+      line-height: 1.5;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.58);
+    }
+
+
+    /* MISSION / VISION */
+
+    .about-purpose {
+      padding: 120px 0;
+      background: #fff;
+    }
+
+    .about-purpose-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid #ddd7cd;
+    }
+
+    .purpose-card {
+      padding: 65px 55px 65px 0;
+    }
+
+    .purpose-card + .purpose-card {
+      padding-left: 55px;
+      padding-right: 0;
+      border-left: 1px solid #ddd7cd;
+    }
+
+    .purpose-number {
+      display: block;
+      margin-bottom: 28px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      color: #a1844e;
+    }
+
+    .purpose-card h3 {
+      margin: 0 0 20px;
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: .95;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .purpose-card p {
+      max-width: 480px;
+      margin: 0;
+      font-size: .98rem;
+      line-height: 1.85;
+      color: #666;
+    }
+
+
+    /* VALUES */
+
+    .about-values {
+      padding: 115px 0 125px;
+      background: #f3efe7;
+    }
+
+    .about-values-head {
+      width: min(1180px, 92%);
+      margin: 0 auto 60px;
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .about-values-head .section-label {
+      margin: 0;
+    }
+
+    .about-values-head h2 {
+      margin: 0;
+      max-width: 700px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.2rem);
+      line-height: .94;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .values-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid #d8d1c5;
+      border-bottom: 1px solid #d8d1c5;
+    }
+
+    .value-card {
+      min-height: 260px;
+      padding: 38px 28px 35px 0;
+    }
+
+    .value-card + .value-card {
+      padding-left: 28px;
+      border-left: 1px solid #d8d1c5;
+    }
+
+    .value-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #b89b63;
+      border-radius: 50%;
+      color: #8d7041;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .value-card h3 {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .value-card p {
+      margin: 0;
+      font-size: .87rem;
+      line-height: 1.7;
+      color: #666;
+    }
+
+
+    /* FOUNDER */
+
+    .about-founder {
+      padding: 125px 0;
+      background: #fff;
+    }
+
+    .about-founder-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .founder-image {
+      min-height: 650px;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0,0,0,.28),
+          transparent 50%
+        ),
+        url("https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png")
+        center / cover no-repeat;
+      filter: saturate(.85);
+    }
+
+    .founder-copy .section-label {
+      margin-bottom: 22px;
+    }
+
+    .founder-copy h2 {
+      margin: 0 0 25px;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: .92;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .founder-role {
+      display: block;
+      margin-bottom: 28px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #a1844e;
+    }
+
+    .founder-copy p {
+      max-width: 520px;
+      margin: 0 0 20px;
+      font-size: .96rem;
+      line-height: 1.85;
+      color: #606060;
+    }
+
+    .founder-signature {
+      margin-top: 35px;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-style: italic;
+      color: #222;
+    }
+
+
+    /* EXPERIENCE */
+
+    .about-experience {
+      padding: 115px 0;
+      background: #111;
+      color: #fff;
+    }
+
+    .experience-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 90px;
+    }
+
+    .experience-left .section-label {
+      color: #c5a56b;
+    }
+
+    .experience-left h2 {
+      margin: 20px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .experience-right {
+      border-top: 1px solid rgba(255,255,255,.17);
+    }
+
+    .experience-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 35px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(255,255,255,.17);
+    }
+
+    .experience-year {
+      font-family: var(--serif);
+      font-size: 1.65rem;
+      color: #d0b276;
+    }
+
+    .experience-row h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+
+    .experience-row p {
+      margin: 0;
+      font-size: .88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,.58);
+    }
+
+
+    /* SERVICES */
+
+    .about-services {
+      padding: 120px 0;
+      background: #f7f4ee;
+    }
+
+    .about-services-head {
+      width: min(1180px, 92%);
+      margin: 0 auto 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+    }
+
+    .about-services-head h2 {
+      margin: 15px 0 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: .92;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .about-services-head p {
+      max-width: 380px;
+      margin: 0;
+      font-size: .9rem;
+      line-height: 1.75;
+      color: #666;
+    }
+
+    .services-grid {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #d8d1c5;
+      border: 1px solid #d8d1c5;
+    }
+
+    .service-card {
+      min-height: 270px;
+      padding: 38px;
+      background: #f7f4ee;
+      transition: transform .3s ease, background .3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      background: #fff;
+    }
+
+    .service-number {
+      display: block;
+      margin-bottom: 55px;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      color: #a1844e;
+    }
+
+    .service-card h3 {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 500;
+      color: #111;
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: .84rem;
+      line-height: 1.7;
+      color: #666;
+    }
+
+
+    /* CTA */
+
+    .about-cta {
+      position: relative;
+      padding: 125px 0;
+      overflow: hidden;
+      background: #171717;
+      color: #fff;
+    }
+
+    .about-cta::before {
+      content: "FORT-ROYAL";
+      position: absolute;
+      left: -30px;
+      bottom: -80px;
+      font-family: var(--serif);
+      font-size: clamp(7rem, 18vw, 18rem);
+      line-height: .8;
+      white-space: nowrap;
+      color: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .about-cta-inner {
+      position: relative;
+      z-index: 2;
+      width: min(900px, 90%);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-cta .section-label {
+      color: #c5a56b;
+    }
+
+    .about-cta h2 {
+      margin: 20px auto 25px;
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .about-cta p {
+      max-width: 570px;
+      margin: 0 auto 35px;
+      font-size: .95rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.62);
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .about-hero {
+        min-height: 76vh;
+      }
+
+      .about-hero-content {
+        padding-bottom: 65px;
+      }
+
+      .about-hero-scroll {
+        display: none;
+      }
+
+      .about-intro-grid,
+      .about-values-head,
+      .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 0;
+      }
+
+      .about-stat:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
+      }
+
+      .about-purpose-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .purpose-card {
+        padding-right: 0;
+      }
+
+      .purpose-card + .purpose-card {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid #ddd7cd;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .value-card:nth-child(3) {
+        border-left: 0;
+      }
+
+      .value-card:nth-child(n+3) {
+        border-top: 1px solid #d8d1c5;
+      }
+
+      .about-founder-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .founder-image {
+        min-height: 520px;
+      }
+
+      .about-services-head {
+        display: block;
+      }
+
+      .about-services-head p {
+        margin-top: 25px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    @media (max-width: 620px) {
+
+      .about-hero {
+        min-height: 72vh;
+      }
+
+      .about-hero-content {
+        padding: 110px 0 48px;
+      }
+
+      .about-hero h1 {
+        font-size: clamp(3.6rem, 17vw, 5.5rem);
+      }
+
+      .about-hero-copy {
+        font-size: .88rem;
+        line-height: 1.7;
+      }
+
+      .about-intro,
+      .about-purpose,
+      .about-values,
+      .about-founder,
+      .about-services {
+        padding: 80px 0;
+      }
+
+      .about-stats {
+        padding: 55px 0;
+      }
+
+      .about-stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-stat {
+        padding: 12px 20px;
+      }
+
+      .about-stat:nth-child(3) {
+        padding-left: 0;
+      }
+
+      .about-stat-number {
+        font-size: 2.8rem;
+      }
+
+      .about-stat-label {
+        font-size: .62rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .value-card,
+      .value-card + .value-card {
+        padding: 30px 0;
+        border-left: 0;
+      }
+
+      .value-card + .value-card {
+        border-top: 1px solid #d8d1c5;
+      }
+
+      .value-icon {
+        margin-bottom: 28px;
+      }
+
+      .founder-image {
+        min-height: 420px;
+      }
+
+      .experience-grid {
+        gap: 55px;
+      }
+
+      .experience-row {
+        grid-template-columns: 75px 1fr;
+        gap: 20px;
+      }
+
+      .experience-year {
+        font-size: 1.3rem;
+      }
+
+      .experience-row h3 {
+        font-size: 1.45rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        min-height: auto;
+      }
+
+      .about-cta {
+        padding: 90px 0;
+      }
+
+      .about-cta h2 {
+        font-size: clamp(3rem, 14vw, 4.5rem);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <a href="index.html" class="brand">
+      <span class="brand-main">FORT-ROYAL</span>
+      <span class="brand-sub">HOMES LIMITED</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="properties.html">Properties</a>
+      <a href="estate.html">The Estate</a>
+      <a href="developments.html">Developments</a>
+      <a href="about.html" class="active">About</a>
+      <a href="journal.html">Journal</a>
+      <a href="inspection.html" class="nav-cta">Book Inspection</a>
+    </nav>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+      <span></span>
+      <span></span>
+    </button>
+
+  </header>
+
+
+  <!-- =======================================================
+       MOBILE MENU
+  ======================================================== -->
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+
+    <div class="mobile-menu-inner">
+
+      <div class="mobile-menu-top">
+        <span>MENU</span>
+
+        <button
+          type="button"
+          class="mobile-menu-close"
+          aria-label="Close navigation menu"
+        >
+          CLOSE
+        </button>
+      </div>
+
+      <nav class="mobile-menu-nav">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="estate.html">The Estate</a>
+        <a href="developments.html">Developments</a>
+        <a href="about.html">About</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <a href="inspection.html" class="mobile-menu-cta">
+        Book an Inspection
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="about-hero">
+
+      <div class="about-hero-image"></div>
+
+      <div class="about-hero-content">
+
+        <div class="about-hero-kicker">
+          Our Story
+        </div>
+
+        <h1>
+          Building a<br>
+          better way<br>
+          to live.
+        </h1>
+
+        <p class="about-hero-copy">
+          Fort-Royal Homes creates exceptional homes and communities
+          where luxury, comfort, security and a sense of belonging
+          come together.
+        </p>
+
+      </div>
+
+      <div class="about-hero-scroll">
+        Explore
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <section class="about-intro">
+
+      <div class="about-intro-grid">
+
+        <div class="about-intro-label">
+          <span>01 — Who We Are</span>
+        </div>
+
+        <div class="about-intro-main">
+
+          <h2>
+            More than property.
+            A place to belong.
+          </h2>
+
+          <p>
+            Since 2006, Fort-Royal Homes has been developing and
+            delivering residential spaces designed around the way
+            people actually want to live.
+          </p>
+
+          <p>
+            Based in Abuja, Nigeria, the company brings together
+            property development, real estate sales, land investment
+            and estate management to create carefully considered
+            living environments.
+          </p>
+
+          <p>
+            From individual residences to a complete gated community,
+            our approach is centred on quality, thoughtful planning,
+            security and long-term value.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATS
+    ====================================================== -->
+
+    <section class="about-stats">
+
+      <div class="about-stats-grid">
+
+        <div class="about-stat">
+          <span class="about-stat-number">2006</span>
+          <span class="about-stat-label">
+            Established
+          </span>
+        </div>
+
+        <div class="about-stat">
+          <span class="about-stat-number">17+</span>
+          <span class="about-stat-label">
+            Years of Experience
+          </span>
+        </div>
+
+        <div class="about-stat">
+          <span class="about-stat-number">25+</span>
+          <span class="about-stat-label">
+            Properties Developed
+          </span>
+        </div>
+
+        <div class="about-stat">
+          <span class="about-stat-number">300+</span>
+          <span class="about-stat-label">
+            Staff & Professionals
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MISSION / VISION
+    ====================================================== -->
+
+    <section class="about-purpose">
+
+      <div class="about-purpose-grid">
+
+        <article class="purpose-card">
+
+          <span class="purpose-number">
+            01 — OUR MISSION
+          </span>
+
+          <h3>
+            Exceptional
+            living,
+            thoughtfully
+            created.
+          </h3>
+
+          <p>
+            Our mission is to create exceptional living environments
+            that combine luxury, comfort, security and community —
+            delivering homes and spaces that improve everyday life.
+          </p>
+
+        </article>
+
+
+        <article class="purpose-card">
+
+          <span class="purpose-number">
+            02 — OUR VISION
+          </span>
+
+          <h3>
+            A trusted
+            name in
+            Nigerian
+            real estate.
+          </h3>
+
+          <p>
+            We aspire to be one of Nigeria's most trusted and
+            innovative real estate companies, known for premium
+            living spaces, thoughtful development and lasting value.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VALUES
+    ====================================================== -->
+
+    <section class="about-values">
+
+      <div class="about-values-head">
+
+        <div>
+          <span class="section-label">
+            02 — What Guides Us
+          </span>
+        </div>
+
+        <h2>
+          Principles that shape
+          every address.
+        </h2>
+
+      </div>
+
+
+      <div class="values-grid">
+
+        <article class="value-card">
+
+          <div class="value-icon">01</div>
+
+          <h3>Excellence</h3>
+
+          <p>
+            We pursue high standards in design, construction,
+            service and every detail of the customer experience.
+          </p>
+
+        </article>
+
+
+        <article class="value-card">
+
+          <div class="value-icon">02</div>
+
+          <h3>Integrity</h3>
+
+          <p>
+            We believe trust is earned through transparency,
+            responsibility and doing what we say we will do.
+          </p>
+
+        </article>
+
+
+        <article class="value-card">
+
+          <div class="value-icon">03</div>
+
+          <h3>Innovation</h3>
+
+          <p>
+            We continually look for smarter ways to design,
+            develop and manage spaces for modern living.
+          </p>
+
+        </article>
+
+
+        <article class="value-card">
+
+          <div class="value-icon">04</div>
+
+          <h3>Community</h3>
+
+          <p>
+            We create environments where families, professionals
+            and neighbours can feel connected and secure.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOUNDER
+    ====================================================== -->
+
+    <section class="about-founder">
+
+      <div class="about-founder-grid">
+
+        <div class="founder-image"></div>
+
+        <div class="founder-copy">
+
+          <span class="section-label">
+            03 — Leadership
+          </span>
+
+          <h2>
+            Vision<br>
+            with purpose.
+          </h2>
+
+          <span class="founder-role">
+            Otunba Collins Adewunmi
+            <br>
+            Visionary Founder & Executive Chairman
+          </span>
+
+          <p>
+            Fort-Royal Homes was founded with a vision to contribute
+            to the development of premium residential environments
+            in Nigeria.
+          </p>
+
+          <p>
+            As a seasoned real estate developer and investor,
+            Otunba Collins Adewunmi has led the company with an
+            emphasis on quality development, community and
+            long-term value.
+          </p>
+
+          <p>
+            That vision continues to influence the way Fort-Royal
+            approaches property — not simply as buildings, but as
+            environments designed for people and their future.
+          </p>
+
+          <div class="founder-signature">
+            Collins Adewunmi
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EXPERIENCE
+    ====================================================== -->
+
+    <section class="about-experience">
+
+      <div class="experience-grid">
+
+        <div class="experience-left">
+
+          <span class="section-label">
+            04 — Our Journey
+          </span>
+
+          <h2>
+            Built on
+            experience.
+          </h2>
+
+        </div>
+
+
+        <div class="experience-right">
+
+          <div class="experience-row">
+
+            <div class="experience-year">
+              2006
+            </div>
+
+            <div>
+              <h3>Fort-Royal begins</h3>
+
+              <p>
+                Fort-Royal Homes was established with a focus on
+                creating quality residential environments in Nigeria.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="experience-row">
+
+            <div class="experience-year">
+              01
+            </div>
+
+            <div>
+              <h3>Residential development</h3>
+
+              <p>
+                The company expanded its portfolio through the
+                development of premium homes and residential
+                properties.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="experience-row">
+
+            <div class="experience-year">
+              02
+            </div>
+
+            <div>
+              <h3>A complete community</h3>
+
+              <p>
+                Fort-Royal Homes Estate developed into a planned,
+                gated residential community in Kyami District,
+                along Abuja's Airport Road.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="experience-row">
+
+            <div class="experience-year">
+              NOW
+            </div>
+
+            <div>
+              <h3>Looking forward</h3>
+
+              <p>
+                Continuing to create premium homes, communities
+                and property solutions for buyers, investors
+                and families.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="about-services">
+
+      <div class="about-services-head">
+
+        <div>
+
+          <span class="section-label">
+            05 — What We Do
+          </span>
+
+          <h2>
+            Real estate,<br>
+            considered fully.
+          </h2>
+
+        </div>
+
+        <p>
+          From finding the right home to developing and managing
+          property, Fort-Royal Homes provides a range of real
+          estate services built around the needs of its clients.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+        <article class="service-card">
+
+          <span class="service-number">
+            01 / PROPERTY SALES
+          </span>
+
+          <h3>
+            Find Your Home
+          </h3>
+
+          <p>
+            Discover carefully selected residences designed for
+            modern family living, comfort and long-term value.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">
+            02 / LAND
+          </span>
+
+          <h3>
+            Land Investment
+          </h3>
+
+          <p>
+            Explore plots within planned and gated developments
+            with documentation and flexible payment options
+            depending on the project.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">
+            03 / DEVELOPMENT
+          </span>
+
+          <h3>
+            Property Development
+          </h3>
+
+          <p>
+            From consultation and planning to design, approvals,
+            construction and handover.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">
+            04 / MANAGEMENT
+          </span>
+
+          <h3>
+            Estate Management
+          </h3>
+
+          <p>
+            Professional property care, maintenance, lease
+            management, marketing and ongoing support.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">
+            05 / BUYING SUPPORT
+          </span>
+
+          <h3>
+            Property Advisory
+          </h3>
+
+          <p>
+            Property sourcing, negotiations, due diligence,
+            inspections, legal advisory and post-sale support.
+          </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">
+            06 / INSPECTIONS
+          </span>
+
+          <h3>
+            Private Viewings
+          </h3>
+
+          <p>
+            Arrange a guided visit to explore available residences
+            and experience the Fort-Royal Homes Estate in person.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="about-cta">
+
+      <div class="about-cta-inner">
+
+        <span class="section-label">
+          Begin Your Journey
+        </span>
+
+        <h2>
+          Your next address
+          could be here.
+        </h2>
+
+        <p>
+          Explore the residences at Fort-Royal Homes or arrange
+          a private inspection and experience the community for
+          yourself.
+        </p>
+
+        <a href="inspection.html" class="button button-light">
+          Book an Inspection
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a href="index.html" class="brand">
+          <span class="brand-main">FORT-ROYAL</span>
+          <span class="brand-sub">HOMES LIMITED</span>
+        </a>
+
+        <p>
+          Exceptional homes. Thoughtful communities.
+          A better way to live.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <span class="footer-heading">
+          Explore
+        </span>
+
+        <a href="properties.html">Properties</a>
+        <a href="estate.html">The Estate</a>
+        <a href="developments.html">Developments</a>
+        <a href="about.html">About</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <span class="footer-heading">
+          Services
+        </span>
+
+        <a href="inspection.html">Book Inspection</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="journal.html">Journal</a>
+
+      </div>
+
+
+      <div class="footer-contact">
+
+        <span class="footer-heading">
+          Get in Touch
+        </span>
+
+        <a href="tel:+2348078191111">
+          +234 807 819 1111
+        </a>
+
+        <a href="tel:+2349053927777">
+          +234 905 392 7777
+        </a>
+
+        <a href="mailto:info@fortroyalhomes.org">
+          info@fortroyalhomes.org
+        </a>
+
+        <p>
+          25 Waziri Ibrahim Crescent,<br>
+          Gudu District,<br>
+          Abuja, Nigeria.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Fort-Royal Homes Limited.
+        All rights reserved.
+      </span>
+
+      <div>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>
