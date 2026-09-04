@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        The Estate | Fort-Royal Homes Limited
+    </title>
+
+    <meta
+        name="description"
+        content="Discover Fort-Royal Homes Estate, a premium gated community in Kyami District along Airport Road, Abuja."
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           ESTATE PAGE
+        ========================================= */
+
+        .estate-page {
+            background: #f3f0e9;
+            color: #111;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .estate-hero {
+
+            position: relative;
+
+            min-height: 94vh;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            overflow: hidden;
+
+            color: #fff;
+
+            background: #111;
+
+        }
+
+
+        .estate-hero-image {
+
+            position: absolute;
+
+            inset: 0;
+
+        }
+
+
+        .estate-hero-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .estate-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.88),
+                    rgba(0,0,0,.28) 55%,
+                    rgba(0,0,0,.15)
+                );
+
+            z-index: 1;
+
+        }
+
+
+        .estate-hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            padding:
+                150px 6vw 75px;
+
+        }
+
+
+        .estate-hero h1 {
+
+            max-width: 1150px;
+
+            margin-top: 22px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(70px, 12vw, 170px);
+
+            font-weight: 400;
+
+            line-height: .76;
+
+            letter-spacing: -.06em;
+
+        }
+
+
+        .estate-hero h1 em {
+
+            color: #c6a66a;
+
+            font-style: italic;
+
+        }
+
+
+        .estate-location {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            margin-top: 30px;
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .14em;
+
+            color:
+                rgba(255,255,255,.65);
+
+        }
+
+
+        .estate-location::before {
+
+            content: "";
+
+            width: 35px;
+
+            height: 1px;
+
+            background: #c6a66a;
+
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .estate-intro {
+
+            display: grid;
+
+            grid-template-columns:
+                .65fr 1.35fr;
+
+            background: #fff;
+
+            border-bottom:
+                1px solid #ded9cf;
+
+        }
+
+
+        .estate-intro-side {
+
+            padding:
+                90px 6vw;
+
+            border-right:
+                1px solid #ded9cf;
+
+        }
+
+
+        .estate-intro-side h2 {
+
+            margin-top: 20px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(50px, 6vw, 85px);
+
+            font-weight: 400;
+
+            line-height: .82;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .estate-intro-side h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .estate-intro-copy {
+
+            padding:
+                90px 7vw 90px 70px;
+
+        }
+
+
+        .estate-intro-copy p {
+
+            max-width: 760px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(28px, 3vw, 46px);
+
+            line-height: 1.05;
+
+            color: #252525;
+
+        }
+
+
+        .estate-intro-copy .small-copy {
+
+            max-width: 650px;
+
+            margin-top: 35px;
+
+            font-family: "DM Sans", sans-serif;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+            color: #777;
+
+        }
+
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .estate-stats {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            background: #111;
+
+            color: #fff;
+
+        }
+
+
+        .estate-stat {
+
+            padding:
+                55px 40px;
+
+            min-height: 170px;
+
+            border-right:
+                1px solid rgba(255,255,255,.12);
+
+        }
+
+
+        .estate-stat:last-child {
+
+            border-right: 0;
+
+        }
+
+
+        .estate-stat strong {
+
+            display: block;
+
+            font-family: var(--serif);
+
+            font-size: 55px;
+
+            font-weight: 400;
+
+            line-height: .9;
+
+        }
+
+
+        .estate-stat span {
+
+            display: block;
+
+            margin-top: 12px;
+
+            color:
+                rgba(255,255,255,.45);
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .13em;
+
+        }
+
+
+        /* =========================================
+           COMMUNITY IMAGE
+        ========================================= */
+
+        .estate-feature {
+
+            padding:
+                120px 6vw;
+
+        }
+
+
+        .estate-feature-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content:
+                space-between;
+
+            gap: 40px;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .estate-feature-heading h2 {
+
+            margin-top: 18px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(60px, 8vw, 115px);
+
+            font-weight: 400;
+
+            line-height: .8;
+
+            letter-spacing: -.055em;
+
+        }
+
+
+        .estate-feature-heading h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .estate-feature-heading p {
+
+            max-width: 330px;
+
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .estate-feature-image {
+
+            position: relative;
+
+            height:
+                min(72vh, 760px);
+
+            overflow: hidden;
+
+        }
+
+
+        .estate-feature-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .estate-feature-caption {
+
+            position: absolute;
+
+            bottom: 25px;
+
+            left: 25px;
+
+            padding: 12px 15px;
+
+            background:
+                rgba(255,255,255,.93);
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+        }
+
+
+        /* =========================================
+           AMENITIES
+        ========================================= */
+
+        .amenities {
+
+            background: #fff;
+
+            padding:
+                110px 6vw;
+
+            border-top:
+                1px solid #ded9cf;
+
+        }
+
+
+        .amenities-heading {
+
+            display: grid;
+
+            grid-template-columns:
+                .7fr 1.3fr;
+
+            gap: 70px;
+
+            margin-bottom: 70px;
+
+        }
+
+
+        .amenities-heading h2 {
+
+            margin-top: 18px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(55px, 7vw, 105px);
+
+            font-weight: 400;
+
+            line-height: .8;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .amenities-heading h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .amenities-heading p {
+
+            max-width: 620px;
+
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+            align-self: end;
+
+        }
+
+
+        .amenities-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            border-top:
+                1px solid #ded9cf;
+
+            border-left:
+                1px solid #ded9cf;
+
+        }
+
+
+        .amenity {
+
+            min-height: 230px;
+
+            padding: 30px;
+
+            border-right:
+                1px solid #ded9cf;
+
+            border-bottom:
+                1px solid #ded9cf;
+
+            transition:
+                background .35s ease,
+                color .35s ease;
+
+        }
+
+
+        .amenity:hover {
+
+            background: #111;
+
+            color: #fff;
+
+        }
+
+
+        .amenity-number {
+
+            font-size: 8px;
+
+            color: #ad8b4e;
+
+            letter-spacing: .1em;
+
+        }
+
+
+        .amenity h3 {
+
+            margin-top: 45px;
+
+            font-family: var(--serif);
+
+            font-size: 32px;
+
+            font-weight: 500;
+
+        }
+
+
+        .amenity p {
+
+            margin-top: 12px;
+
+            max-width: 290px;
+
+            color: #777;
+
+            font-size: 10px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .amenity:hover p {
+
+            color:
+                rgba(255,255,255,.6);
+
+        }
+
+
+        /* =========================================
+           LIFESTYLE SPLIT
+        ========================================= */
+
+        .estate-lifestyle {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            min-height: 720px;
+
+        }
+
+
+        .lifestyle-image {
+
+            min-height: 600px;
+
+            overflow: hidden;
+
+        }
+
+
+        .lifestyle-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .lifestyle-copy {
+
+            padding:
+                90px 7vw;
+
+            background: #e9e5dc;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        .lifestyle-copy h2 {
+
+            margin-top: 20px;
+
+            max-width: 600px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(55px, 7vw, 100px);
+
+            font-weight: 400;
+
+            line-height: .82;
+
+            letter-spacing: -.055em;
+
+        }
+
+
+        .lifestyle-copy h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .lifestyle-copy > p {
+
+            max-width: 510px;
+
+            margin-top: 30px;
+
+            color: #666;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .lifestyle-list {
+
+            margin-top: 35px;
+
+            max-width: 550px;
+
+        }
+
+
+        .lifestyle-list div {
+
+            padding:
+                15px 0;
+
+            border-top:
+                1px solid #cfc9be;
+
+            font-size: 10px;
+
+        }
+
+
+        .lifestyle-list div:last-child {
+
+            border-bottom:
+                1px solid #cfc9be;
+
+        }
+
+
+        /* =========================================
+           LOCATION
+        ========================================= */
+
+        .location-section {
+
+            padding:
+                120px 6vw;
+
+            background: #111;
+
+            color: #fff;
+
+        }
+
+
+        .location-heading {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-end;
+
+            gap: 40px;
+
+            margin-bottom: 60px;
+
+        }
+
+
+        .location-heading h2 {
+
+            margin-top: 20px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(60px, 8vw, 115px);
+
+            font-weight: 400;
+
+            line-height: .8;
+
+            letter-spacing: -.055em;
+
+        }
+
+
+        .location-heading h2 em {
+
+            color: #c6a66a;
+
+            font-style: italic;
+
+        }
+
+
+        .location-heading p {
+
+            max-width: 320px;
+
+            color:
+                rgba(255,255,255,.55);
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .location-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.25fr .75fr;
+
+            gap: 15px;
+
+        }
+
+
+        .location-image {
+
+            min-height: 560px;
+
+            overflow: hidden;
+
+        }
+
+
+        .location-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+        }
+
+
+        .location-facts {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content:
+                space-between;
+
+            border-top:
+                1px solid rgba(255,255,255,.15);
+
+        }
+
+
+        .location-fact {
+
+            padding:
+                25px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.15);
+
+        }
+
+
+        .location-fact strong {
+
+            display: block;
+
+            font-family: var(--serif);
+
+            font-size: 30px;
+
+            font-weight: 400;
+
+        }
+
+
+        .location-fact span {
+
+            display: block;
+
+            margin-top: 7px;
+
+            color:
+                rgba(255,255,255,.45);
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .1em;
+
+        }
+
+
+        /* =========================================
+           PROPERTY COLLECTION
+        ========================================= */
+
+        .estate-properties {
+
+            padding:
+                120px 6vw;
+
+        }
+
+
+        .estate-properties-heading {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-end;
+
+            margin-bottom: 55px;
+
+        }
+
+
+        .estate-properties-heading h2 {
+
+            margin-top: 20px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(55px, 7vw, 100px);
+
+            font-weight: 400;
+
+            line-height: .8;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .estate-properties-heading h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .estate-properties-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .estate-property {
+
+            display: block;
+
+        }
+
+
+        .estate-property-image {
+
+            aspect-ratio: 1/.95;
+
+            overflow: hidden;
+
+            background: #ddd;
+
+        }
+
+
+        .estate-property-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform .8s ease;
+
+        }
+
+
+        .estate-property:hover
+        .estate-property-image img {
+
+            transform: scale(1.05);
+
+        }
+
+
+        .estate-property-info {
+
+            padding-top: 18px;
+
+        }
+
+
+        .estate-property-info h3 {
+
+            font-family: var(--serif);
+
+            font-size: 29px;
+
+            font-weight: 500;
+
+        }
+
+
+        .estate-property-info p {
+
+            margin-top: 6px;
+
+            color: #777;
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .08em;
+
+        }
+
+
+        /* =========================================
+           FINAL CTA
+        ========================================= */
+
+        .estate-cta {
+
+            position: relative;
+
+            min-height: 620px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: #fff;
+
+            background: #111;
+
+        }
+
+
+        .estate-cta-image {
+
+            position: absolute;
+
+            inset: 0;
+
+        }
+
+
+        .estate-cta-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: .42;
+
+        }
+
+
+        .estate-cta::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                rgba(0,0,0,.45);
+
+        }
+
+
+        .estate-cta-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding: 50px 6vw;
+
+        }
+
+
+        .estate-cta-content h2 {
+
+            max-width: 900px;
+
+            margin: 20px auto 0;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(60px, 9vw, 125px);
+
+            font-weight: 400;
+
+            line-height: .8;
+
+            letter-spacing: -.06em;
+
+        }
+
+
+        .estate-cta-content h2 em {
+
+            color: #c6a66a;
+
+            font-style: italic;
+
+        }
+
+
+        .estate-cta-content p {
+
+            max-width: 500px;
+
+            margin: 30px auto 0;
+
+            color:
+                rgba(255,255,255,.65);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .estate-hero {
+
+                min-height: 82vh;
+
+            }
+
+
+            .estate-hero-content {
+
+                padding:
+                    140px 6vw 60px;
+
+            }
+
+
+            .estate-hero h1 {
+
+                font-size:
+                    clamp(62px, 18vw, 105px);
+
+            }
+
+
+            .estate-intro {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .estate-intro-side {
+
+                border-right: 0;
+
+                border-bottom:
+                    1px solid #ded9cf;
+
+                padding:
+                    70px 6vw;
+
+            }
+
+
+            .estate-intro-copy {
+
+                padding:
+                    65px 6vw;
+
+            }
+
+
+            .estate-stats {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .estate-stat:nth-child(2) {
+
+                border-right: 0;
+
+            }
+
+
+            .estate-stat:nth-child(-n+2) {
+
+                border-bottom:
+                    1px solid rgba(255,255,255,.12);
+
+            }
+
+
+            .estate-feature {
+
+                padding:
+                    80px 6vw;
+
+            }
+
+
+            .estate-feature-heading {
+
+                flex-direction: column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .estate-feature-image {
+
+                height: 55vh;
+
+            }
+
+
+            .amenities {
+
+                padding:
+                    80px 6vw;
+
+            }
+
+
+            .amenities-heading {
+
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+
+            }
+
+
+            .amenities-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            .estate-lifestyle {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .lifestyle-image {
+
+                min-height: 450px;
+
+            }
+
+
+            .lifestyle-copy {
+
+                padding:
+                    75px 6vw;
+
+            }
+
+
+            .location-section {
+
+                padding:
+                    80px 6vw;
+
+            }
+
+
+            .location-heading {
+
+                flex-direction: column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .location-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .location-image {
+
+                min-height: 430px;
+
+            }
+
+
+            .estate-properties {
+
+                padding:
+                    80px 6vw;
+
+            }
+
+
+            .estate-properties-heading {
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .estate-properties-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+            }
+
+
+            .estate-cta {
+
+                min-height: 570px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="estate-page">
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <a
+        href="index.html"
+        class="brand"
+    >
+
+        <span class="brand-main">
+            FORT-ROYAL
+        </span>
+
+        <span class="brand-sub">
+            HOMES LIMITED
+        </span>
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+        <a href="properties.html">
+            Properties
+        </a>
+
+        <a
+            href="estate.html"
+            class="active"
+        >
+            The Estate
+        </a>
+
+        <a href="developments.html">
+            Developments
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="journal.html">
+            Journal
+        </a>
+
+    </nav>
+
+
+    <a
+        href="inspection.html"
+        class="nav-cta"
+    >
+
+        <span>
+            Book an Inspection
+        </span>
+
+        <span class="arrow">
+            ↗
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =========================================
+     MOBILE MENU
+========================================= -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-inner">
+
+
+        <div class="mobile-menu-top">
+
+            <span>
+                MENU
+            </span>
+
+            <button
+                id="menuClose"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                <span>00</span>
+                Home
+            </a>
+
+            <a href="properties.html">
+                <span>01</span>
+                Properties
+            </a>
+
+            <a href="estate.html">
+                <span>02</span>
+                The Estate
+            </a>
+
+            <a href="developments.html">
+                <span>03</span>
+                Developments
+            </a>
+
+            <a href="about.html">
+                <span>04</span>
+                About
+            </a>
+
+            <a href="journal.html">
+                <span>05</span>
+                Journal
+            </a>
+
+        </nav>
+
+
+        <a
+            href="inspection.html"
+            class="mobile-menu-cta"
+        >
+
+            <span>
+                Book a Private Inspection
+            </span>
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="estate-hero">
+
+
+    <div class="estate-hero-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Entrance-Gate.jpg"
+            alt="Fort-Royal Homes Estate entrance"
+        >
+
+    </div>
+
+
+    <div class="estate-hero-content">
+
+        <div class="eyebrow">
+            FORT-ROYAL HOMES ESTATE
+        </div>
+
+
+        <h1>
+
+            A community
+            <em>apart.</em>
+
+        </h1>
+
+
+        <div class="estate-location">
+
+            Kyami District · Airport Road · Abuja
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<section class="estate-intro">
+
+
+    <div class="estate-intro-side">
+
+        <div class="section-label">
+
+            <span>
+                01
+            </span>
+
+            The Estate
+
+        </div>
+
+
+        <h2>
+
+            More than
+            <em>a home.</em>
+
+        </h2>
+
+    </div>
+
+
+    <div class="estate-intro-copy">
+
+        <p>
+
+            A planned residential community created around
+            the idea that luxury should include the way
+            you live beyond your front door.
+
+        </p>
+
+
+        <p class="small-copy">
+
+            Fort-Royal Homes Estate is located at Plot 3153/4,
+            Kyami District, along Airport Road, Abuja.
+            The estate combines residential homes with
+            community facilities and essential services,
+            creating a more self-contained living environment.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     STATS
+========================================= -->
+
+<section class="estate-stats">
+
+
+    <div class="estate-stat">
+
+        <strong>
+            2006
+        </strong>
+
+        <span>
+            Fort-Royal established
+        </span>
+
+    </div>
+
+
+    <div class="estate-stat">
+
+        <strong>
+            5
+        </strong>
+
+        <span>
+            Published property types
+        </span>
+
+    </div>
+
+
+    <div class="estate-stat">
+
+        <strong>
+            30%
+        </strong>
+
+        <span>
+            Green spaces
+        </span>
+
+    </div>
+
+
+    <div class="estate-stat">
+
+        <strong>
+            24/7
+        </strong>
+
+        <span>
+            Security
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ESTATE FEATURE
+========================================= -->
+
+<section class="estate-feature">
+
+
+    <div class="estate-feature-heading">
+
+        <div>
+
+            <div class="section-label">
+
+                <span>
+                    02
+                </span>
+
+                The Setting
+
+            </div>
+
+
+            <h2>
+
+                Designed around
+                <em>life.</em>
+
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            A gated residential environment combining
+            contemporary homes, landscaped areas and
+            essential community facilities.
+
+        </p>
+
+    </div>
+
+
+    <div class="estate-feature-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Estate-Walk-Way.jpg"
+            alt="Fort-Royal Homes Estate walkway"
+            loading="lazy"
+        >
+
+
+        <span class="estate-feature-caption">
+
+            Fort-Royal Homes Estate
+
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     AMENITIES
+========================================= -->
+
+<section class="amenities">
+
+
+    <div class="amenities-heading">
+
+
+        <div>
+
+            <div class="section-label">
+
+                <span>
+                    03
+                </span>
+
+                Community
+
+            </div>
+
+
+            <h2>
+
+                Everything
+                <em>closer.</em>
+
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Fort-Royal's published estate information
+            describes a community planned with residential,
+            educational, medical, recreational, commercial
+            and emergency facilities.
+
+        </p>
+
+    </div>
+
+
+    <div class="amenities-grid">
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                01
+            </span>
+
+            <h3>
+                Fort-Royal Academy
+            </h3>
+
+            <p>
+                Nursery, primary and secondary education
+                within the community.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                02
+            </span>
+
+            <h3>
+                Medical Centre
+            </h3>
+
+            <p>
+                An estate medical facility for convenient
+                access to healthcare.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                03
+            </span>
+
+            <h3>
+                Shopping Complex
+            </h3>
+
+            <p>
+                Retail and everyday essentials within
+                the community.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                04
+            </span>
+
+            <h3>
+                Recreation
+            </h3>
+
+            <p>
+                Recreational facilities including football,
+                lawn tennis and basketball.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                05
+            </span>
+
+            <h3>
+                Security
+            </h3>
+
+            <p>
+                Gated community security with a dedicated
+                police post and continuous security provision.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                06
+            </span>
+
+            <h3>
+                Emergency Services
+            </h3>
+
+            <p>
+                Ambulance, fire response and waste-management
+                services are part of the estate offering.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                07
+            </span>
+
+            <h3>
+                Roads & Lighting
+            </h3>
+
+            <p>
+                Asphalt, interlock and concrete roads together
+                with street lighting.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                08
+            </span>
+
+            <h3>
+                Water Infrastructure
+            </h3>
+
+            <p>
+                Water storage infrastructure designed to
+                support reliable community supply.
+            </p>
+
+        </div>
+
+
+        <div class="amenity">
+
+            <span class="amenity-number">
+                09
+            </span>
+
+            <h3>
+                Property Management
+            </h3>
+
+            <p>
+                Estate management focused on maintaining
+                the community and resident experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     LIFESTYLE
+========================================= -->
+
+<section class="estate-lifestyle">
+
+
+    <div class="lifestyle-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-homes-estate-relaxation-garden.jpg"
+            alt="Fort-Royal Homes Estate relaxation garden"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="lifestyle-copy">
+
+
+        <div class="section-label">
+
+            <span>
+                04
+            </span>
+
+            The Lifestyle
+
+        </div>
+
+
+        <h2>
+
+            Live with
+            <em>less friction.</em>
+
+        </h2>
+
+
+        <p>
+
+            The estate is designed around the convenience
+            of having important parts of everyday life
+            close to home.
+
+        </p>
+
+
+        <div class="lifestyle-list">
+
+            <div>
+                Education within the community
+            </div>
+
+            <div>
+                Shopping and everyday services nearby
+            </div>
+
+            <div>
+                Recreational spaces for residents
+            </div>
+
+            <div>
+                Healthcare and emergency support
+            </div>
+
+            <div>
+                Secure gated residential environment
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     LOCATION
+========================================= -->
+
+<section class="location-section">
+
+
+    <div class="location-heading">
+
+
+        <div>
+
+            <div class="section-label">
+
+                <span>
+                    05
+                </span>
+
+                Location
+
+            </div>
+
+
+            <h2>
+
+                Connected to
+                <em>Abuja.</em>
+
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Located in Kyami District along Airport Road,
+            the estate is positioned to offer access to
+            Abuja's airport corridor and wider city.
+
+        </p>
+
+    </div>
+
+
+    <div class="location-grid">
+
+
+        <div class="location-image">
+
+            <img
+                src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Estate-Entrance-Gate.jpg"
+                alt="Fort-Royal Homes Estate gate"
+                loading="lazy"
+            >
+
+        </div>
+
+
+        <div class="location-facts">
+
+
+            <div class="location-fact">
+
+                <strong>
+                    Kyami District
+                </strong>
+
+                <span>
+                    Airport Road · Abuja
+                </span>
+
+            </div>
+
+
+            <div class="location-fact">
+
+                <strong>
+                    10 min
+                </strong>
+
+                <span>
+                    Published estate information · Abuja International Airport
+                </span>
+
+            </div>
+
+
+            <div class="location-fact">
+
+                <strong>
+                    15 min
+                </strong>
+
+                <span>
+                    Published estate information · City Centre
+                </span>
+
+            </div>
+
+
+            <div class="location-fact">
+
+                <strong>
+                    25 min
+                </strong>
+
+                <span>
+                    Published estimate · Major shopping centres
+                </span>
+
+            </div>
+
+
+            <div class="location-fact">
+
+                <strong>
+                    Airport Road
+                </strong>
+
+                <span>
+                    Major transport connection
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     PROPERTY COLLECTION
+========================================= -->
+
+<section class="estate-properties">
+
+
+    <div class="estate-properties-heading">
+
+        <div>
+
+            <div class="section-label">
+
+                <span>
+                    06
+                </span>
+
+                Residences
+
+            </div>
+
+
+            <h2>
+
+                Choose your
+                <em>Royal.</em>
+
+            </h2>
+
+        </div>
+
+
+        <a
+            href="properties.html"
+            class="text-link"
+        >
+
+            Explore all properties
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <div class="estate-properties-grid">
+
+
+        <a
+            href="property.html?property=imperial-villa"
+            class="estate-property"
+        >
+
+            <div class="estate-property-image">
+
+                <img
+                    src="https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png"
+                    alt="Imperial Villa"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="estate-property-info">
+
+                <h3>
+                    Imperial Villa
+                </h3>
+
+                <p>
+                    6 Bedrooms · 700m²
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="property.html?property=avalon-de-royal"
+            class="estate-property"
+        >
+
+            <div class="estate-property-image">
+
+                <img
+                    src="https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png"
+                    alt="Avalon De Royal"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="estate-property-info">
+
+                <h3>
+                    Avalon De Royal
+                </h3>
+
+                <p>
+                    6 Bedrooms · 430m²
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="property.html?property=villa-de-royal"
+            class="estate-property"
+        >
+
+            <div class="estate-property-image">
+
+                <img
+                    src="https://fortroyalhomes.org/wp-content/uploads/2025/05/VILLA-DE-ROYAL.png"
+                    alt="Villa De Royal"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="estate-property-info">
+
+                <h3>
+                    Villa De Royal
+                </h3>
+
+                <p>
+                    5 Bedrooms · 500m²
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="estate-cta">
+
+
+    <div class="estate-cta-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Estate-Walk-Way.jpg"
+            alt=""
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="estate-cta-content">
+
+
+        <div class="section-label">
+
+            <span>
+                07
+            </span>
+
+            Private Viewing
+
+        </div>
+
+
+        <h2>
+
+            Come see
+            <em>the estate.</em>
+
+        </h2>
+
+
+        <p>
+
+            Experience Fort-Royal Homes Estate and explore
+            the residences, community facilities and
+            surroundings in person.
+
+        </p>
+
+
+        <a
+            href="inspection.html"
+            class="button button-light"
+        >
+
+            Book a Private Inspection
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+            <span class="brand-main">
+                FORT-ROYAL
+            </span>
+
+            <span class="brand-sub">
+                HOMES LIMITED
+            </span>
+
+            <p>
+                Living in pleasure and security.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Explore
+            </span>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="properties.html">
+                Properties
+            </a>
+
+            <a href="estate.html">
+                The Estate
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Connect
+            </span>
+
+            <a href="inspection.html">
+                Book Inspection
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="journal.html">
+                Journal
+            </a>
+
+            <a href="https://wa.me/2348078191111">
+                WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="footer-column footer-contact">
+
+            <span>
+                Head Office
+            </span>
+
+            <p>
+                25 Waziri Ibrahim Crescent<br>
+                Gudu District, Abuja FCT
+            </p>
+
+            <a href="tel:+2348078191111">
+                +234 807 819 1111
+            </a>
+
+            <a href="tel:+2349053927777">
+                0905 392 7777
+            </a>
+
+            <a href="mailto:info@fortroyalhomes.org">
+                info@fortroyalhomes.org
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Fort-Royal Homes Limited
+        </span>
+
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+        </div>
+
+
+        <span>
+            Abuja · Nigeria
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
