@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Fort-Royal Homes</title>
+
+    <meta
+        name="description"
+        content="Contact Fort-Royal Homes Limited in Abuja for property enquiries, inspections, land sales, development and property management."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================================
+           CONTACT PAGE
+        ========================================================= */
+
+        .contact-hero {
+            min-height: 66vh;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.76),
+                    rgba(0,0,0,.38),
+                    rgba(0,0,0,.16)
+                ),
+                url("https://fortroyalhomes.org/wp-content/uploads/revslider/video-media/FORT-ROYAL-AD-010_7.jpeg")
+                center / cover no-repeat;
+            color: #fff;
+        }
+
+        .contact-hero-inner {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 150px 0 80px;
+        }
+
+        .contact-hero .eyebrow {
+            color: #d4c096;
+        }
+
+        .contact-hero h1 {
+            max-width: 850px;
+            margin: 16px 0 22px;
+            font-family: var(--serif);
+            font-size: clamp(3.6rem, 7vw, 7rem);
+            line-height: .9;
+            font-weight: 500;
+            letter-spacing: -.035em;
+        }
+
+        .contact-hero p {
+            max-width: 590px;
+            margin: 0;
+            color: rgba(255,255,255,.78);
+            line-height: 1.8;
+        }
+
+        /* MAIN */
+
+        .contact-main {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 110px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 390px minmax(0, 1fr);
+            gap: 100px;
+            align-items: start;
+        }
+
+        .contact-intro h2 {
+            margin: 14px 0 22px;
+            font-family: var(--serif);
+            font-size: clamp(2.8rem, 5vw, 4.6rem);
+            font-weight: 500;
+            line-height: .96;
+            letter-spacing: -.025em;
+        }
+
+        .contact-intro > p {
+            margin: 0 0 40px;
+            color: #666;
+            font-size: .95rem;
+            line-height: 1.85;
+        }
+
+        .contact-details {
+            border-top: 1px solid #d9d5ce;
+        }
+
+        .contact-detail {
+            padding: 24px 0;
+            border-bottom: 1px solid #d9d5ce;
+        }
+
+        .contact-detail-label {
+            margin-bottom: 9px;
+            color: #888;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .contact-detail strong,
+        .contact-detail a {
+            display: block;
+            color: #171717;
+            font-size: .9rem;
+            line-height: 1.7;
+            text-decoration: none;
+        }
+
+        .contact-detail a:hover {
+            text-decoration: underline;
+        }
+
+        /* FORM */
+
+        .contact-form-wrap {
+            padding: 48px;
+            background: #f0eee9;
+        }
+
+        .contact-form-heading {
+            margin-bottom: 38px;
+        }
+
+        .contact-form-heading h3 {
+            margin: 12px 0 12px;
+            font-family: var(--serif);
+            font-size: 2.7rem;
+            line-height: 1;
+            font-weight: 500;
+        }
+
+        .contact-form-heading p {
+            max-width: 560px;
+            margin: 0;
+            color: #6d6d6d;
+            font-size: .86rem;
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: #333;
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid #d1cdc5;
+            border-radius: 0;
+            padding: 16px 17px;
+            background: #fff;
+            color: #171717;
+            font-family: "DM Sans", sans-serif;
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #222;
+            box-shadow: 0 0 0 3px rgba(0,0,0,.045);
+        }
+
+        .form-group textarea {
+            min-height: 155px;
+            resize: vertical;
+        }
+
+        .contact-submit {
+            width: 100%;
+            justify-content: center;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .contact-status {
+            display: none;
+            padding: 15px 17px;
+            background: #fff;
+            border: 1px solid #d1cdc5;
+            color: #444;
+            font-size: .82rem;
+            line-height: 1.6;
+        }
+
+        .contact-status.show {
+            display: block;
+        }
+
+        /* OFFICES */
+
+        .contact-offices {
+            background: #171717;
+            color: #fff;
+            padding: 110px 0;
+        }
+
+        .offices-inner {
+            width: min(1180px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .offices-heading {
+            max-width: 650px;
+            margin-bottom: 60px;
+        }
+
+        .offices-heading .section-label {
+            color: #cbb98e;
+        }
+
+        .offices-heading h2 {
+            margin: 15px 0 18px;
+            font-family: var(--serif);
+            font-size: clamp(3rem, 5vw, 4.8rem);
+            font-weight: 500;
+            line-height: .96;
+        }
+
+        .offices-heading p {
+            margin: 0;
+            color: rgba(255,255,255,.62);
+            line-height: 1.8;
+        }
+
+        .office-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.15);
+        }
+
+        .office-card {
+            min-height: 330px;
+            padding: 42px;
+            background: #171717;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .office-number {
+            color: #cbb98e;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+        }
+
+        .office-card h3 {
+            margin: 45px 0 15px;
+            font-family: var(--serif);
+            font-size: 2.5rem;
+            font-weight: 500;
+        }
+
+        .office-card p {
+            margin: 0;
+            color: rgba(255,255,255,.63);
+            font-size: .86rem;
+            line-height: 1.8;
+        }
+
+        .office-card a {
+            margin-top: 22px;
+            color: #fff;
+            font-size: .83rem;
+            text-decoration: none;
+        }
+
+        .office-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* WHATSAPP / DIRECT CONTACT */
+
+        .direct-contact {
+            padding: 110px 0;
+        }
+
+        .direct-inner {
+            width: min(1000px, calc(100% - 48px));
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .direct-inner h2 {
+            margin: 15px 0 20px;
+            font-family: var(--serif);
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 500;
+            line-height: .95;
+        }
+
+        .direct-inner > p {
+            max-width: 620px;
+            margin: 0 auto 35px;
+            color: #6b6b6b;
+            line-height: 1.8;
+        }
+
+        .direct-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 28px;
+            border: 1px solid #222;
+            color: #222;
+            text-decoration: none;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            transition: all .2s ease;
+        }
+
+        .secondary-button:hover {
+            background: #222;
+            color: #fff;
+        }
+
+        /* CTA */
+
+        .contact-cta {
+            padding: 110px 0;
+            background: #efede8;
+            text-align: center;
+        }
+
+        .contact-cta-inner {
+            width: min(850px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .contact-cta h2 {
+            margin: 15px 0 22px;
+            font-family: var(--serif);
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 500;
+            line-height: .95;
+        }
+
+        .contact-cta p {
+            max-width: 620px;
+            margin: 0 auto 35px;
+            color: #6b6b6b;
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 65px;
+            }
+
+            .office-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 680px) {
+
+            .contact-hero-inner {
+                width: min(100% - 32px, 1180px);
+                padding: 120px 0 55px;
+            }
+
+            .contact-main {
+                width: min(100% - 32px, 1180px);
+                padding: 75px 0;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrap {
+                padding: 28px 20px;
+            }
+
+            .contact-offices {
+                padding: 75px 0;
+            }
+
+            .offices-inner {
+                width: min(100% - 32px, 1180px);
+            }
+
+            .office-card {
+                min-height: 290px;
+                padding: 30px 24px;
+            }
+
+            .direct-contact,
+            .contact-cta {
+                padding: 75px 0;
+            }
+
+            .direct-inner,
+            .contact-cta-inner {
+                width: min(100% - 32px, 850px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="header-inner">
+
+            <a href="index.html" class="brand">
+                <span class="brand-main">FORT-ROYAL</span>
+                <span class="brand-sub">HOMES LIMITED</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="properties.html">Properties</a>
+                <a href="estate.html">The Estate</a>
+                <a href="developments.html">Developments</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+                <a href="inspection.html" class="nav-cta">Book Inspection</a>
+            </nav>
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobileMenu"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-inner">
+
+            <div class="mobile-menu-top">
+
+                <span>MENU</span>
+
+                <button
+                    type="button"
+                    class="mobile-menu-close"
+                    aria-label="Close menu"
+                >
+                    ×
+                </button>
+
+            </div>
+
+            <nav>
+                <a href="properties.html">Properties</a>
+                <a href="estate.html">The Estate</a>
+                <a href="developments.html">Developments</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="journal.html">Journal</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <a
+                href="inspection.html"
+                class="mobile-menu-cta"
+            >
+                Book an Inspection
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section class="contact-hero">
+
+            <div class="contact-hero-inner">
+
+                <div class="eyebrow">
+                    FORT-ROYAL HOMES
+                </div>
+
+                <h1>
+                    Let's talk<br>
+                    property.
+                </h1>
+
+                <p>
+                    Whether you're looking for a home, exploring an investment,
+                    considering land or simply want to understand what Fort-Royal
+                    can offer, our team is here to help.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT + FORM -->
+        <section class="contact-main">
+
+            <div class="contact-grid">
+
+                <!-- DETAILS -->
+                <div class="contact-intro">
+
+                    <div class="section-label">
+                        GET IN TOUCH
+                    </div>
+
+                    <h2>
+                        Start a conversation.
+                    </h2>
+
+                    <p>
+                        Tell us what you're looking for and we'll help point
+                        you in the right direction. You can also contact us
+                        directly by phone or email.
+                    </p>
+
+
+                    <div class="contact-details">
+
+                        <div class="contact-detail">
+
+                            <div class="contact-detail-label">
+                                Head Office
+                            </div>
+
+                            <strong>
+                                25 Waziri Ibrahim Crescent,<br>
+                                Gudu District,<br>
+                                Abuja FCT, Nigeria.
+                            </strong>
+
+                        </div>
+
+
+                        <div class="contact-detail">
+
+                            <div class="contact-detail-label">
+                                Phone
+                            </div>
+
+                            <a href="tel:+2348078191111">
+                                +234 807 819 1111
+                            </a>
+
+                            <a href="tel:+2349053927777">
+                                +234 905 392 7777
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-detail">
+
+                            <div class="contact-detail-label">
+                                Email
+                            </div>
+
+                            <a href="mailto:info@fortroyalhomes.org">
+                                info@fortroyalhomes.org
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-detail">
+
+                            <div class="contact-detail-label">
+                                Estate
+                            </div>
+
+                            <strong>
+                                Plot 3153/4 Kyami District,<br>
+                                Airport Road, Abuja, Nigeria.
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM -->
+                <div class="contact-form-wrap">
+
+                    <div class="contact-form-heading">
+
+                        <div class="section-label">
+                            SEND AN ENQUIRY
+                        </div>
+
+                        <h3>
+                            How can we help?
+                        </h3>
+
+                        <p>
+                            Complete the form and our team will be able to
+                            understand your enquiry before getting in touch.
+                        </p>
+
+                    </div>
+
+
+                    <form
+                        class="contact-form"
+                        id="contactForm"
+                    >
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="contactName">
+                                    Full name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="contactName"
+                                    name="name"
+                                    placeholder="Your full name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="contactEmail">
+                                    Email address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="contactPhone">
+                                    Phone number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="contactPhone"
+                                    name="phone"
+                                    placeholder="+234..."
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="enquiryType">
+                                    Enquiry type
+                                </label>
+
+                                <select
+                                    id="enquiryType"
+                                    name="enquiryType"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select an enquiry
+                                    </option>
+
+                                    <option value="Property">
+                                        Property
+                                    </option>
+
+                                    <option value="Land">
+                                        Land
+                                    </option>
+
+                                    <option value="Property Development">
+                                        Property Development
+                                    </option>
+
+                                    <option value="Property Management">
+                                        Property Management
+                                    </option>
+
+                                    <option value="Inspection">
+                                        Inspection
+                                    </option>
+
+                                    <option value="Investment">
+                                        Investment
+                                    </option>
+
+                                    <option value="General">
+                                        General enquiry
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label for="contactMessage">
+                                Message
+                            </label>
+
+                            <textarea
+                                id="contactMessage"
+                                name="message"
+                                placeholder="Tell us what you are looking for..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="button contact-submit"
+                        >
+                            Send Enquiry
+                        </button>
+
+
+                        <div
+                            class="contact-status"
+                            id="contactStatus"
+                            role="status"
+                        ></div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OFFICES -->
+        <section class="contact-offices">
+
+            <div class="offices-inner">
+
+                <div class="offices-heading">
+
+                    <div class="section-label">
+                        FIND US
+                    </div>
+
+                    <h2>
+                        Two locations.<br>
+                        One Fort-Royal experience.
+                    </h2>
+
+                    <p>
+                        Visit our head office in Gudu or make your way to
+                        Fort-Royal Homes Estate in Kyami District.
+                    </p>
+
+                </div>
+
+
+                <div class="office-grid">
+
+                    <div class="office-card">
+
+                        <div class="office-number">
+                            01 · HEAD OFFICE
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Gudu District
+                            </h3>
+
+                            <p>
+                                25 Waziri Ibrahim Crescent,<br>
+                                Gudu District,<br>
+                                Abuja FCT, Nigeria.
+                            </p>
+
+                            <a href="tel:+2348078191111">
+                                Call +234 807 819 1111 →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="office-card">
+
+                        <div class="office-number">
+                            02 · ESTATE
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Kyami District
+                            </h3>
+
+                            <p>
+                                Plot 3153/4 Kyami District,<br>
+                                Airport Road,<br>
+                                Abuja, Nigeria.
+                            </p>
+
+                            <a href="inspection.html">
+                                Book an inspection →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DIRECT CONTACT -->
+        <section class="direct-contact">
+
+            <div class="direct-inner">
+
+                <div class="section-label">
+                    SPEAK DIRECTLY
+                </div>
+
+                <h2>
+                    Sometimes a conversation<br>
+                    is the easiest place to start.
+                </h2>
+
+                <p>
+                    If you already know what you're looking for, contact
+                    the Fort-Royal team directly and let's get started.
+                </p>
+
+                <div class="direct-actions">
+
+                    <a
+                        href="tel:+2348078191111"
+                        class="button"
+                    >
+                        Call Us
+                    </a>
+
+                    <a
+                        href="mailto:info@fortroyalhomes.org"
+                        class="secondary-button"
+                    >
+                        Send an Email
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+        <section class="contact-cta">
+
+            <div class="contact-cta-inner">
+
+                <div class="section-label">
+                    READY TO VISIT?
+                </div>
+
+                <h2>
+                    See the homes<br>
+                    in person.
+                </h2>
+
+                <p>
+                    Explore Fort-Royal Homes Estate and discover the property
+                    that feels right for you.
+                </p>
+
+                <a
+                    href="inspection.html"
+                    class="button"
+                >
+                    Book an Inspection
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="brand">
+
+                    <span class="brand-main">
+                        FORT-ROYAL
+                    </span>
+
+                    <span class="brand-sub">
+                        HOMES LIMITED
+                    </span>
+
+                </a>
+
+                <p>
+                    Exceptional homes, thoughtful communities and
+                    a better way to live in Abuja.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="properties.html">
+                    Properties
+                </a>
+
+                <a href="estate.html">
+                    The Estate
+                </a>
+
+                <a href="developments.html">
+                    Developments
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Company
+                </h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="journal.html">
+                    Journal
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="inspection.html">
+                    Book Inspection
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <p>
+                    25 Waziri Ibrahim Crescent,<br>
+                    Gudu District,<br>
+                    Abuja FCT, Nigeria.
+                </p>
+
+                <a href="tel:+2348078191111">
+                    +234 807 819 1111
+                </a>
+
+                <a href="mailto:info@fortroyalhomes.org">
+                    info@fortroyalhomes.org
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Fort-Royal Homes Limited.
+            </span>
+
+            <div>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/main.js"></script>
+
+
+    <script>
+        /*
+         * TEMPORARY CONTACT FORM UX
+         *
+         * The form is not connected to a database yet.
+         * We will connect this to Supabase + admin + email later.
+         */
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const contactStatus =
+            document.getElementById("contactStatus");
+
+
+        if (contactForm) {
+
+            contactForm.addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                contactStatus.classList.add("show");
+
+                contactStatus.textContent =
+                    "Your enquiry has been prepared successfully. " +
+                    "Online submission will be connected to the " +
+                    "Fort-Royal enquiry system in the next stage.";
+
+                contactStatus.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
+
+            });
+
+        }
+    </script>
+
+</body>
+</html>
