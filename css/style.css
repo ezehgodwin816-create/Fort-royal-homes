@@ -1442,3 +1442,21 @@ button {
         flex-direction: column;
     }
 }
+.menu-toggle {
+    position: relative;
+    z-index: 301;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu-toggle span {
+    pointer-events: none;
+}
+
+.mobile-menu {
+    pointer-events: none;
+}
+
+.mobile-menu.active {
+    pointer-events: auto;
+}
