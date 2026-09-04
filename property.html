@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Property | Fort-Royal Homes Limited</title>
+
+    <meta
+        name="description"
+        content="Discover a Fort-Royal Homes residence in Kyami District, Abuja."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+
+    <style>
+
+        /* =========================================
+           PROPERTY PAGE
+        ========================================= */
+
+        .property-page {
+            background: #f4f1ea;
+            color: #111;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .property-hero {
+
+            position: relative;
+
+            min-height: 88vh;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            overflow: hidden;
+
+            color: #fff;
+
+            background: #111;
+
+        }
+
+
+        .property-hero-image {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 0;
+
+        }
+
+
+        .property-hero-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            display: block;
+
+            transform: scale(1.01);
+
+        }
+
+
+        .property-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 1;
+
+            background:
+
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.82) 0%,
+                    rgba(0,0,0,.30) 50%,
+                    rgba(0,0,0,.15) 100%
+                );
+
+        }
+
+
+        .property-hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            padding:
+
+                150px
+                6vw
+                75px;
+
+        }
+
+
+        .property-breadcrumb {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 25px;
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .14em;
+
+            color:
+                rgba(255,255,255,.65);
+
+        }
+
+
+        .property-breadcrumb a {
+
+            color: inherit;
+
+        }
+
+
+        .property-hero h1 {
+
+            max-width: 1000px;
+
+            margin: 0;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(65px, 11vw, 155px);
+
+            font-weight: 400;
+
+            line-height: .78;
+
+            letter-spacing: -.055em;
+
+        }
+
+
+        .property-hero h1 em {
+
+            color: #c6a66a;
+
+            font-style: italic;
+
+        }
+
+
+        .hero-location {
+
+            margin-top: 28px;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .13em;
+
+            color:
+                rgba(255,255,255,.68);
+
+        }
+
+
+        .hero-price {
+
+            position: absolute;
+
+            right: 6vw;
+
+            bottom: 78px;
+
+            z-index: 3;
+
+            text-align: right;
+
+        }
+
+
+        .hero-price-label {
+
+            display: block;
+
+            margin-bottom: 5px;
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .12em;
+
+            color:
+                rgba(255,255,255,.5);
+
+        }
+
+
+        .hero-price-value {
+
+            font-family: var(--serif);
+
+            font-size: 30px;
+
+        }
+
+
+        /* =========================================
+           PROPERTY SUMMARY
+        ========================================= */
+
+        .property-summary {
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr .8fr;
+
+            background: #fff;
+
+            border-bottom:
+                1px solid #ded9cf;
+
+        }
+
+
+        .summary-intro {
+
+            padding:
+                75px 6vw;
+
+            border-right:
+                1px solid #ded9cf;
+
+        }
+
+
+        .summary-intro h2 {
+
+            max-width: 700px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(40px, 5vw, 70px);
+
+            font-weight: 400;
+
+            line-height: .9;
+
+            letter-spacing: -.045em;
+
+        }
+
+
+        .summary-intro h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .summary-intro p {
+
+            max-width: 600px;
+
+            margin-top: 25px;
+
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .summary-facts {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+        }
+
+
+        .fact {
+
+            padding: 35px;
+
+            min-height: 145px;
+
+            border-bottom:
+                1px solid #ded9cf;
+
+        }
+
+
+        .fact:nth-child(odd) {
+
+            border-right:
+                1px solid #ded9cf;
+
+        }
+
+
+        .fact:nth-last-child(-n+2) {
+
+            border-bottom: 0;
+
+        }
+
+
+        .fact strong {
+
+            display: block;
+
+            font-family: var(--serif);
+
+            font-size: 34px;
+
+            font-weight: 400;
+
+        }
+
+
+        .fact span {
+
+            display: block;
+
+            margin-top: 7px;
+
+            font-size: 8px;
+
+            text-transform: uppercase;
+
+            letter-spacing: .1em;
+
+            color: #888;
+
+        }
+
+
+        /* =========================================
+           GALLERY
+        ========================================= */
+
+        .property-gallery-section {
+
+            padding:
+                115px 6vw;
+
+        }
+
+
+        .gallery-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content:
+                space-between;
+
+            gap: 30px;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .gallery-heading h2 {
+
+            margin-top: 18px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(55px, 7vw, 100px);
+
+            font-weight: 400;
+
+            line-height: .82;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .gallery-heading h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .gallery-heading p {
+
+            max-width: 310px;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            color: #777;
+
+        }
+
+
+        .property-gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                1.35fr .65fr;
+
+            gap: 15px;
+
+        }
+
+
+        .gallery-main {
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+        }
+
+
+        .gallery-side {
+
+            display: grid;
+
+            grid-template-rows:
+                1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+
+        .gallery-image {
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #ddd;
+
+        }
+
+
+        .gallery-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform .8s
+                cubic-bezier(.2,.65,.3,1);
+
+        }
+
+
+        .gallery-image:hover img {
+
+            transform: scale(1.045);
+
+        }
+
+
+        .gallery-count {
+
+            position: absolute;
+
+            left: 20px;
+
+            bottom: 20px;
+
+            z-index: 2;
+
+            padding: 10px 13px;
+
+            background:
+                rgba(255,255,255,.92);
+
+            font-size: 8px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing: .1em;
+
+        }
+
+
+        /* =========================================
+           DETAILS
+        ========================================= */
+
+        .property-details {
+
+            display: grid;
+
+            grid-template-columns:
+                .7fr 1.3fr;
+
+            gap: 80px;
+
+            padding:
+                100px 6vw;
+
+            background: #fff;
+
+            border-top:
+                1px solid #ded9cf;
+
+            border-bottom:
+                1px solid #ded9cf;
+
+        }
+
+
+        .details-title {
+
+            position: sticky;
+
+            top: 100px;
+
+            align-self: start;
+
+        }
+
+
+        .details-title h2 {
+
+            margin-top: 18px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(50px, 6vw, 85px);
+
+            font-weight: 400;
+
+            line-height: .82;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .details-title h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .details-content {
+
+            max-width: 700px;
+
+        }
+
+
+        .detail-block {
+
+            padding: 30px 0;
+
+            border-bottom:
+                1px solid #ded9cf;
+
+        }
+
+
+        .detail-block:first-child {
+
+            padding-top: 0;
+
+        }
+
+
+        .detail-block h3 {
+
+            font-family: var(--serif);
+
+            font-size: 28px;
+
+            font-weight: 500;
+
+        }
+
+
+        .detail-block p {
+
+            margin-top: 13px;
+
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .feature-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 0;
+
+            margin-top: 20px;
+
+        }
+
+
+        .feature-item {
+
+            padding:
+                13px 0;
+
+            border-top:
+                1px solid #e2ded5;
+
+            font-size: 10px;
+
+            color: #555;
+
+        }
+
+
+        .feature-item::before {
+
+            content: "—";
+
+            margin-right: 8px;
+
+            color: #ad8b4e;
+
+        }
+
+
+        /* =========================================
+           INSPECTION CTA
+        ========================================= */
+
+        .inspection-panel {
+
+            margin:
+                100px 6vw;
+
+            min-height: 530px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+            background: #111;
+
+            color: #fff;
+
+        }
+
+
+        .inspection-panel::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.92),
+                    rgba(0,0,0,.4)
+                );
+
+        }
+
+
+        .inspection-panel-image {
+
+            position: absolute;
+
+            inset: 0;
+
+        }
+
+
+        .inspection-panel-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: .5;
+
+        }
+
+
+        .inspection-panel-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 700px;
+
+            padding:
+                75px;
+
+        }
+
+
+        .inspection-panel-content h2 {
+
+            margin-top: 20px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(55px, 7vw, 100px);
+
+            font-weight: 400;
+
+            line-height: .82;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .inspection-panel-content h2 em {
+
+            color: #c6a66a;
+
+            font-style: italic;
+
+        }
+
+
+        .inspection-panel-content p {
+
+            max-width: 500px;
+
+            margin-top: 25px;
+
+            color:
+                rgba(255,255,255,.68);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================
+           RELATED PROPERTIES
+        ========================================= */
+
+        .related-properties {
+
+            padding:
+                20px 6vw 120px;
+
+        }
+
+
+        .related-heading {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: flex-end;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .related-heading h2 {
+
+            margin-top: 18px;
+
+            font-family: var(--serif);
+
+            font-size:
+                clamp(50px, 6vw, 85px);
+
+            font-weight: 400;
+
+            line-height: .85;
+
+            letter-spacing: -.05em;
+
+        }
+
+
+        .related-heading h2 em {
+
+            color: #ad8b4e;
+
+            font-style: italic;
+
+        }
+
+
+        .related-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .related-card {
+
+            display: block;
+
+        }
+
+
+        .related-image {
+
+            aspect-ratio: 1/.85;
+
+            overflow: hidden;
+
+            background: #ddd;
+
+        }
+
+
+        .related-image img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform .8s ease;
+
+        }
+
+
+        .related-card:hover
+        .related-image img {
+
+            transform: scale(1.05);
+
+        }
+
+
+        .related-info {
+
+            padding-top: 17px;
+
+        }
+
+
+        .related-info h3 {
+
+            font-family: var(--serif);
+
+            font-size: 28px;
+
+            font-weight: 500;
+
+        }
+
+
+        .related-info p {
+
+            margin-top: 6px;
+
+            color: #777;
+
+            font-size: 9px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing: .07em;
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .property-hero {
+
+                min-height: 82vh;
+
+            }
+
+
+            .property-hero-content {
+
+                padding:
+                    140px 6vw
+                    55px;
+
+            }
+
+
+            .property-hero h1 {
+
+                font-size:
+                    clamp(62px, 18vw, 100px);
+
+            }
+
+
+            .hero-price {
+
+                position: static;
+
+                margin-top: 25px;
+
+                text-align: left;
+
+            }
+
+
+            .property-summary {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .summary-intro {
+
+                border-right: 0;
+
+                border-bottom:
+                    1px solid #ded9cf;
+
+                padding:
+                    60px 6vw;
+
+            }
+
+
+            .summary-facts {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .property-gallery-section {
+
+                padding:
+                    80px 6vw;
+
+            }
+
+
+            .gallery-heading {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .property-gallery {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .gallery-main {
+
+                min-height: 450px;
+
+            }
+
+
+            .gallery-side {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                grid-template-rows: 250px;
+
+            }
+
+
+            .property-details {
+
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+
+                padding:
+                    75px 6vw;
+
+            }
+
+
+            .details-title {
+
+                position: static;
+
+            }
+
+
+            .feature-list {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .inspection-panel {
+
+                margin:
+                    60px 6vw 80px;
+
+                min-height: 550px;
+
+            }
+
+
+            .inspection-panel-content {
+
+                padding:
+                    45px 30px;
+
+            }
+
+
+            .related-properties {
+
+                padding:
+                    0 6vw 80px;
+
+            }
+
+
+            .related-heading {
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .related-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="property-page">
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <a
+        href="index.html"
+        class="brand"
+    >
+
+        <span class="brand-main">
+            FORT-ROYAL
+        </span>
+
+        <span class="brand-sub">
+            HOMES LIMITED
+        </span>
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+        <a href="properties.html">
+            Properties
+        </a>
+
+        <a href="estate.html">
+            The Estate
+        </a>
+
+        <a href="developments.html">
+            Developments
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="journal.html">
+            Journal
+        </a>
+
+    </nav>
+
+
+    <a
+        href="inspection.html"
+        class="nav-cta"
+    >
+
+        <span>
+            Book an Inspection
+        </span>
+
+        <span class="arrow">
+            ↗
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- =========================================
+     MOBILE MENU
+========================================= -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-inner">
+
+
+        <div class="mobile-menu-top">
+
+            <span>
+                MENU
+            </span>
+
+            <button
+                id="menuClose"
+                type="button"
+                aria-label="Close navigation menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                <span>00</span>
+                Home
+            </a>
+
+            <a href="properties.html">
+                <span>01</span>
+                Properties
+            </a>
+
+            <a href="estate.html">
+                <span>02</span>
+                The Estate
+            </a>
+
+            <a href="developments.html">
+                <span>03</span>
+                Developments
+            </a>
+
+            <a href="about.html">
+                <span>04</span>
+                About
+            </a>
+
+            <a href="journal.html">
+                <span>05</span>
+                Journal
+            </a>
+
+        </nav>
+
+
+        <a
+            href="inspection.html"
+            class="mobile-menu-cta"
+        >
+
+            <span>
+                Book a Private Inspection
+            </span>
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<main id="propertyApp">
+
+    <!-- CONTENT GENERATED BY JAVASCRIPT -->
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+            <span class="brand-main">
+                FORT-ROYAL
+            </span>
+
+            <span class="brand-sub">
+                HOMES LIMITED
+            </span>
+
+            <p>
+                Living in pleasure and security.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Explore
+            </span>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="properties.html">
+                Properties
+            </a>
+
+            <a href="estate.html">
+                The Estate
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Connect
+            </span>
+
+            <a href="inspection.html">
+                Book Inspection
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="journal.html">
+                Journal
+            </a>
+
+            <a href="https://wa.me/2348078191111">
+                WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="footer-column footer-contact">
+
+            <span>
+                Head Office
+            </span>
+
+            <p>
+                25 Waziri Ibrahim Crescent<br>
+                Gudu District, Abuja FCT
+            </p>
+
+            <a href="tel:+2348078191111">
+                +234 807 819 1111
+            </a>
+
+            <a href="tel:+2349053927777">
+                0905 392 7777
+            </a>
+
+            <a href="mailto:info@fortroyalhomes.org">
+                info@fortroyalhomes.org
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Fort-Royal Homes Limited
+        </span>
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+        </div>
+
+        <span>
+            Abuja · Nigeria
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+
+<script>
+
+    /* =========================================
+       VERIFIED PROPERTY DATA
+    ========================================= */
+
+    const properties = {
+
+        "terrace-de-royal": {
+
+            name: "Terrace De Royal",
+
+            type: "Terrace Duplex",
+
+            location:
+                "Fort-Royal Homes Estate · Kyami District, Abuja",
+
+            bedrooms: "3",
+
+            bathrooms: "3",
+
+            land: "—",
+
+            bq: "1 Bedroom",
+
+            living: "2",
+
+            image:
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/TERRACE-DE-ROYAL-768x768.png",
+
+            gallery: [
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/TERRACE-DE-ROYAL-768x768.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/TERRACE-DE-ROYAL-768x768.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/TERRACE-DE-ROYAL-768x768.png"
+
+            ],
+
+            intro:
+                "A refined three-bedroom terrace duplex designed for contemporary residential living within Fort-Royal Homes Estate.",
+
+            description:
+                "Terrace De Royal offers three bedrooms and three bathrooms, complemented by two living rooms and a one-bedroom Boys Quarters.",
+
+            features: [
+
+                "3 Bedrooms",
+
+                "3 Bathrooms",
+
+                "2 Living Rooms",
+
+                "1-Bedroom Boys Quarters",
+
+                "Fort-Royal Homes Estate",
+
+                "Kyami District, Abuja"
+
+            ]
+
+        },
+
+
+        "imperial-villa": {
+
+            name: "Imperial Villa",
+
+            type: "Luxury Villa",
+
+            location:
+                "Fort-Royal Homes Estate · Kyami District, Abuja",
+
+            bedrooms: "6",
+
+            bathrooms: "6",
+
+            land: "700m²",
+
+            bq: "2 Bedrooms",
+
+            living: "2",
+
+            image:
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png",
+
+            gallery: [
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png"
+
+            ],
+
+            intro:
+                "An expansive six-bedroom signature residence created for elevated family living within Fort-Royal Homes Estate.",
+
+            description:
+                "Imperial Villa features six bedrooms and six bathrooms, two living rooms, a gym, a home cinema and a two-bedroom Boys Quarters.",
+
+            features: [
+
+                "6 Bedrooms",
+
+                "6 Bathrooms",
+
+                "700m² Land Size",
+
+                "2 Living Rooms",
+
+                "Gym",
+
+                "Home Cinema",
+
+                "2-Bedroom Boys Quarters",
+
+                "Fort-Royal Homes Estate"
+
+            ]
+
+        },
+
+
+        "classic-de-royal": {
+
+            name: "Classic De Royal",
+
+            type: "Luxury Villa",
+
+            location:
+                "Fort-Royal Homes Estate · Kyami District, Abuja",
+
+            bedrooms: "4",
+
+            bathrooms: "4",
+
+            land: "400m²",
+
+            bq: "1 Bedroom",
+
+            living: "2",
+
+            image:
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png",
+
+            gallery: [
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png"
+
+            ],
+
+            intro:
+                "A four-bedroom residence combining generous family spaces with the security and community setting of Fort-Royal Homes Estate.",
+
+            description:
+                "Classic De Royal provides four bedrooms and four bathrooms, two living rooms, a 400m² land size and a one-bedroom Boys Quarters.",
+
+            features: [
+
+                "4 Bedrooms",
+
+                "4 Bathrooms",
+
+                "400m² Land Size",
+
+                "2 Living Rooms",
+
+                "1-Bedroom Boys Quarters",
+
+                "Fort-Royal Homes Estate"
+
+            ]
+
+        },
+
+
+        "avalon-de-royal": {
+
+            name: "Avalon De Royal",
+
+            type: "Luxury Duplex",
+
+            location:
+                "Fort-Royal Homes Estate · Kyami District, Abuja",
+
+            bedrooms: "6",
+
+            bathrooms: "6",
+
+            land: "430m²",
+
+            bq: "2 Bedrooms",
+
+            living: "2",
+
+            image:
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png",
+
+            gallery: [
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png"
+
+            ],
+
+            intro:
+                "A spacious six-bedroom duplex designed around generous living areas and modern family requirements.",
+
+            description:
+                "Avalon De Royal features six bedrooms and six bathrooms, two living rooms, a 430m² land size and a two-bedroom Boys Quarters.",
+
+            features: [
+
+                "6 Bedrooms",
+
+                "6 Bathrooms",
+
+                "430m² Land Size",
+
+                "2 Living Rooms",
+
+                "2-Bedroom Boys Quarters",
+
+                "Fort-Royal Homes Estate"
+
+            ]
+
+        },
+
+
+        "villa-de-royal": {
+
+            name: "Villa De Royal",
+
+            type: "Luxury Villa",
+
+            location:
+                "Fort-Royal Homes Estate · Kyami District, Abuja",
+
+            bedrooms: "5",
+
+            bathrooms: "5",
+
+            land: "500m²",
+
+            bq: "—",
+
+            living: "—",
+
+            image:
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/VILLA-DE-ROYAL.png",
+
+            gallery: [
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/VILLA-DE-ROYAL.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/VILLA-DE-ROYAL.png",
+
+                "https://fortroyalhomes.org/wp-content/uploads/2025/05/VILLA-DE-ROYAL.png"
+
+            ],
+
+            intro:
+                "A five-bedroom luxury villa designed for private family living within the Fort-Royal community.",
+
+            description:
+                "Villa De Royal features five bedrooms, five bathrooms and a 500m² land size. The published property information also highlights a private study and temperature-controlled pool.",
+
+            features: [
+
+                "5 Bedrooms",
+
+                "5 Bathrooms",
+
+                "500m² Land Size",
+
+                "Private Study",
+
+                "Temperature-Controlled Pool",
+
+                "Fort-Royal Homes Estate"
+
+            ]
+
+        }
+
+    };
+
+
+    /* =========================================
+       GET PROPERTY
+    ========================================= */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const selected =
+        params.get("property") ||
+        "imperial-villa";
+
+
+    const property =
+        properties[selected] ||
+        properties["imperial-villa"];
+
+
+    /* =========================================
+       PAGE
+    ========================================= */
+
+    document.title =
+        `${property.name} | Fort-Royal Homes Limited`;
+
+
+    const app =
+        document.getElementById("propertyApp");
+
+
+    /* =========================================
+       RELATED PROPERTIES
+    ========================================= */
+
+    const related =
+        Object.entries(properties)
+            .filter(([key]) => key !== selected)
+            .slice(0, 3);
+
+
+    const relatedHTML =
+        related.map(([key, item]) => `
+
+            <a
+                class="related-card"
+                href="property.html?property=${key}"
+            >
+
+                <div class="related-image">
+
+                    <img
+                        src="${item.image}"
+                        alt="${item.name}"
+                        loading="lazy"
+                    >
+
+                </div>
+
+                <div class="related-info">
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+                    <p>
+                        ${item.bedrooms} Bedrooms
+                        ·
+                        ${item.bathrooms} Bathrooms
+                    </p>
+
+                </div>
+
+            </a>
+
+        `).join("");
+
+
+    /* =========================================
+       FEATURES
+    ========================================= */
+
+    const featuresHTML =
+        property.features.map(feature => `
+
+            <div class="feature-item">
+                ${feature}
+            </div>
+
+        `).join("");
+
+
+    /* =========================================
+       RENDER
+    ========================================= */
+
+    app.innerHTML = `
+
+        <!-- HERO -->
+
+        <section class="property-hero">
+
+            <div class="property-hero-image">
+
+                <img
+                    src="${property.image}"
+                    alt="${property.name}"
+                >
+
+            </div>
+
+
+            <div class="property-hero-content">
+
+                <div class="property-breadcrumb">
+
+                    <a href="properties.html">
+                        Properties
+                    </a>
+
+                    <span>
+                        /
+                    </span>
+
+                    <span>
+                        ${property.name}
+                    </span>
+
+                </div>
+
+
+                <h1>
+                    ${property.name}
+                </h1>
+
+
+                <div class="hero-location">
+
+                    ${property.location}
+
+                </div>
+
+
+                <div class="hero-price">
+
+                    <span class="hero-price-label">
+                        Price
+                    </span>
+
+                    <span class="hero-price-value">
+                        Enquire
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SUMMARY -->
+
+        <section class="property-summary">
+
+
+            <div class="summary-intro">
+
+                <div class="section-label">
+
+                    <span>
+                        01
+                    </span>
+
+                    ${property.type}
+
+                </div>
+
+
+                <h2>
+
+                    Designed for
+                    <em>living.</em>
+
+                </h2>
+
+
+                <p>
+
+                    ${property.intro}
+
+                </p>
+
+            </div>
+
+
+            <div class="summary-facts">
+
+
+                <div class="fact">
+
+                    <strong>
+                        ${property.bedrooms}
+                    </strong>
+
+                    <span>
+                        Bedrooms
+                    </span>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <strong>
+                        ${property.bathrooms}
+                    </strong>
+
+                    <span>
+                        Bathrooms
+                    </span>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <strong>
+                        ${property.land}
+                    </strong>
+
+                    <span>
+                        Land Size
+                    </span>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <strong>
+                        ${property.bq}
+                    </strong>
+
+                    <span>
+                        Boys Quarters
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- GALLERY -->
+
+        <section class="property-gallery-section">
+
+
+            <div class="gallery-heading">
+
+                <div>
+
+                    <div class="section-label">
+
+                        <span>
+                            02
+                        </span>
+
+                        Residence Gallery
+
+                    </div>
+
+
+                    <h2>
+
+                        See the
+                        <em>residence.</em>
+
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    Explore the architecture and character
+                    of ${property.name}.
+
+                </p>
+
+            </div>
+
+
+            <div class="property-gallery">
+
+
+                <div class="gallery-image gallery-main">
+
+                    <img
+                        src="${property.gallery[0]}"
+                        alt="${property.name}"
+                    >
+
+                    <span class="gallery-count">
+                        Residence
+                    </span>
+
+                </div>
+
+
+                <div class="gallery-side">
+
+
+                    <div class="gallery-image">
+
+                        <img
+                            src="${property.gallery[1]}"
+                            alt="${property.name}"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="gallery-image">
+
+                        <img
+                            src="${property.gallery[2]}"
+                            alt="${property.name}"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DETAILS -->
+
+        <section class="property-details">
+
+
+            <div class="details-title">
+
+                <div class="section-label">
+
+                    <span>
+                        03
+                    </span>
+
+                    The Residence
+
+                </div>
+
+
+                <h2>
+
+                    Built for
+                    <em>you.</em>
+
+                </h2>
+
+            </div>
+
+
+            <div class="details-content">
+
+
+                <div class="detail-block">
+
+                    <h3>
+                        Overview
+                    </h3>
+
+                    <p>
+                        ${property.description}
+                    </p>
+
+                </div>
+
+
+                <div class="detail-block">
+
+                    <h3>
+                        Property Features
+                    </h3>
+
+
+                    <div class="feature-list">
+
+                        ${featuresHTML}
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-block">
+
+                    <h3>
+                        Location
+                    </h3>
+
+                    <p>
+
+                        ${property.location}.
+
+                        Fort-Royal Homes Estate is situated
+                        within the Kyami District along Airport
+                        Road, Abuja.
+
+                    </p>
+
+                </div>
+
+
+                <div class="detail-block">
+
+                    <a
+                        href="inspection.html?property=${encodeURIComponent(property.name)}"
+                        class="button"
+                    >
+
+                        Book a Private Inspection
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INSPECTION CTA -->
+
+        <section class="inspection-panel">
+
+
+            <div class="inspection-panel-image">
+
+                <img
+                    src="${property.image}"
+                    alt=""
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="inspection-panel-content">
+
+
+                <div class="section-label">
+
+                    <span>
+                        04
+                    </span>
+
+                    Private Viewing
+
+                </div>
+
+
+                <h2>
+
+                    See it
+                    <em>in person.</em>
+
+                </h2>
+
+
+                <p>
+
+                    Experience ${property.name} within
+                    Fort-Royal Homes Estate. Arrange a
+                    private inspection with the Fort-Royal
+                    Homes team.
+
+                </p>
+
+
+                <a
+                    href="inspection.html?property=${encodeURIComponent(property.name)}"
+                    class="button button-light"
+                >
+
+                    Book an Inspection
+
+                    <span>
+                        ↗
+                    </span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- RELATED -->
+
+        <section class="related-properties">
+
+
+            <div class="related-heading">
+
+                <div>
+
+                    <div class="section-label">
+
+                        <span>
+                            05
+                        </span>
+
+                        More Residences
+
+                    </div>
+
+
+                    <h2>
+
+                        Explore
+                        <em>more.</em>
+
+                    </h2>
+
+                </div>
+
+
+                <a
+                    href="properties.html"
+                    class="text-link"
+                >
+
+                    View All Properties
+                    <span>↗</span>
+
+                </a>
+
+            </div>
+
+
+            <div class="related-grid">
+
+                ${relatedHTML}
+
+            </div>
+
+        </section>
+
+    `;
+
+</script>
+
+
+</body>
+</html>
