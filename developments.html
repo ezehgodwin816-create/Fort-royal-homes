@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Developments | Fort-Royal Homes Limited</title>
+
+<meta name="description" content="Explore the residential developments and real estate vision of Fort-Royal Homes Limited, Abuja.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =========================================
+   DEVELOPMENTS PAGE
+========================================= */
+
+.developments-page {
+    background:#f3f0e9;
+    color:#111;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.dev-hero {
+    min-height:92vh;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+    color:#fff;
+    background:#111;
+}
+
+.dev-hero-image {
+    position:absolute;
+    inset:0;
+}
+
+.dev-hero-image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.dev-hero::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.9),
+            rgba(0,0,0,.25) 65%,
+            rgba(0,0,0,.1)
+        );
+}
+
+.dev-hero-content {
+    position:relative;
+    z-index:2;
+    width:100%;
+    padding:150px 6vw 75px;
+}
+
+.dev-hero h1 {
+    max-width:1100px;
+    margin-top:22px;
+    font-family:var(--serif);
+    font-size:clamp(70px,12vw,165px);
+    font-weight:400;
+    line-height:.76;
+    letter-spacing:-.06em;
+}
+
+.dev-hero h1 em {
+    color:#c6a66a;
+    font-style:italic;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.dev-intro {
+    display:grid;
+    grid-template-columns:.7fr 1.3fr;
+    background:#fff;
+}
+
+.dev-intro-left {
+    padding:90px 6vw;
+    border-right:1px solid #ded9cf;
+}
+
+.dev-intro-left h2 {
+    margin-top:20px;
+    font-family:var(--serif);
+    font-size:clamp(55px,7vw,100px);
+    font-weight:400;
+    line-height:.8;
+    letter-spacing:-.055em;
+}
+
+.dev-intro-left h2 em {
+    color:#ad8b4e;
+    font-style:italic;
+}
+
+.dev-intro-right {
+    padding:90px 7vw;
+}
+
+.dev-intro-right p:first-child {
+    max-width:850px;
+    font-family:var(--serif);
+    font-size:clamp(30px,3.3vw,50px);
+    line-height:1.03;
+}
+
+.dev-intro-right p:last-child {
+    max-width:650px;
+    margin-top:35px;
+    color:#777;
+    font-size:12px;
+    line-height:1.9;
+}
+
+
+/* =========================================
+   FEATURE DEVELOPMENT
+========================================= */
+
+.dev-feature {
+    padding:120px 6vw;
+}
+
+.dev-feature-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:55px;
+}
+
+.dev-feature-top h2 {
+    margin-top:18px;
+    font-family:var(--serif);
+    font-size:clamp(60px,8vw,115px);
+    font-weight:400;
+    line-height:.8;
+    letter-spacing:-.055em;
+}
+
+.dev-feature-top h2 em {
+    color:#ad8b4e;
+    font-style:italic;
+}
+
+.dev-feature-top p {
+    max-width:340px;
+    color:#777;
+    font-size:11px;
+    line-height:1.8;
+}
+
+.dev-feature-image {
+    position:relative;
+    height:min(75vh,780px);
+    overflow:hidden;
+}
+
+.dev-feature-image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .8s ease;
+}
+
+.dev-feature-image:hover img {
+    transform:scale(1.025);
+}
+
+.dev-feature-label {
+    position:absolute;
+    left:25px;
+    bottom:25px;
+    padding:12px 15px;
+    background:rgba(255,255,255,.94);
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+
+/* =========================================
+   DEVELOPMENT STORY
+========================================= */
+
+.dev-story {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:#111;
+    color:#fff;
+}
+
+.dev-story-image {
+    min-height:650px;
+    overflow:hidden;
+}
+
+.dev-story-image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.dev-story-copy {
+    padding:90px 7vw;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.dev-story-copy h2 {
+    margin-top:20px;
+    max-width:600px;
+    font-family:var(--serif);
+    font-size:clamp(55px,7vw,100px);
+    font-weight:400;
+    line-height:.82;
+    letter-spacing:-.055em;
+}
+
+.dev-story-copy h2 em {
+    color:#c6a66a;
+    font-style:italic;
+}
+
+.dev-story-copy p {
+    max-width:520px;
+    margin-top:30px;
+    color:rgba(255,255,255,.55);
+    font-size:12px;
+    line-height:1.9;
+}
+
+.dev-story-list {
+    margin-top:40px;
+    max-width:560px;
+}
+
+.dev-story-list div {
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:16px 0;
+    border-top:1px solid rgba(255,255,255,.14);
+    font-size:10px;
+}
+
+.dev-story-list div:last-child {
+    border-bottom:1px solid rgba(255,255,255,.14);
+}
+
+.dev-story-list span {
+    color:#c6a66a;
+}
+
+
+/* =========================================
+   PRINCIPLES
+========================================= */
+
+.dev-principles {
+    padding:120px 6vw;
+    background:#fff;
+}
+
+.dev-principles-heading {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    margin-bottom:65px;
+}
+
+.dev-principles-heading h2 {
+    margin-top:18px;
+    font-family:var(--serif);
+    font-size:clamp(55px,7vw,105px);
+    font-weight:400;
+    line-height:.8;
+    letter-spacing:-.05em;
+}
+
+.dev-principles-heading h2 em {
+    color:#ad8b4e;
+    font-style:italic;
+}
+
+.dev-principles-heading p {
+    max-width:330px;
+    color:#777;
+    font-size:11px;
+    line-height:1.8;
+}
+
+.principles-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid #ded9cf;
+    border-left:1px solid #ded9cf;
+}
+
+.principle {
+    min-height:290px;
+    padding:30px;
+    border-right:1px solid #ded9cf;
+    border-bottom:1px solid #ded9cf;
+    transition:.35s ease;
+}
+
+.principle:hover {
+    background:#111;
+    color:#fff;
+}
+
+.principle-number {
+    color:#ad8b4e;
+    font-size:8px;
+    letter-spacing:.1em;
+}
+
+.principle h3 {
+    margin-top:60px;
+    font-family:var(--serif);
+    font-size:35px;
+    font-weight:500;
+}
+
+.principle p {
+    max-width:300px;
+    margin-top:12px;
+    color:#777;
+    font-size:10px;
+    line-height:1.8;
+}
+
+.principle:hover p {
+    color:rgba(255,255,255,.55);
+}
+
+
+/* =========================================
+   PORTFOLIO
+========================================= */
+
+.dev-portfolio {
+    padding:120px 6vw;
+}
+
+.dev-portfolio-heading {
+    margin-bottom:55px;
+}
+
+.dev-portfolio-heading h2 {
+    margin-top:18px;
+    font-family:var(--serif);
+    font-size:clamp(60px,8vw,115px);
+    font-weight:400;
+    line-height:.8;
+    letter-spacing:-.055em;
+}
+
+.dev-portfolio-heading h2 em {
+    color:#ad8b4e;
+    font-style:italic;
+}
+
+.portfolio-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.portfolio-card {
+    position:relative;
+    min-height:620px;
+    overflow:hidden;
+    background:#111;
+    color:#fff;
+}
+
+.portfolio-card img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .8s ease;
+}
+
+.portfolio-card:hover img {
+    transform:scale(1.045);
+}
+
+.portfolio-card::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        transparent 60%
+    );
+}
+
+.portfolio-info {
+    position:absolute;
+    z-index:2;
+    left:30px;
+    right:30px;
+    bottom:30px;
+}
+
+.portfolio-info span {
+    color:#c6a66a;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:.13em;
+}
+
+.portfolio-info h3 {
+    margin-top:12px;
+    font-family:var(--serif);
+    font-size:48px;
+    font-weight:400;
+}
+
+.portfolio-info p {
+    margin-top:7px;
+    color:rgba(255,255,255,.6);
+    font-size:10px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.dev-cta {
+    min-height:600px;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    background:#111;
+}
+
+.dev-cta-bg {
+    position:absolute;
+    inset:0;
+}
+
+.dev-cta-bg img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:.38;
+}
+
+.dev-cta::after {
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.52);
+}
+
+.dev-cta-content {
+    position:relative;
+    z-index:2;
+    padding:60px 6vw;
+}
+
+.dev-cta-content h2 {
+    max-width:900px;
+    margin:20px auto 0;
+    font-family:var(--serif);
+    font-size:clamp(60px,9vw,125px);
+    font-weight:400;
+    line-height:.8;
+    letter-spacing:-.06em;
+}
+
+.dev-cta-content h2 em {
+    color:#c6a66a;
+    font-style:italic;
+}
+
+.dev-cta-content p {
+    max-width:500px;
+    margin:30px auto;
+    color:rgba(255,255,255,.62);
+    font-size:12px;
+    line-height:1.8;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:800px) {
+
+    .dev-hero {
+        min-height:82vh;
+    }
+
+    .dev-hero-content {
+        padding:140px 6vw 60px;
+    }
+
+    .dev-hero h1 {
+        font-size:clamp(62px,18vw,105px);
+    }
+
+    .dev-intro {
+        grid-template-columns:1fr;
+    }
+
+    .dev-intro-left {
+        padding:70px 6vw;
+        border-right:0;
+        border-bottom:1px solid #ded9cf;
+    }
+
+    .dev-intro-right {
+        padding:65px 6vw;
+    }
+
+    .dev-feature {
+        padding:80px 6vw;
+    }
+
+    .dev-feature-top {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .dev-feature-image {
+        height:55vh;
+    }
+
+    .dev-story {
+        grid-template-columns:1fr;
+    }
+
+    .dev-story-image {
+        min-height:450px;
+    }
+
+    .dev-story-copy {
+        padding:75px 6vw;
+    }
+
+    .dev-principles {
+        padding:80px 6vw;
+    }
+
+    .dev-principles-heading {
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .principles-grid {
+        grid-template-columns:1fr;
+    }
+
+    .dev-portfolio {
+        padding:80px 6vw;
+    }
+
+    .portfolio-grid {
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-card {
+        min-height:520px;
+    }
+
+    .dev-cta {
+        min-height:550px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body class="developments-page">
+
+
+<!-- HEADER -->
+
+<header class="site-header" id="siteHeader">
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-main">
+            FORT-ROYAL
+        </span>
+
+        <span class="brand-sub">
+            HOMES LIMITED
+        </span>
+
+    </a>
+
+
+    <nav class="desktop-nav">
+
+        <a href="properties.html">
+            Properties
+        </a>
+
+        <a href="estate.html">
+            The Estate
+        </a>
+
+        <a href="developments.html" class="active">
+            Developments
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="journal.html">
+            Journal
+        </a>
+
+    </nav>
+
+
+    <a href="inspection.html" class="nav-cta">
+
+        <span>
+            Book an Inspection
+        </span>
+
+        <span class="arrow">
+            ↗
+        </span>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+    >
+
+        <span></span>
+        <span></span>
+
+    </button>
+
+</header>
+
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-inner">
+
+        <div class="mobile-menu-top">
+
+            <span>
+                MENU
+            </span>
+
+            <button id="menuClose" type="button">
+                ×
+            </button>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                <span>00</span>
+                Home
+            </a>
+
+            <a href="properties.html">
+                <span>01</span>
+                Properties
+            </a>
+
+            <a href="estate.html">
+                <span>02</span>
+                The Estate
+            </a>
+
+            <a href="developments.html">
+                <span>03</span>
+                Developments
+            </a>
+
+            <a href="about.html">
+                <span>04</span>
+                About
+            </a>
+
+            <a href="journal.html">
+                <span>05</span>
+                Journal
+            </a>
+
+        </nav>
+
+
+        <a href="inspection.html" class="mobile-menu-cta">
+
+            <span>
+                Book a Private Inspection
+            </span>
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="dev-hero">
+
+    <div class="dev-hero-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Estate-Entrance-Gate.jpg"
+            alt="Fort-Royal Homes development"
+        >
+
+    </div>
+
+
+    <div class="dev-hero-content">
+
+        <div class="eyebrow">
+            FORT-ROYAL DEVELOPMENTS
+        </div>
+
+
+        <h1>
+            Building the
+            <em>extraordinary.</em>
+        </h1>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="dev-intro">
+
+
+    <div class="dev-intro-left">
+
+        <div class="section-label">
+
+            <span>
+                01
+            </span>
+
+            Our Vision
+
+        </div>
+
+
+        <h2>
+            Places with
+            <em>purpose.</em>
+        </h2>
+
+    </div>
+
+
+    <div class="dev-intro-right">
+
+        <p>
+            We create residential environments where
+            architecture, security, convenience and
+            community come together.
+        </p>
+
+
+        <p>
+            Fort-Royal Homes approaches real estate as
+            more than the delivery of buildings. The
+            objective is to create places people can
+            confidently call home while building lasting
+            value for property owners and investors.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURE -->
+
+<section class="dev-feature">
+
+
+    <div class="dev-feature-top">
+
+        <div>
+
+            <div class="section-label">
+
+                <span>
+                    02
+                </span>
+
+                Signature Development
+
+            </div>
+
+
+            <h2>
+                Fort-Royal
+                <em>Homes Estate.</em>
+            </h2>
+
+        </div>
+
+
+        <p>
+            A gated residential community in Kyami District
+            along Airport Road, Abuja, planned around homes,
+            community facilities and everyday convenience.
+        </p>
+
+    </div>
+
+
+    <div class="dev-feature-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Entrance-Gate.jpg"
+            alt="Fort-Royal Homes Estate"
+            loading="lazy"
+        >
+
+        <span class="dev-feature-label">
+            Kyami District · Abuja
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section class="dev-story">
+
+
+    <div class="dev-story-image">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-homes-estate-relaxation-garden.jpg"
+            alt="Fort-Royal Homes Estate landscaped environment"
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="dev-story-copy">
+
+        <div class="section-label">
+
+            <span>
+                03
+            </span>
+
+            Development Philosophy
+
+        </div>
+
+
+        <h2>
+            Designed for
+            <em>real life.</em>
+        </h2>
+
+
+        <p>
+            Great developments are not defined only by
+            beautiful houses. They are defined by what
+            surrounds them — the infrastructure, services,
+            security and spaces that make daily life easier.
+        </p>
+
+
+        <div class="dev-story-list">
+
+            <div>
+                <span>01</span>
+                Security & privacy
+            </div>
+
+            <div>
+                <span>02</span>
+                Infrastructure
+            </div>
+
+            <div>
+                <span>03</span>
+                Community facilities
+            </div>
+
+            <div>
+                <span>04</span>
+                Quality residences
+            </div>
+
+            <div>
+                <span>05</span>
+                Long-term value
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRINCIPLES -->
+
+<section class="dev-principles">
+
+
+    <div class="dev-principles-heading">
+
+        <div>
+
+            <div class="section-label">
+
+                <span>
+                    04
+                </span>
+
+                Our Standards
+
+            </div>
+
+
+            <h2>
+                The details
+                <em>matter.</em>
+            </h2>
+
+        </div>
+
+
+        <p>
+            Every development is considered from the
+            perspective of the people who will live,
+            work and invest within it.
+        </p>
+
+    </div>
+
+
+    <div class="principles-grid">
+
+
+        <div class="principle">
+
+            <span class="principle-number">
+                01
+            </span>
+
+            <h3>
+                Architecture
+            </h3>
+
+            <p>
+                Contemporary residential design with
+                attention to proportion, function and
+                everyday comfort.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <span class="principle-number">
+                02
+            </span>
+
+            <h3>
+                Infrastructure
+            </h3>
+
+            <p>
+                Roads, lighting, utilities and community
+                infrastructure are fundamental to a
+                complete development.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <span class="principle-number">
+                03
+            </span>
+
+            <h3>
+                Security
+            </h3>
+
+            <p>
+                Secure environments give residents the
+                confidence to enjoy their homes and
+                surroundings.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <span class="principle-number">
+                04
+            </span>
+
+            <h3>
+                Community
+            </h3>
+
+            <p>
+                The best developments provide spaces and
+                services that encourage a connected lifestyle.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <span class="principle-number">
+                05
+            </span>
+
+            <h3>
+                Sustainability
+            </h3>
+
+            <p>
+                Thoughtful planning and green spaces help
+                create environments designed to remain
+                attractive over time.
+            </p>
+
+        </div>
+
+
+        <div class="principle">
+
+            <span class="principle-number">
+                06
+            </span>
+
+            <h3>
+                Value
+            </h3>
+
+            <p>
+                Residential property should combine
+                quality of life with long-term ownership value.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="dev-portfolio">
+
+
+    <div class="dev-portfolio-heading">
+
+        <div class="section-label">
+
+            <span>
+                05
+            </span>
+
+            Featured Residences
+
+        </div>
+
+
+        <h2>
+            Explore the
+            <em>collection.</em>
+        </h2>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+
+        <a
+            href="property.html?property=imperial-villa"
+            class="portfolio-card"
+        >
+
+            <img
+                src="https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png"
+                alt="Imperial Villa"
+                loading="lazy"
+            >
+
+            <div class="portfolio-info">
+
+                <span>
+                    Signature Residence
+                </span>
+
+                <h3>
+                    Imperial Villa
+                </h3>
+
+                <p>
+                    Explore residence
+                    ↗
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <a
+            href="property.html?property=avalon-de-royal"
+            class="portfolio-card"
+        >
+
+            <img
+                src="https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png"
+                alt="Avalon De Royal"
+                loading="lazy"
+            >
+
+            <div class="portfolio-info">
+
+                <span>
+                    Royal Collection
+                </span>
+
+                <h3>
+                    Avalon De Royal
+                </h3>
+
+                <p>
+                    Explore residence
+                    ↗
+                </p>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="dev-cta">
+
+
+    <div class="dev-cta-bg">
+
+        <img
+            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/Fort-Royal-Homes-Walkway.jpg"
+            alt=""
+            loading="lazy"
+        >
+
+    </div>
+
+
+    <div class="dev-cta-content">
+
+        <div class="section-label">
+
+            <span>
+                06
+            </span>
+
+            Begin Your Journey
+
+        </div>
+
+
+        <h2>
+            Find your
+            <em>place.</em>
+        </h2>
+
+
+        <p>
+            Explore our available residences or arrange
+            a private inspection with the Fort-Royal team.
+        </p>
+
+
+        <a
+            href="inspection.html"
+            class="button button-light"
+        >
+
+            Book a Private Inspection
+
+            <span>
+                ↗
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+
+        <div class="footer-brand">
+
+            <span class="brand-main">
+                FORT-ROYAL
+            </span>
+
+            <span class="brand-sub">
+                HOMES LIMITED
+            </span>
+
+            <p>
+                Living in pleasure and security.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Explore
+            </span>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="properties.html">
+                Properties
+            </a>
+
+            <a href="estate.html">
+                The Estate
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <span>
+                Connect
+            </span>
+
+            <a href="inspection.html">
+                Book Inspection
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="journal.html">
+                Journal
+            </a>
+
+            <a href="https://wa.me/2348078191111">
+                WhatsApp
+            </a>
+
+        </div>
+
+
+        <div class="footer-column footer-contact">
+
+            <span>
+                Head Office
+            </span>
+
+            <p>
+                25 Waziri Ibrahim Crescent<br>
+                Gudu District, Abuja FCT
+            </p>
+
+            <a href="tel:+2348078191111">
+                +234 807 819 1111
+            </a>
+
+            <a href="tel:+2349053927777">
+                0905 392 7777
+            </a>
+
+            <a href="mailto:info@fortroyalhomes.org">
+                info@fortroyalhomes.org
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Fort-Royal Homes Limited
+        </span>
+
+        <div>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="terms.html">
+                Terms
+            </a>
+
+        </div>
+
+        <span>
+            Abuja · Nigeria
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
