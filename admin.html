@@ -1053,6 +1053,247 @@ content="Fort-Royal Homes Limited administration dashboard."
       cursor: not-allowed;
     }
 
+
+    /* =========================================================
+       PROPERTY MEDIA MANAGER
+    ========================================================= */
+
+    .media-manager-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(17,17,17,.78);
+      overflow-y: auto;
+    }
+
+    .media-manager-overlay.visible {
+      display: flex;
+    }
+
+    .media-manager {
+      width: min(1050px, 100%);
+      max-height: 94vh;
+      overflow-y: auto;
+      background: #f8f5ef;
+      box-shadow: 0 30px 100px rgba(0,0,0,.4);
+    }
+
+    .media-manager-header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 28px;
+      background: #111;
+      color: #fff;
+    }
+
+    .media-manager-header h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+
+    .media-manager-property {
+      margin-top: 4px;
+      color: rgba(255,255,255,.62);
+      font-size: .68rem;
+    }
+
+    .media-manager-close {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: transparent;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .media-manager-close:hover {
+      border-color: #c7a76a;
+      color: #c7a76a;
+    }
+
+    .media-manager-body {
+      padding: 28px;
+    }
+
+    .media-upload-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+
+    .media-upload-box {
+      padding: 18px;
+      background: #fff;
+      border: 1px solid #e1dcd3;
+    }
+
+    .media-upload-box label {
+      display: block;
+      margin-bottom: 9px;
+      color: #777;
+      font-size: .59rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .media-upload-box input[type="file"] {
+      width: 100%;
+      font-size: .68rem;
+    }
+
+    .media-upload-hint {
+      margin-top: 8px;
+      color: #999;
+      font-size: .6rem;
+      line-height: 1.5;
+    }
+
+    .media-upload-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .media-upload-button {
+      padding: 13px 20px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-size: .61rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .media-upload-button:hover {
+      border-color: #9a7b48;
+      background: #9a7b48;
+    }
+
+    .media-upload-button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .media-upload-status {
+      min-height: 18px;
+      color: #777;
+      font-size: .68rem;
+    }
+
+    .media-list-heading {
+      margin: 0 0 15px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.9rem;
+      font-weight: 500;
+    }
+
+    .media-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .media-item {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #e1dcd3;
+    }
+
+    .media-preview {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1ede5;
+      overflow: hidden;
+    }
+
+    .media-preview img,
+    .media-preview video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .media-file-icon {
+      font-size: 2.5rem;
+    }
+
+    .media-item-body {
+      padding: 13px;
+    }
+
+    .media-item-name {
+      margin-bottom: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: .68rem;
+      font-weight: 700;
+    }
+
+    .media-item-type {
+      margin-bottom: 11px;
+      color: #888;
+      font-size: .58rem;
+      text-transform: uppercase;
+    }
+
+    .media-item-actions {
+      display: flex;
+      gap: 7px;
+    }
+
+    .media-item-actions a,
+    .media-item-actions button {
+      flex: 1;
+      padding: 8px 9px;
+      border: 1px solid #cfc8bc;
+      background: transparent;
+      color: #111;
+      font-size: .54rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .media-item-actions a:hover,
+    .media-item-actions button:hover {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .media-item-actions button.danger:hover {
+      border-color: #8b4036;
+      background: #8b4036;
+    }
+
+    @media (max-width: 800px) {
+      .media-upload-grid,
+      .media-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* =========================================================
        MOBILE
     ========================================================= */
@@ -1471,42 +1712,7 @@ content="Fort-Royal Homes Limited administration dashboard."
       </div>
 
     </div>
-<!-- PROPERTY MEDIA MANAGER -->
-<div id="mediaManager" style="display:none; margin-top:25px; padding:20px; border:1px solid #ddd; border-radius:12px;">
 
-    <h3>Manage Property Media</h3>
-
-    <p id="selectedPropertyName">
-        No property selected
-    </p>
-
-    <input type="hidden" id="mediaPropertyId">
-
-    <div style="margin:15px 0;">
-        <label><strong>Photos</strong></label><br>
-        <input type="file" id="propertyPhotos" accept="image/*" multiple>
-    </div>
-
-    <div style="margin:15px 0;">
-        <label><strong>Videos</strong></label><br>
-        <input type="file" id="propertyVideos" accept="video/*" multiple>
-    </div>
-
-    <div style="margin:15px 0;">
-        <label><strong>Brochures / Documents</strong></label><br>
-        <input type="file" id="propertyDocuments" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple>
-    </div>
-
-    <button type="button" onclick="uploadPropertyMedia()">
-        Upload Media
-    </button>
-
-    <p id="mediaUploadStatus"></p>
-
-    <div id="propertyMediaList" style="margin-top:20px;"></div>
-
-</div>
-<!-- END PROPERTY MEDIA MANAGER -->
   </section>
 
 
@@ -3179,6 +3385,19 @@ content="Fort-Royal Homes Limited administration dashboard."
                       )}"
                     >
                       Edit Property
+                    </button>
+
+                    <button
+                      type="button"
+                      class="property-action"
+                      data-manage-media="${escapeHTML(
+                        property.id
+                      )}"
+                      data-property-name="${escapeHTML(
+                        property.name || "Property"
+                      )}"
+                    >
+                      Manage Media
                     </button>
 
 
@@ -5851,208 +6070,638 @@ supabaseClient.auth
 ======================================================== */
 
 checkExistingSession();
-// ===============================
-// PROPERTY MEDIA MANAGER
-// ===============================
 
-let selectedMediaProperty = null;
+  
+    /* =======================================================
+       PROPERTY MEDIA MANAGER
+    ======================================================== */
 
-function openMediaManager(propertyId, propertyName) {
-    selectedMediaProperty = propertyId;
+    let activeMediaPropertyId = null;
 
-    document.getElementById("mediaPropertyId").value = propertyId;
-    document.getElementById("selectedPropertyName").textContent =
-        "Managing media for: " + propertyName;
+    const mediaManagerOverlay =
+      document.getElementById("mediaManagerOverlay");
 
-    document.getElementById("mediaManager").style.display = "block";
+    const mediaManagerPropertyName =
+      document.getElementById("mediaManagerPropertyName");
 
-    document.getElementById("mediaUploadStatus").textContent = "";
+    const mediaManagerClose =
+      document.getElementById("mediaManagerClose");
 
-    loadPropertyMedia(propertyId);
+    const propertyPhotoFiles =
+      document.getElementById("propertyPhotoFiles");
 
-    document.getElementById("mediaManager").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-}
+    const propertyVideoFiles =
+      document.getElementById("propertyVideoFiles");
+
+    const propertyDocumentFiles =
+      document.getElementById("propertyDocumentFiles");
+
+    const uploadPropertyMediaButton =
+      document.getElementById("uploadPropertyMediaButton");
+
+    const mediaUploadStatus =
+      document.getElementById("mediaUploadStatus");
+
+    const propertyMediaList =
+      document.getElementById("propertyMediaList");
 
 
-// ===============================
-// UPLOAD PROPERTY MEDIA
-// ===============================
+    function openMediaManager(propertyId, propertyName) {
 
-async function uploadPropertyMedia() {
+      activeMediaPropertyId = propertyId;
 
-    const propertyId = document.getElementById("mediaPropertyId").value;
+      mediaManagerPropertyName.textContent =
+        propertyName || "Property";
 
-    if (!propertyId) {
-        alert("Please select a property first.");
-        return;
+      mediaUploadStatus.textContent = "";
+
+      propertyPhotoFiles.value = "";
+      propertyVideoFiles.value = "";
+      propertyDocumentFiles.value = "";
+
+      mediaManagerOverlay.classList.add("visible");
+
+      loadPropertyMedia(propertyId);
     }
 
-    const photos =
-        document.getElementById("propertyPhotos").files;
 
-    const videos =
-        document.getElementById("propertyVideos").files;
+    function closeMediaManager() {
 
-    const documents =
-        document.getElementById("propertyDocuments").files;
+      mediaManagerOverlay.classList.remove("visible");
 
-    const status =
-        document.getElementById("mediaUploadStatus");
+      activeMediaPropertyId = null;
 
-    const allFiles = [
-        ...Array.from(photos).map(file => ({
-            file,
-            type: "photo",
-            bucket: "property-images"
-        })),
+      propertyPhotoFiles.value = "";
+      propertyVideoFiles.value = "";
+      propertyDocumentFiles.value = "";
 
-        ...Array.from(videos).map(file => ({
-            file,
-            type: "video",
-            bucket: "property-videos"
-        })),
-
-        ...Array.from(documents).map(file => ({
-            file,
-            type: "document",
-            bucket: "property-documents"
-        }))
-    ];
-
-    if (allFiles.length === 0) {
-        alert("Please select at least one file.");
-        return;
+      mediaUploadStatus.textContent = "";
     }
 
-    status.textContent = "Uploading...";
 
-    try {
+    mediaManagerClose.addEventListener(
+      "click",
+      closeMediaManager
+    );
 
-        for (const item of allFiles) {
 
-            const file = item.file;
+    mediaManagerOverlay.addEventListener(
+      "click",
+      function(event) {
 
-            const safeName =
-                file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-
-            const filePath =
-                `${propertyId}/${Date.now()}_${safeName}`;
-
-            const { error: uploadError } =
-                await supabase.storage
-                    .from(item.bucket)
-                    .upload(filePath, file);
-
-            if (uploadError) {
-                throw uploadError;
-            }
-
-            const { data: publicData } =
-                supabase.storage
-                    .from(item.bucket)
-                    .getPublicUrl(filePath);
-
-            const fileUrl =
-                publicData.publicUrl;
-
-            const { error: databaseError } =
-                await supabase
-                    .from("property_media")
-                    .insert({
-                        property_id: propertyId,
-                        media_type: item.type,
-                        file_url: fileUrl,
-                        file_name: file.name
-                    });
-
-            if (databaseError) {
-                throw databaseError;
-            }
+        if (event.target === mediaManagerOverlay) {
+          closeMediaManager();
         }
 
-        status.textContent =
-            "✅ Media uploaded successfully.";
-
-        document.getElementById("propertyPhotos").value = "";
-        document.getElementById("propertyVideos").value = "";
-        document.getElementById("propertyDocuments").value = "";
-
-        loadPropertyMedia(propertyId);
-
-    } catch (error) {
-
-        console.error("Media upload error:", error);
-
-        status.textContent =
-            "❌ Upload failed: " + error.message;
-    }
-}
+      }
+    );
 
 
-// ===============================
-// LOAD PROPERTY MEDIA
-// ===============================
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-async function loadPropertyMedia(propertyId) {
+        if (
+          event.key === "Escape" &&
+          mediaManagerOverlay.classList.contains("visible")
+        ) {
+          closeMediaManager();
+        }
 
-    const container =
-        document.getElementById("propertyMediaList");
+      }
+    );
 
-    container.innerHTML = "Loading media...";
 
-    const { data, error } =
-        await supabase
-            .from("property_media")
-            .select("*")
-            .eq("property_id", propertyId)
-            .order("created_at", {
-                ascending: false
-            });
+    async function uploadPropertyMedia() {
 
-    if (error) {
+      const propertyId =
+        activeMediaPropertyId;
 
-        console.error(error);
-
-        container.innerHTML =
-            "Unable to load property media.";
-
+      if (!propertyId) {
+        mediaUploadStatus.textContent =
+          "Please select a property first.";
         return;
-    }
+      }
 
-    if (!data || data.length === 0) {
+      const files = [
+        ...Array.from(propertyPhotoFiles.files).map(file => ({
+          file,
+          mediaType: "photo",
+          bucket: "property-images"
+        })),
 
-        container.innerHTML =
-            "<p>No media uploaded for this property yet.</p>";
+        ...Array.from(propertyVideoFiles.files).map(file => ({
+          file,
+          mediaType: "video",
+          bucket: "property-videos"
+        })),
 
+        ...Array.from(propertyDocumentFiles.files).map(file => ({
+          file,
+          mediaType: "document",
+          bucket: "property-documents"
+        }))
+      ];
+
+      if (!files.length) {
+        mediaUploadStatus.textContent =
+          "Select at least one file to upload.";
         return;
+      }
+
+      uploadPropertyMediaButton.disabled = true;
+
+      let completed = 0;
+
+      try {
+
+        for (const item of files) {
+
+          const file = item.file;
+
+          const safeFileName =
+            file.name.replace(
+              /[^a-zA-Z0-9._-]/g,
+              "_"
+            );
+
+          const uniqueName =
+            `${Date.now()}_${Math.random()
+              .toString(36)
+              .slice(2, 8)}_${safeFileName}`;
+
+          const storagePath =
+            `${propertyId}/${uniqueName}`;
+
+          mediaUploadStatus.textContent =
+            `Uploading ${completed + 1} of ${files.length}...`;
+
+          const {
+            error: uploadError
+          } =
+            await supabaseClient.storage
+              .from(item.bucket)
+              .upload(
+                storagePath,
+                file,
+                {
+                  cacheControl: "3600",
+                  upsert: false
+                }
+              );
+
+          if (uploadError) {
+            throw uploadError;
+          }
+
+          const {
+            data: publicData
+          } =
+            supabaseClient.storage
+              .from(item.bucket)
+              .getPublicUrl(storagePath);
+
+          const fileUrl =
+            publicData.publicUrl;
+
+          const {
+            error: mediaInsertError
+          } =
+            await supabaseClient
+              .from("property_media")
+              .insert({
+                property_id: propertyId,
+                media_type: item.mediaType,
+                file_url: fileUrl,
+                file_name: file.name
+              });
+
+          if (mediaInsertError) {
+
+            await supabaseClient.storage
+              .from(item.bucket)
+              .remove([storagePath]);
+
+            throw mediaInsertError;
+          }
+
+          completed++;
+        }
+
+        mediaUploadStatus.textContent =
+          `✓ ${completed} file${completed === 1 ? "" : "s"} uploaded successfully.`;
+
+        propertyPhotoFiles.value = "";
+        propertyVideoFiles.value = "";
+        propertyDocumentFiles.value = "";
+
+        await loadPropertyMedia(propertyId);
+
+      } catch (error) {
+
+        console.error(
+          "Property media upload error:",
+          error
+        );
+
+        mediaUploadStatus.textContent =
+          "Upload failed: " +
+          (error?.message || "Unknown error");
+
+      } finally {
+
+        uploadPropertyMediaButton.disabled = false;
+
+      }
     }
 
-    container.innerHTML = "";
 
-    data.forEach(media => {
+    uploadPropertyMediaButton.addEventListener(
+      "click",
+      uploadPropertyMedia
+    );
 
-        const item = document.createElement("div");
 
-        item.style.marginBottom = "15px";
-        item.style.padding = "12px";
-        item.style.border = "1px solid #ddd";
-        item.style.borderRadius = "10px";
+    async function loadPropertyMedia(propertyId) {
 
-        item.innerHTML = `
-            <strong>${media.file_name || "Media file"}</strong>
-            <br>
-            <small>${media.media_type}</small>
-            <br>
-            <a href="${media.file_url}" target="_blank">
-                Open file
-            </a>
+      propertyMediaList.innerHTML = `
+        <div class="table-message">
+          Loading media...
+        </div>
+      `;
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient
+          .from("property_media")
+          .select("*")
+          .eq("property_id", propertyId)
+          .order("created_at", {
+            ascending: false
+          });
+
+      if (error) {
+
+        console.error(
+          "Property media load error:",
+          error
+        );
+
+        propertyMediaList.innerHTML = `
+          <div class="table-message">
+            Could not load property media.
+            ${escapeHTML(error.message || "")}
+          </div>
         `;
 
-        container.appendChild(item);
-    });
-}
-  </script></body>
+        return;
+      }
+
+      if (!data || !data.length) {
+
+        propertyMediaList.innerHTML = `
+          <div class="table-message">
+            No media uploaded for this property yet.
+          </div>
+        `;
+
+        return;
+      }
+
+      propertyMediaList.innerHTML =
+        data.map(media => {
+
+          const mediaType =
+            String(media.media_type || "").toLowerCase();
+
+          const fileName =
+            media.file_name || "Media file";
+
+          let preview = "";
+
+          if (
+            mediaType === "photo" ||
+            mediaType === "image"
+          ) {
+
+            preview = `
+              <img
+                src="${escapeHTML(media.file_url || "")}"
+                alt="${escapeHTML(fileName)}"
+                loading="lazy"
+              >
+            `;
+
+          } else if (mediaType === "video") {
+
+            preview = `
+              <video
+                src="${escapeHTML(media.file_url || "")}"
+                controls
+                preload="metadata"
+              ></video>
+            `;
+
+          } else {
+
+            preview = `
+              <div class="media-file-icon">
+                📄
+              </div>
+            `;
+
+          }
+
+          return `
+            <div class="media-item">
+
+              <div class="media-preview">
+                ${preview}
+              </div>
+
+              <div class="media-item-body">
+
+                <div
+                  class="media-item-name"
+                  title="${escapeHTML(fileName)}"
+                >
+                  ${escapeHTML(fileName)}
+                </div>
+
+                <div class="media-item-type">
+                  ${escapeHTML(mediaType || "file")}
+                </div>
+
+                <div class="media-item-actions">
+
+                  <a
+                    href="${escapeHTML(media.file_url || "#")}"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Open
+                  </a>
+
+                  <button
+                    type="button"
+                    class="danger"
+                    data-delete-media="${escapeHTML(media.id)}"
+                    data-media-url="${escapeHTML(media.file_url || "")}"
+                    data-media-type="${escapeHTML(mediaType)}"
+                  >
+                    Delete
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+          `;
+        }).join("");
+    }
+
+
+    async function deletePropertyMedia(
+      mediaId,
+      fileUrl,
+      mediaType
+    ) {
+
+      if (!mediaId) {
+        return;
+      }
+
+      const confirmed =
+        window.confirm("Delete this media file?");
+
+      if (!confirmed) {
+        return;
+      }
+
+      try {
+
+        const {
+          error: deleteRowError
+        } =
+          await supabaseClient
+            .from("property_media")
+            .delete()
+            .eq("id", mediaId);
+
+        if (deleteRowError) {
+          throw deleteRowError;
+        }
+
+        if (fileUrl) {
+
+          const bucket =
+            mediaType === "video"
+              ? "property-videos"
+              : mediaType === "document"
+                ? "property-documents"
+                : "property-images";
+
+          const marker =
+            `/storage/v1/object/public/${bucket}/`;
+
+          const markerIndex =
+            fileUrl.indexOf(marker);
+
+          if (markerIndex !== -1) {
+
+            const storagePath =
+              decodeURIComponent(
+                fileUrl.slice(
+                  markerIndex + marker.length
+                )
+              );
+
+            await supabaseClient.storage
+              .from(bucket)
+              .remove([storagePath]);
+          }
+        }
+
+        mediaUploadStatus.textContent =
+          "✓ Media deleted.";
+
+        await loadPropertyMedia(
+          activeMediaPropertyId
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Property media deletion error:",
+          error
+        );
+
+        mediaUploadStatus.textContent =
+          "Delete failed: " +
+          (error?.message || "Unknown error");
+      }
+    }
+
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        const mediaButton =
+          event.target.closest("[data-manage-media]");
+
+        if (mediaButton) {
+
+          openMediaManager(
+            mediaButton.dataset.manageMedia,
+            mediaButton.dataset.propertyName
+          );
+
+        }
+
+      }
+    );
+
+
+    propertyMediaList.addEventListener(
+      "click",
+      function(event) {
+
+        const deleteButton =
+          event.target.closest("[data-delete-media]");
+
+        if (!deleteButton) {
+          return;
+        }
+
+        deletePropertyMedia(
+          deleteButton.dataset.deleteMedia,
+          deleteButton.dataset.mediaUrl,
+          deleteButton.dataset.mediaType
+        );
+
+      }
+    );
+
+</script>
+  <!-- =======================================================
+       PROPERTY MEDIA MANAGER
+  ======================================================== -->
+  <div
+    class="media-manager-overlay"
+    id="mediaManagerOverlay"
+  >
+    <div
+      class="media-manager"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mediaManagerTitle"
+    >
+      <div class="media-manager-header">
+        <div>
+          <h2 id="mediaManagerTitle">Manage Media</h2>
+          <div
+            class="media-manager-property"
+            id="mediaManagerPropertyName"
+          ></div>
+        </div>
+
+        <button
+          type="button"
+          class="media-manager-close"
+          id="mediaManagerClose"
+          aria-label="Close media manager"
+        >
+          ×
+        </button>
+      </div>
+
+      <div class="media-manager-body">
+
+        <div class="media-upload-grid">
+
+          <div class="media-upload-box">
+            <label for="propertyPhotoFiles">
+              Photos
+            </label>
+            <input
+              type="file"
+              id="propertyPhotoFiles"
+              accept="image/*"
+              multiple
+            >
+            <div class="media-upload-hint">
+              Select multiple image files.
+            </div>
+          </div>
+
+          <div class="media-upload-box">
+            <label for="propertyVideoFiles">
+              Videos
+            </label>
+            <input
+              type="file"
+              id="propertyVideoFiles"
+              accept="video/*"
+              multiple
+            >
+            <div class="media-upload-hint">
+              Select one or more property videos.
+            </div>
+          </div>
+
+          <div class="media-upload-box">
+            <label for="propertyDocumentFiles">
+              Brochures / Documents
+            </label>
+            <input
+              type="file"
+              id="propertyDocumentFiles"
+              accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png"
+              multiple
+            >
+            <div class="media-upload-hint">
+              Upload brochures, floor plans and other documents.
+            </div>
+          </div>
+
+        </div>
+
+        <div class="media-upload-actions">
+          <button
+            type="button"
+            class="media-upload-button"
+            id="uploadPropertyMediaButton"
+          >
+            Upload Selected Media
+          </button>
+
+          <div
+            class="media-upload-status"
+            id="mediaUploadStatus"
+            aria-live="polite"
+          ></div>
+        </div>
+
+        <h3 class="media-list-heading">
+          Uploaded Media
+        </h3>
+
+        <div
+          class="media-list"
+          id="propertyMediaList"
+        >
+          <div class="table-message">
+            Select a property to view its media.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
 </html>
