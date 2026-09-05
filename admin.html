@@ -6707,5 +6707,32 @@ checkExistingSession();
     </div>
   </div>
 
+<script>
+/* Media Manager fallback click wiring */
+document.addEventListener('click', function (event) {
+  const button = event.target.closest('[data-manage-media]');
+  if (!button) return;
+
+  const overlay = document.getElementById('mediaManagerOverlay');
+  const nameEl = document.getElementById('mediaManagerPropertyName');
+  const statusEl = document.getElementById('mediaUploadStatus');
+  const listEl = document.getElementById('propertyMediaList');
+
+  if (!overlay || !nameEl) {
+    console.error('Media Manager HTML was not found.');
+    alert('Media Manager could not open. Please refresh the page.');
+    return;
+  }
+
+  window.activeMediaPropertyId = button.dataset.manageMedia || '';
+  nameEl.textContent = button.dataset.propertyName || 'Property';
+  if (statusEl) statusEl.textContent = '';
+  overlay.classList.add('visible');
+
+  if (listEl && typeof window.loadPropertyMedia === 'function') {
+    window.loadPropertyMedia(window.activeMediaPropertyId);
+  }
+});
+</script>
 </body>
 </html>
