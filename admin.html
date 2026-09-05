@@ -548,6 +548,7 @@
       color: #8b4036;
       font-size: .75rem;
       line-height: 1.6;
+      word-break: break-word;
     }
 
     .dashboard-error.visible {
@@ -1042,12 +1043,14 @@
           <table>
 
             <thead>
+
               <tr>
                 <th>Email</th>
                 <th>Status</th>
                 <th>Subscribed</th>
                 <th>Action</th>
               </tr>
+
             </thead>
 
             <tbody id="newsletterTableBody">
@@ -1253,7 +1256,7 @@
 
     /* =======================================================
        ADMIN VERIFICATION
-       UPDATED TO USE verify_admin RPC
+       USES verify_admin RPC
     ======================================================== */
 
     async function verifyAdmin(user) {
@@ -1338,8 +1341,14 @@
           error
         );
 
+        const message =
+          error?.message ||
+          error?.details ||
+          error?.hint ||
+          "Unknown dashboard error";
+
         showDashboardError(
-          "Some dashboard information could not be loaded. Please refresh and try again."
+          "Dashboard error: " + message
         );
 
       } finally {
