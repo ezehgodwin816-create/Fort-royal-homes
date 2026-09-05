@@ -5851,6 +5851,208 @@ supabaseClient.auth
 ======================================================== */
 
 checkExistingSession();
+// ===============================
+// PROPERTY MEDIA MANAGER
+// ===============================
 
+let selectedMediaProperty = null;
+
+function openMediaManager(propertyId, propertyName) {
+    selectedMediaProperty = propertyId;
+
+    document.getElementById("mediaPropertyId").value = propertyId;
+    document.getElementById("selectedPropertyName").textContent =
+        "Managing media for: " + propertyName;
+
+    document.getElementById("mediaManager").style.display = "block";
+
+    document.getElementById("mediaUploadStatus").textContent = "";
+
+    loadPropertyMedia(propertyId);
+
+    document.getElementById("mediaManager").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+
+// ===============================
+// UPLOAD PROPERTY MEDIA
+// ===============================
+
+async function uploadPropertyMedia() {
+
+    const propertyId = document.getElementById("mediaPropertyId").value;
+
+    if (!propertyId) {
+        alert("Please select a property first.");
+        return;
+    }
+
+    const photos =
+        document.getElementById("propertyPhotos").files;
+
+    const videos =
+        document.getElementById("propertyVideos").files;
+
+    const documents =
+        document.getElementById("propertyDocuments").files;
+
+    const status =
+        document.getElementById("mediaUploadStatus");
+
+    const allFiles = [
+        ...Array.from(photos).map(file => ({
+            file,
+            type: "photo",
+            bucket: "property-images"
+        })),
+
+        ...Array.from(videos).map(file => ({
+            file,
+            type: "video",
+            bucket: "property-videos"
+        })),
+
+        ...Array.from(documents).map(file => ({
+            file,
+            type: "document",
+            bucket: "property-documents"
+        }))
+    ];
+
+    if (allFiles.length === 0) {
+        alert("Please select at least one file.");
+        return;
+    }
+
+    status.textContent = "Uploading...";
+
+    try {
+
+        for (const item of allFiles) {
+
+            const file = item.file;
+
+            const safeName =
+                file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+
+            const filePath =
+                `${propertyId}/${Date.now()}_${safeName}`;
+
+            const { error: uploadError } =
+                await supabase.storage
+                    .from(item.bucket)
+                    .upload(filePath, file);
+
+            if (uploadError) {
+                throw uploadError;
+            }
+
+            const { data: publicData } =
+                supabase.storage
+                    .from(item.bucket)
+                    .getPublicUrl(filePath);
+
+            const fileUrl =
+                publicData.publicUrl;
+
+            const { error: databaseError } =
+                await supabase
+                    .from("property_media")
+                    .insert({
+                        property_id: propertyId,
+                        media_type: item.type,
+                        file_url: fileUrl,
+                        file_name: file.name
+                    });
+
+            if (databaseError) {
+                throw databaseError;
+            }
+        }
+
+        status.textContent =
+            "✅ Media uploaded successfully.";
+
+        document.getElementById("propertyPhotos").value = "";
+        document.getElementById("propertyVideos").value = "";
+        document.getElementById("propertyDocuments").value = "";
+
+        loadPropertyMedia(propertyId);
+
+    } catch (error) {
+
+        console.error("Media upload error:", error);
+
+        status.textContent =
+            "❌ Upload failed: " + error.message;
+    }
+}
+
+
+// ===============================
+// LOAD PROPERTY MEDIA
+// ===============================
+
+async function loadPropertyMedia(propertyId) {
+
+    const container =
+        document.getElementById("propertyMediaList");
+
+    container.innerHTML = "Loading media...";
+
+    const { data, error } =
+        await supabase
+            .from("property_media")
+            .select("*")
+            .eq("property_id", propertyId)
+            .order("created_at", {
+                ascending: false
+            });
+
+    if (error) {
+
+        console.error(error);
+
+        container.innerHTML =
+            "Unable to load property media.";
+
+        return;
+    }
+
+    if (!data || data.length === 0) {
+
+        container.innerHTML =
+            "<p>No media uploaded for this property yet.</p>";
+
+        return;
+    }
+
+    container.innerHTML = "";
+
+    data.forEach(media => {
+
+        const item = document.createElement("div");
+
+        item.style.marginBottom = "15px";
+        item.style.padding = "12px";
+        item.style.border = "1px solid #ddd";
+        item.style.borderRadius = "10px";
+
+        item.innerHTML = `
+            <strong>${media.file_name || "Media file"}</strong>
+            <br>
+            <small>${media.media_type}</small>
+            <br>
+            <a href="${media.file_url}" target="_blank">
+                Open file
+            </a>
+        `;
+
+        container.appendChild(item);
+    });
+}
   </script></body>
 </html>
