@@ -1,125 +1,766 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Fort-Royal Homes | Luxury Real Estate in Abuja</title>
 
-    <title>Fort-Royal Homes | Luxury Real Estate in Abuja</title>
+<meta
+    name="description"
+    content="Discover exceptional homes and communities by Fort-Royal Homes in Abuja, Nigeria."
+>
 
-    <meta
-        name="description"
-        content="Discover exceptional homes and communities by Fort-Royal Homes in Abuja, Nigeria."
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link rel="stylesheet" href="css/style.css">
+
+<!--
+    FORT-ROYAL VISUAL ENHANCEMENT
+    Keeps the existing design intact while making the interface
+    stronger, bolder and more solid.
+-->
+<style>
+    /* Stronger overall typography */
+    body {
+        font-weight: 500;
+    }
+
+    h1,
+    h2,
+    h3,
+    .brand-main,
+    .button,
+    .nav-cta,
+    .section-label,
+    .property-status,
+    .property-meta,
+    .service-item,
+    .footer-column > span {
+        font-weight: 700;
+    }
+
+    /* Stronger hero heading */
+    .hero h1 {
+        font-weight: 700;
+        letter-spacing: -0.025em;
+    }
+
+    .hero h1 em,
+    .section-heading h2 em,
+    .intro-content h2 em,
+    .estate-content h2 em,
+    .lifestyle-heading h2 em,
+    .lifestyle-copy h3 em,
+    .about-content h2 em,
+    .inspection-inner h2 em {
+        font-weight: 700;
+    }
+
+    /* Stronger buttons */
+    .button,
+    .nav-cta {
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+
+    /* Stronger property cards */
+    .property-card {
+        border-radius: 2px;
+    }
+
+    .property-card h3 {
+        font-weight: 700;
+    }
+
+    .property-info p {
+        font-weight: 500;
+    }
+
+    .property-meta span {
+        font-weight: 700;
+    }
+
+    .property-status {
+        font-weight: 700;
+    }
+
+    /* Make section headings more commanding */
+    .section-heading h2,
+    .intro-content h2,
+    .estate-content h2,
+    .lifestyle-heading h2,
+    .about-content h2,
+    .inspection-inner h2 {
+        font-weight: 700;
+    }
+
+    /* Stronger service rows */
+    .service-item h3 {
+        font-weight: 700;
+    }
+
+    .service-item strong {
+        font-weight: 700;
+    }
+
+    /* Stronger footer brand */
+    .footer-brand .brand-main {
+        font-weight: 700;
+    }
+
+    /*
+        External images:
+        no-referrer helps when an external image server behaves
+        differently when the image is embedded inside another website.
+    */
+    .property-image img,
+    .estate-image img,
+    .lifestyle-image img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+</head><body><!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+    <div class="loader-mark">FR</div>
+</div>
+
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+
+    <a href="index.html" class="brand">
+        <span class="brand-main">FORT-ROYAL</span>
+        <span class="brand-sub">HOMES LIMITED</span>
+    </a>
+
+    <nav class="desktop-nav">
+        <a href="#properties">Properties</a>
+        <a href="#estate">The Estate</a>
+        <a href="#developments">Developments</a>
+        <a href="#about">About</a>
+        <a href="#journal">Journal</a>
+    </nav>
+
+    <a href="#inspection" class="nav-cta">
+        <span>Book an Inspection</span>
+        <span class="arrow">↗</span>
+    </a>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
     >
+        <span></span>
+        <span></span>
+    </button>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-    <!-- PAGE LOADER -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-mark">FR</div>
-    </div>
+</header>
 
 
-    <!-- HEADER -->
-    <header class="site-header" id="siteHeader">
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
 
-        <a href="index.html" class="brand">
-            <span class="brand-main">FORT-ROYAL</span>
-            <span class="brand-sub">HOMES LIMITED</span>
-        </a>
+    <div class="mobile-menu-inner">
 
-        <nav class="desktop-nav">
-            <a href="#properties">Properties</a>
-            <a href="#estate">The Estate</a>
-            <a href="#developments">Developments</a>
-            <a href="#about">About</a>
-            <a href="#journal">Journal</a>
+        <div class="mobile-menu-top">
+
+            <span>MENU</span>
+
+            <button
+                id="menuClose"
+                type="button"
+                aria-label="Close navigation menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <nav>
+
+            <a href="#properties">
+                <span>01</span>
+                Properties
+            </a>
+
+            <a href="#estate">
+                <span>02</span>
+                The Estate
+            </a>
+
+            <a href="#developments">
+                <span>03</span>
+                Developments
+            </a>
+
+            <a href="#about">
+                <span>04</span>
+                About
+            </a>
+
+            <a href="#journal">
+                <span>05</span>
+                Journal
+            </a>
+
         </nav>
 
-        <a href="#inspection" class="nav-cta">
-            <span>Book an Inspection</span>
-            <span class="arrow">↗</span>
+        <a
+            href="#inspection"
+            class="mobile-menu-cta"
+        >
+            <span>Book a Private Inspection</span>
+            <span>↗</span>
         </a>
 
-        <!-- MOBILE MENU BUTTON -->
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-        </button>
+    </div>
 
-    </header>
+</div>
 
 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+<main>
 
-        <div class="mobile-menu-inner">
+    <!-- HERO -->
+    <section class="hero">
 
-            <div class="mobile-menu-top">
+        <div class="hero-image"></div>
 
-                <span>MENU</span>
+        <div class="hero-overlay"></div>
 
-                <button
-                    id="menuClose"
-                    type="button"
-                    aria-label="Close navigation menu"
-                >
-                    ×
-                </button>
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                FORT-ROYAL HOMES · ABUJA
+            </p>
+
+            <h1>
+                A better way<br>
+                <em>to live.</em>
+            </h1>
+
+            <p class="hero-description">
+                Exceptional homes. Thoughtfully planned communities.
+                A life designed around comfort, security and belonging.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#properties" class="button button-light">
+                    Explore Properties
+                    <span>↗</span>
+                </a>
+
+                <a href="#inspection" class="button button-outline">
+                    Book an Inspection
+                </a>
 
             </div>
 
-            <nav>
+        </div>
 
-                <a href="#properties">
-                    <span>01</span>
-                    Properties
+        <div class="hero-bottom">
+
+            <div class="hero-location">
+                <span class="location-dot"></span>
+                Abuja, Nigeria
+            </div>
+
+            <div class="scroll-indicator">
+                <span>Scroll to discover</span>
+                <span class="scroll-line"></span>
+            </div>
+
+            <div class="hero-number">
+                01 / 06
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INTRO -->
+    <section class="intro section-padding">
+
+        <div class="section-label">
+            <span>01</span>
+            The Fort-Royal Difference
+        </div>
+
+        <div class="intro-content">
+
+            <h2>
+                Where architecture,
+                <em>community</em> and
+                everyday life meet.
+            </h2>
+
+            <div class="intro-text">
+
+                <p>
+                    Since 2006, Fort-Royal Homes has been creating
+                    premium residential environments designed around
+                    the way people actually want to live.
+                </p>
+
+                <a href="#about" class="text-link">
+                    Discover our story
+                    <span>↗</span>
                 </a>
 
-                <a href="#estate">
-                    <span>02</span>
-                    The Estate
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROPERTIES -->
+    <section class="properties section-padding" id="properties">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                <span>02</span>
+                Featured Residences
+            </div>
+
+            <div>
+                <h2>
+                    Find your
+                    <em>place.</em>
+                </h2>
+
+                <p>
+                    Explore a collection of distinctive residences
+                    at Fort-Royal Homes Estate.
+                </p>
+            </div>
+
+            <a href="properties.html" class="round-link">
+                <span>View all</span>
+                ↗
+            </a>
+
+        </div>
+
+
+        <div class="property-grid">
+
+            <article class="property-card property-large">
+
+                <a href="property.html">
+
+                    <div class="property-image">
+
+                        <img
+                            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png"
+                            alt="Classic De Royal"
+                            referrerpolicy="no-referrer"
+                            loading="eager"
+                            decoding="async"
+                        >
+
+                        <span class="property-status">
+                            Featured
+                        </span>
+
+                        <span class="property-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                    <div class="property-info">
+
+                        <div>
+                            <h3>Classic De Royal</h3>
+
+                            <p>
+                                Kyami District · Airport Road, Abuja
+                            </p>
+                        </div>
+
+                        <div class="property-meta">
+                            <span>4 Beds</span>
+                            <span>4 Baths</span>
+                            <span>400 sqm</span>
+                        </div>
+
+                    </div>
+
                 </a>
 
-                <a href="#developments">
-                    <span>03</span>
-                    Developments
+            </article>
+
+
+            <article class="property-card">
+
+                <a href="property.html">
+
+                    <div class="property-image">
+
+                        <img
+                            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png"
+                            alt="Avalon De Royal"
+                            referrerpolicy="no-referrer"
+                            loading="eager"
+                            decoding="async"
+                        >
+
+                        <span class="property-status">
+                            Featured
+                        </span>
+
+                        <span class="property-arrow">
+                            ↗
+                        </span>
+
+                    </div>
+
+                    <div class="property-info">
+
+                        <div>
+                            <h3>Avalon De Royal</h3>
+
+                            <p>
+                                Kyami District · Abuja
+                            </p>
+                        </div>
+
+                        <div class="property-meta">
+                            <span>6 Beds</span>
+                            <span>6 Baths</span>
+                            <span>430 sqm</span>
+                        </div>
+
+                    </div>
+
                 </a>
 
-                <a href="#about">
-                    <span>04</span>
-                    About
-                </a>
+            </article>
 
-                <a href="#journal">
-                    <span>05</span>
-                    Journal
-                </a>
+        </div>
 
-            </nav>
+    </section>
 
-            <a
-                href="#inspection"
-                class="mobile-menu-cta"
+
+    <!-- ESTATE -->
+    <section class="estate" id="estate">
+
+        <div class="estate-image">
+
+            <img
+                src="https://fortroyalhomes.org/wp-content/uploads/revslider/video-media/FORT-ROYAL-AD-010_7.jpeg"
+                alt="Fort-Royal Homes Estate"
+                referrerpolicy="no-referrer"
+                loading="lazy"
+                decoding="async"
             >
-                <span>Book a Private Inspection</span>
+
+        </div>
+
+        <div class="estate-content">
+
+            <div class="section-label light">
+                <span>03</span>
+                Fort-Royal Homes Estate
+            </div>
+
+            <h2>
+                More than a home.
+                <em>A place to belong.</em>
+            </h2>
+
+            <p>
+                A thoughtfully planned gated community in Kyami District,
+                along Airport Road, Abuja — created for families and
+                professionals who value comfort, security and convenience.
+            </p>
+
+            <a href="estate.html" class="button button-light">
+                Explore the Estate
                 <span>↗</span>
+            </a>
+
+            <div class="estate-stats">
+
+                <div>
+                    <strong>2006</strong>
+                    <span>Established</span>
+                </div>
+
+                <div>
+                    <strong>5</strong>
+                    <span>Property Types</span>
+                </div>
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Security</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIFESTYLE -->
+    <section class="lifestyle section-padding">
+
+        <div class="section-label">
+            <span>04</span>
+            The Lifestyle
+        </div>
+
+        <div class="lifestyle-heading">
+
+            <h2>
+                Designed for the
+                <em>life you imagined.</em>
+            </h2>
+
+        </div>
+
+        <div class="lifestyle-grid">
+
+            <div class="lifestyle-item lifestyle-main">
+
+                <div class="lifestyle-image">
+
+                    <img
+                        src="https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png"
+                        alt="Imperial Villa"
+                        referrerpolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+                <span>01 · Architecture</span>
+
+            </div>
+
+            <div class="lifestyle-copy">
+
+                <span>02 · Community</span>
+
+                <h3>
+                    Everything you need,
+                    <em>closer.</em>
+                </h3>
+
+                <p>
+                    From landscaped spaces and recreation to essential
+                    community facilities, Fort-Royal Homes Estate is
+                    designed to make everyday life easier.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+    <section class="services section-padding" id="developments">
+
+        <div class="section-label">
+            <span>05</span>
+            What We Do
+        </div>
+
+        <div class="services-grid">
+
+            <a href="services.html" class="service-item">
+                <span>01</span>
+
+                <div>
+                    <h3>Property Sales</h3>
+                    <p>
+                        Discover homes designed for exceptional living.
+                    </p>
+                </div>
+
+                <strong>↗</strong>
+            </a>
+
+            <a href="services.html" class="service-item">
+                <span>02</span>
+
+                <div>
+                    <h3>Land Sales</h3>
+                    <p>
+                        Explore strategic land opportunities.
+                    </p>
+                </div>
+
+                <strong>↗</strong>
+            </a>
+
+            <a href="services.html" class="service-item">
+                <span>03</span>
+
+                <div>
+                    <h3>Property Development</h3>
+                    <p>
+                        From concept to completed environments.
+                    </p>
+                </div>
+
+                <strong>↗</strong>
+            </a>
+
+            <a href="services.html" class="service-item">
+                <span>04</span>
+
+                <div>
+                    <h3>Estate Management</h3>
+                    <p>
+                        Professional care for exceptional communities.
+                    </p>
+                </div>
+
+                <strong>↗</strong>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about section-padding" id="about">
+
+        <div class="section-label">
+            <span>06</span>
+            About Fort-Royal
+        </div>
+
+        <div class="about-content">
+
+            <h2>
+                Building exceptional
+                <em>homes and communities.</em>
+            </h2>
+
+            <p>
+                Fort-Royal Homes Limited has been operating in Nigeria
+                since 2006, with a focus on premium homes, communities
+                and real estate development.
+            </p>
+
+            <a href="about.html" class="text-link">
+                Our story
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- INSPECTION -->
+    <section class="inspection" id="inspection">
+
+        <div class="inspection-inner">
+
+            <p class="eyebrow">
+                PRIVATE PROPERTY VIEWING
+            </p>
+
+            <h2>
+                See where your
+                <em>next chapter</em>
+                begins.
+            </h2>
+
+            <a href="inspection.html" class="button button-light">
+                Book a Private Inspection
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="footer" id="journal">
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <span class="brand-main">
+                FORT-ROYAL
+            </span>
+
+            <span class="brand-sub">
+                HOMES LIMITED
+            </span>
+
+            <p>
+                Living in pleasure and security.
+            </p>
+
+        </div>
+
+        <div class="footer-column">
+
+            <span>Explore</span>
+
+            <a href="properties.html">Properties</a>
+            <a href="estate.html">The Estate</a>
+            <a href="developments.html">Developments</a>
+            <a href="about.html">About</a>
+
+        </div>
+
+        <div class="footer-column">
+
+            <span>Connect</span>
+
+            <a href="contact.html">Contact</a>
+            <a href="inspection.html">Book Inspection</a>
+            <a href="journal.html">Journal</a>
+            <a href="#">WhatsApp</a>
+
+        </div>
+
+        <div class="footer-column footer-contact">
+
+            <span>Head Office</span>
+
+            <p>
+                Gudu District<br>
+                Abuja, Nigeria
+            </p>
+
+            <a href="tel:+2348078191111">
+                +234 807 819 1111
+            </a>
+
+            <a href="mailto:info@fortroyalhomes.org">
+                info@fortroyalhomes.org
             </a>
 
         </div>
@@ -127,553 +768,27 @@
     </div>
 
 
-    <main>
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-image"></div>
-
-            <div class="hero-overlay"></div>
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                    FORT-ROYAL HOMES · ABUJA
-                </p>
-
-                <h1>
-                    A better way<br>
-                    <em>to live.</em>
-                </h1>
-
-                <p class="hero-description">
-                    Exceptional homes. Thoughtfully planned communities.
-                    A life designed around comfort, security and belonging.
-                </p>
-
-                <div class="hero-actions">
-
-                    <a href="#properties" class="button button-light">
-                        Explore Properties
-                        <span>↗</span>
-                    </a>
-
-                    <a href="#inspection" class="button button-outline">
-                        Book an Inspection
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-bottom">
-
-                <div class="hero-location">
-                    <span class="location-dot"></span>
-                    Abuja, Nigeria
-                </div>
-
-                <div class="scroll-indicator">
-                    <span>Scroll to discover</span>
-                    <span class="scroll-line"></span>
-                </div>
-
-                <div class="hero-number">
-                    01 / 06
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- INTRO -->
-        <section class="intro section-padding">
-
-            <div class="section-label">
-                <span>01</span>
-                The Fort-Royal Difference
-            </div>
-
-            <div class="intro-content">
-
-                <h2>
-                    Where architecture,
-                    <em>community</em> and
-                    everyday life meet.
-                </h2>
-
-                <div class="intro-text">
-
-                    <p>
-                        Since 2006, Fort-Royal Homes has been creating
-                        premium residential environments designed around
-                        the way people actually want to live.
-                    </p>
-
-                    <a href="#about" class="text-link">
-                        Discover our story
-                        <span>↗</span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROPERTIES -->
-        <section class="properties section-padding" id="properties">
-
-            <div class="section-heading">
-
-                <div class="section-label">
-                    <span>02</span>
-                    Featured Residences
-                </div>
-
-                <div>
-                    <h2>
-                        Find your
-                        <em>place.</em>
-                    </h2>
-
-                    <p>
-                        Explore a collection of distinctive residences
-                        at Fort-Royal Homes Estate.
-                    </p>
-                </div>
-
-                <a href="properties.html" class="round-link">
-                    <span>View all</span>
-                    ↗
-                </a>
-
-            </div>
-
-
-            <div class="property-grid">
-
-                <article class="property-card property-large">
-
-                    <a href="property.html">
-
-                        <div class="property-image">
-
-                            <img
-                                src="https://fortroyalhomes.org/wp-content/uploads/2025/05/CLASSIC-DE-ROYAL-768x768.png"
-                                alt="Classic De Royal"
-                            >
-
-                            <span class="property-status">
-                                Featured
-                            </span>
-
-                            <span class="property-arrow">
-                                ↗
-                            </span>
-
-                        </div>
-
-                        <div class="property-info">
-
-                            <div>
-                                <h3>Classic De Royal</h3>
-
-                                <p>
-                                    Kyami District · Airport Road, Abuja
-                                </p>
-                            </div>
-
-                            <div class="property-meta">
-                                <span>4 Beds</span>
-                                <span>4 Baths</span>
-                                <span>400 sqm</span>
-                            </div>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-
-                <article class="property-card">
-
-                    <a href="property.html">
-
-                        <div class="property-image">
-
-                            <img
-                                src="https://fortroyalhomes.org/wp-content/uploads/2025/05/AVALON-DE-ROYAL-768x768.png"
-                                alt="Avalon De Royal"
-                            >
-
-                            <span class="property-status">
-                                Featured
-                            </span>
-
-                            <span class="property-arrow">
-                                ↗
-                            </span>
-
-                        </div>
-
-                        <div class="property-info">
-
-                            <div>
-                                <h3>Avalon De Royal</h3>
-
-                                <p>
-                                    Kyami District · Abuja
-                                </p>
-                            </div>
-
-                            <div class="property-meta">
-                                <span>6 Beds</span>
-                                <span>6 Baths</span>
-                                <span>430 sqm</span>
-                            </div>
-
-                        </div>
-
-                    </a>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- ESTATE -->
-        <section class="estate" id="estate">
-
-            <div class="estate-image">
-
-                <img
-                    src="https://fortroyalhomes.org/wp-content/uploads/revslider/video-media/FORT-ROYAL-AD-010_7.jpeg"
-                    alt="Fort-Royal Homes Estate"
-                >
-
-            </div>
-
-            <div class="estate-content">
-
-                <div class="section-label light">
-                    <span>03</span>
-                    Fort-Royal Homes Estate
-                </div>
-
-                <h2>
-                    More than a home.
-                    <em>A place to belong.</em>
-                </h2>
-
-                <p>
-                    A thoughtfully planned gated community in Kyami District,
-                    along Airport Road, Abuja — created for families and
-                    professionals who value comfort, security and convenience.
-                </p>
-
-                <a href="estate.html" class="button button-light">
-                    Explore the Estate
-                    <span>↗</span>
-                </a>
-
-                <div class="estate-stats">
-
-                    <div>
-                        <strong>2006</strong>
-                        <span>Established</span>
-                    </div>
-
-                    <div>
-                        <strong>5</strong>
-                        <span>Property Types</span>
-                    </div>
-
-                    <div>
-                        <strong>24/7</strong>
-                        <span>Security</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- LIFESTYLE -->
-        <section class="lifestyle section-padding">
-
-            <div class="section-label">
-                <span>04</span>
-                The Lifestyle
-            </div>
-
-            <div class="lifestyle-heading">
-
-                <h2>
-                    Designed for the
-                    <em>life you imagined.</em>
-                </h2>
-
-            </div>
-
-            <div class="lifestyle-grid">
-
-                <div class="lifestyle-item lifestyle-main">
-
-                    <div class="lifestyle-image">
-
-                        <img
-                            src="https://fortroyalhomes.org/wp-content/uploads/2025/05/IMPERIAL-VILLA.png"
-                            alt="Imperial Villa"
-                        >
-
-                    </div>
-
-                    <span>01 · Architecture</span>
-
-                </div>
-
-                <div class="lifestyle-copy">
-
-                    <span>02 · Community</span>
-
-                    <h3>
-                        Everything you need,
-                        <em>closer.</em>
-                    </h3>
-
-                    <p>
-                        From landscaped spaces and recreation to essential
-                        community facilities, Fort-Royal Homes Estate is
-                        designed to make everyday life easier.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SERVICES -->
-        <section class="services section-padding" id="developments">
-
-            <div class="section-label">
-                <span>05</span>
-                What We Do
-            </div>
-
-            <div class="services-grid">
-
-                <a href="services.html" class="service-item">
-                    <span>01</span>
-
-                    <div>
-                        <h3>Property Sales</h3>
-                        <p>
-                            Discover homes designed for exceptional living.
-                        </p>
-                    </div>
-
-                    <strong>↗</strong>
-                </a>
-
-                <a href="services.html" class="service-item">
-                    <span>02</span>
-
-                    <div>
-                        <h3>Land Sales</h3>
-                        <p>
-                            Explore strategic land opportunities.
-                        </p>
-                    </div>
-
-                    <strong>↗</strong>
-                </a>
-
-                <a href="services.html" class="service-item">
-                    <span>03</span>
-
-                    <div>
-                        <h3>Property Development</h3>
-                        <p>
-                            From concept to completed environments.
-                        </p>
-                    </div>
-
-                    <strong>↗</strong>
-                </a>
-
-                <a href="services.html" class="service-item">
-                    <span>04</span>
-
-                    <div>
-                        <h3>Estate Management</h3>
-                        <p>
-                            Professional care for exceptional communities.
-                        </p>
-                    </div>
-
-                    <strong>↗</strong>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-        <section class="about section-padding" id="about">
-
-            <div class="section-label">
-                <span>06</span>
-                About Fort-Royal
-            </div>
-
-            <div class="about-content">
-
-                <h2>
-                    Building exceptional
-                    <em>homes and communities.</em>
-                </h2>
-
-                <p>
-                    Fort-Royal Homes Limited has been operating in Nigeria
-                    since 2006, with a focus on premium homes, communities
-                    and real estate development.
-                </p>
-
-                <a href="about.html" class="text-link">
-                    Our story
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- INSPECTION -->
-        <section class="inspection" id="inspection">
-
-            <div class="inspection-inner">
-
-                <p class="eyebrow">
-                    PRIVATE PROPERTY VIEWING
-                </p>
-
-                <h2>
-                    See where your
-                    <em>next chapter</em>
-                    begins.
-                </h2>
-
-                <a href="inspection.html" class="button button-light">
-                    Book a Private Inspection
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="footer" id="journal">
-
-        <div class="footer-top">
-
-            <div class="footer-brand">
-
-                <span class="brand-main">
-                    FORT-ROYAL
-                </span>
-
-                <span class="brand-sub">
-                    HOMES LIMITED
-                </span>
-
-                <p>
-                    Living in pleasure and security.
-                </p>
-
-            </div>
-
-            <div class="footer-column">
-
-                <span>Explore</span>
-
-                <a href="properties.html">Properties</a>
-                <a href="estate.html">The Estate</a>
-                <a href="developments.html">Developments</a>
-                <a href="about.html">About</a>
-
-            </div>
-
-            <div class="footer-column">
-
-                <span>Connect</span>
-
-                <a href="contact.html">Contact</a>
-                <a href="inspection.html">Book Inspection</a>
-                <a href="journal.html">Journal</a>
-                <a href="#">WhatsApp</a>
-
-            </div>
-
-            <div class="footer-column footer-contact">
-
-                <span>Head Office</span>
-
-                <p>
-                    Gudu District<br>
-                    Abuja, Nigeria
-                </p>
-
-                <a href="tel:+2348078191111">
-                    +234 807 819 1111
-                </a>
-
-                <a href="mailto:info@fortroyalhomes.org">
-                    info@fortroyalhomes.org
-                </a>
-
-            </div>
-
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Fort-Royal Homes Limited
+        </span>
+
+        <div>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
         </div>
 
+        <span>
+            Abuja · Nigeria
+        </span>
 
-        <div class="footer-bottom">
+    </div>
 
-            <span>
-                © 2026 Fort-Royal Homes Limited
-            </span>
-
-            <div>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-            </div>
-
-            <span>
-                Abuja · Nigeria
-            </span>
-
-        </div>
-
-    </footer>
+</footer>
 
 
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
