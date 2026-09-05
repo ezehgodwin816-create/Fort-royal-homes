@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Admin Dashboard | Fort-Royal Homes Limited</title><meta
+name="description"
+content="Fort-Royal Homes Limited administration dashboard."
 
-  <title>Admin Dashboard | Fort-Royal Homes Limited</title>
-
-  <meta
-    name="description"
-    content="Fort-Royal Homes Limited administration dashboard."
-  >
+«»
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet"
-  >
-
-  <style>
+  >  <style>
     * {
       box-sizing: border-box;
     }
@@ -52,7 +44,7 @@
     }
 
     /* =========================================================
-       LOGIN SCREEN
+       LOGIN
     ========================================================= */
 
     .login-screen {
@@ -247,7 +239,7 @@
     }
 
     /* =========================================================
-       DASHBOARD WRAPPER
+       MAIN
     ========================================================= */
 
     .admin-main {
@@ -291,7 +283,8 @@
       font-weight: 500;
     }
 
-    .refresh-button {
+    .refresh-button,
+    .add-property-button {
       padding: 13px 18px;
       border: 1px solid #bbb2a4;
       background: transparent;
@@ -302,19 +295,31 @@
       text-transform: uppercase;
     }
 
-    .refresh-button:hover {
+    .refresh-button:hover,
+    .add-property-button:hover {
       border-color: #111;
       background: #111;
       color: #fff;
     }
 
+    .add-property-button {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .add-property-button:hover {
+      border-color: #9a7b48;
+      background: #9a7b48;
+    }
+
     /* =========================================================
-       OVERVIEW CARDS
+       STATS
     ========================================================= */
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 18px;
       margin-bottom: 70px;
     }
@@ -407,6 +412,177 @@
     .panel-count {
       color: #888;
       font-size: .7rem;
+    }
+
+    /* =========================================================
+       PROPERTY GRID
+    ========================================================= */
+
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .property-card {
+      background: #fff;
+      border: 1px solid #e1dcd3;
+      overflow: hidden;
+    }
+
+    .property-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 25px;
+      border-bottom: 1px solid #eee9e1;
+    }
+
+    .property-card h3 {
+      margin: 0 0 7px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .property-type {
+      color: #777;
+      font-size: .68rem;
+    }
+
+    .property-status {
+      flex-shrink: 0;
+      padding: 6px 9px;
+      background: #e7eee3;
+      color: #53644d;
+      font-size: .54rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .property-status.reserved {
+      background: #f1eadb;
+      color: #80683d;
+    }
+
+    .property-status.sold {
+      background: #eee2df;
+      color: #8b4036;
+    }
+
+    .property-status.off-market {
+      background: #e8e8e8;
+      color: #666;
+    }
+
+    .property-status.coming-soon {
+      background: #e5e8ef;
+      color: #4f5d78;
+    }
+
+    .property-card-body {
+      padding: 25px;
+    }
+
+    .property-price {
+      margin-bottom: 22px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+    }
+
+    .property-meta {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .property-meta-item {
+      padding: 12px;
+      background: #f7f4ee;
+    }
+
+    .property-meta-number {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+    }
+
+    .property-meta-label {
+      display: block;
+      margin-top: 3px;
+      color: #888;
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .property-location {
+      margin-bottom: 20px;
+      color: #666;
+      font-size: .7rem;
+      line-height: 1.6;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 5px 8px;
+      background: #f1eadb;
+      color: #80683d;
+      font-size: .52rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .property-actions {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .property-action {
+      padding: 10px 13px;
+      border: 1px solid #cfc8bc;
+      background: transparent;
+      color: #111;
+      font-size: .57rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .property-action:hover {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .property-action.primary {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .property-action.primary:hover {
+      border-color: #9a7b48;
+      background: #9a7b48;
+    }
+
+    .property-action.danger {
+      border-color: #c7aaa4;
+      color: #8b4036;
+    }
+
+    .property-action.danger:hover {
+      border-color: #8b4036;
+      background: #8b4036;
+      color: #fff;
     }
 
     /* =========================================================
@@ -530,7 +706,7 @@
     }
 
     /* =========================================================
-       EMPTY / LOADING / ERROR
+       EMPTY / ERROR
     ========================================================= */
 
     .table-message {
@@ -555,8 +731,21 @@
       display: block;
     }
 
+    .success-message {
+      display: none;
+      margin-bottom: 20px;
+      padding: 13px 16px;
+      background: #e7eee3;
+      color: #53644d;
+      font-size: .72rem;
+    }
+
+    .success-message.visible {
+      display: block;
+    }
+
     /* =========================================================
-       NEWSLETTER ACTIONS
+       NEWSLETTER
     ========================================================= */
 
     .subscriber-status {
@@ -592,8 +781,295 @@
     }
 
     /* =========================================================
+       MODAL
+    ========================================================= */
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: rgba(17,17,17,.72);
+      overflow-y: auto;
+    }
+
+    .modal-overlay.visible {
+      display: flex;
+    }
+
+    .property-modal {
+      width: min(1050px, 100%);
+      max-height: 92vh;
+      overflow-y: auto;
+      background: #f8f5ef;
+      box-shadow: 0 30px 100px rgba(0,0,0,.35);
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 28px;
+      background: #111;
+      color: #fff;
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.2rem;
+      font-weight: 500;
+    }
+
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,.25);
+      background: transparent;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .modal-close:hover {
+      border-color: #c7a76a;
+      color: #c7a76a;
+    }
+
+    .modal-body {
+      padding: 30px;
+    }
+
+    .form-section {
+      margin-bottom: 35px;
+    }
+
+    .form-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d8d1c6;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: #96794a;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .form-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-grid.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 7px;
+      color: #777;
+      font-size: .59rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #d2cbc0;
+      outline: 0;
+      background: #fff;
+      color: #111;
+      font-size: .72rem;
+    }
+
+    .form-field textarea {
+      min-height: 110px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: #9a7b48;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px;
+      background: #fff;
+      border: 1px solid #e0dad0;
+      cursor: pointer;
+    }
+
+    .check-item input {
+      width: 16px;
+      height: 16px;
+      accent-color: #9a7b48;
+    }
+
+    .check-item span {
+      font-size: .65rem;
+    }
+
+    .custom-feature-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .custom-feature-row input {
+      flex: 1;
+    }
+
+    .small-button {
+      padding: 11px 14px;
+      border: 1px solid #111;
+      background: #111;
+      color: #fff;
+      font-size: .57rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .small-button:hover {
+      background: #9a7b48;
+      border-color: #9a7b48;
+    }
+
+    .custom-feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 13px;
+    }
+
+    .custom-feature-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 9px;
+      background: #eee9e1;
+      font-size: .6rem;
+    }
+
+    .custom-feature-remove {
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #8b4036;
+      cursor: pointer;
+    }
+
+    .media-placeholder {
+      padding: 25px;
+      border: 1px dashed #c9c1b4;
+      background: #f4f0e8;
+      color: #777;
+      text-align: center;
+      font-size: .7rem;
+      line-height: 1.7;
+    }
+
+    .media-placeholder strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #111;
+      font-size: .72rem;
+    }
+
+    .modal-footer {
+      position: sticky;
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 18px 30px;
+      background: #f1ede5;
+      border-top: 1px solid #d8d1c6;
+    }
+
+    .modal-button {
+      padding: 13px 20px;
+      border: 1px solid #bbb2a4;
+      background: transparent;
+      color: #111;
+      font-size: .61rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .modal-button:hover {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .modal-button.primary {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    .modal-button.primary:hover {
+      border-color: #9a7b48;
+      background: #9a7b48;
+    }
+
+    .modal-button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    /* =========================================================
        MOBILE
     ========================================================= */
+
+    @media (max-width: 1100px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .property-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
 
     @media (max-width: 900px) {
 
@@ -620,6 +1096,15 @@
 
       .refresh-button {
         margin-top: 25px;
+      }
+
+      .form-grid,
+      .form-grid.two {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .checkbox-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -674,70 +1159,315 @@
         padding: 14px 15px;
         font-size: .57rem;
       }
+
+      .property-card-top,
+      .property-card-body {
+        padding: 20px;
+      }
+
+      .property-meta {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .modal-overlay {
+        padding: 0;
+      }
+
+      .property-modal {
+        width: 100%;
+        max-height: 100vh;
+      }
+
+      .modal-body {
+        padding: 20px;
+      }
+
+      .form-grid,
+      .form-grid.two,
+      .form-grid.four {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .modal-footer {
+        padding: 15px 20px;
+      }
     }
-  </style>
-</head>
-
-<body>
-
-  <!-- =======================================================
+  </style></head><body>  <!-- =======================================================
        LOGIN
-  ======================================================== -->
+  ======================================================== -->  <section class="login-screen" id="loginScreen"><div class="login-card">
 
-  <section class="login-screen" id="loginScreen">
+  <div class="login-brand">
+    <span class="login-brand-main">FORT-ROYAL</span>
+    <span class="login-brand-sub">HOMES LIMITED · ADMINISTRATION</span>
+  </div>
 
-    <div class="login-card">
+  <form id="loginForm">
 
-      <div class="login-brand">
-        <span class="login-brand-main">FORT-ROYAL</span>
-        <span class="login-brand-sub">HOMES LIMITED · ADMINISTRATION</span>
+    <label class="login-label" for="loginEmail">
+      Admin Email
+    </label>
+
+    <input
+      class="login-field"
+      type="email"
+      id="loginEmail"
+      autocomplete="email"
+      required
+    >
+
+    <label class="login-label" for="loginPassword">
+      Password
+    </label>
+
+    <input
+      class="login-field"
+      type="password"
+      id="loginPassword"
+      autocomplete="current-password"
+      required
+    >
+
+    <button
+      class="login-button"
+      id="loginButton"
+      type="submit"
+    >
+      Sign In
+    </button>
+
+    <div
+      class="login-status"
+      id="loginStatus"
+      role="alert"
+      aria-live="polite"
+    ></div>
+
+  </form>
+
+  <div class="login-footer">
+    Fort-Royal Homes Limited · Secure Administration
+  </div>
+
+</div>
+
+  </section>  <!-- =======================================================
+       DASHBOARD
+  ======================================================== -->  <div class="dashboard" id="dashboard"><header class="admin-header">
+
+  <a href="index.html" class="admin-brand">
+    <span class="admin-brand-main">FORT-ROYAL</span>
+    <span class="admin-brand-sub">HOMES LIMITED · ADMIN</span>
+  </a>
+
+  <div class="admin-header-right">
+
+    <span
+      class="admin-user"
+      id="adminUserEmail"
+    ></span>
+
+    <button
+      class="logout-button"
+      id="logoutButton"
+      type="button"
+    >
+      Sign Out
+    </button>
+
+  </div>
+
+</header>
+
+
+<main class="admin-main">
+
+  <div class="admin-heading">
+
+    <div>
+      <div class="admin-eyebrow">
+        Administration
       </div>
 
-      <form id="loginForm">
+      <h1>Dashboard.</h1>
+    </div>
 
-        <label class="login-label" for="loginEmail">
-          Admin Email
-        </label>
+    <button
+      class="refresh-button"
+      id="refreshButton"
+      type="button"
+    >
+      Refresh Data
+    </button>
 
-        <input
-          class="login-field"
-          type="email"
-          id="loginEmail"
-          autocomplete="email"
-          required
-        >
+  </div>
 
-        <label class="login-label" for="loginPassword">
-          Password
-        </label>
 
-        <input
-          class="login-field"
-          type="password"
-          id="loginPassword"
-          autocomplete="current-password"
-          required
-        >
+  <div
+    class="dashboard-error"
+    id="dashboardError"
+    role="alert"
+  ></div>
 
-        <button
-          class="login-button"
-          id="loginButton"
-          type="submit"
-        >
-          Sign In
-        </button>
+  <div
+    class="success-message"
+    id="successMessage"
+  ></div>
 
-        <div
-          class="login-status"
-          id="loginStatus"
-          role="alert"
-          aria-live="polite"
-        ></div>
 
-      </form>
+  <!-- =====================================================
+       STATS
+  ====================================================== -->
 
-      <div class="login-footer">
-        Fort-Royal Homes Limited · Secure Administration
+  <section class="stats-grid">
+
+    <div class="stat-card">
+      <span class="stat-label">
+        Properties
+      </span>
+
+      <div
+        class="stat-number"
+        id="propertyCount"
+      >
+        —
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">
+        Inspection Requests
+      </span>
+
+      <div
+        class="stat-number"
+        id="inspectionCount"
+      >
+        —
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">
+        New Enquiries
+      </span>
+
+      <div
+        class="stat-number"
+        id="newEnquiryCount"
+      >
+        —
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">
+        Contact Messages
+      </span>
+
+      <div
+        class="stat-number"
+        id="contactCount"
+      >
+        —
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-label">
+        Newsletter Subscribers
+      </span>
+
+      <div
+        class="stat-number"
+        id="subscriberCount"
+      >
+        —
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       TABS
+  ====================================================== -->
+
+  <nav
+    class="admin-tabs"
+    aria-label="Administration sections"
+  >
+
+    <button
+      class="admin-tab active"
+      type="button"
+      data-tab="properties"
+    >
+      Properties
+    </button>
+
+    <button
+      class="admin-tab"
+      type="button"
+      data-tab="inspections"
+    >
+      Inspections
+    </button>
+
+    <button
+      class="admin-tab"
+      type="button"
+      data-tab="contacts"
+    >
+      Contact Messages
+    </button>
+
+    <button
+      class="admin-tab"
+      type="button"
+      data-tab="newsletter"
+    >
+      Newsletter
+    </button>
+
+  </nav>
+
+
+  <!-- =====================================================
+       PROPERTIES
+  ====================================================== -->
+
+  <section
+    class="admin-panel active"
+    id="panel-properties"
+  >
+
+    <div class="panel-head">
+
+      <div>
+        <h2>Properties</h2>
+      </div>
+
+      <button
+        class="add-property-button"
+        id="addPropertyButton"
+        type="button"
+      >
+        + Add Property
+      </button>
+
+    </div>
+
+    <div
+      class="property-grid"
+      id="propertyGrid"
+    >
+
+      <div class="table-message">
+        Loading properties...
       </div>
 
     </div>
@@ -745,350 +1475,1033 @@
   </section>
 
 
-  <!-- =======================================================
-       DASHBOARD
-  ======================================================== -->
+  <!-- =====================================================
+       INSPECTIONS
+  ====================================================== -->
 
-  <div class="dashboard" id="dashboard">
+  <section
+    class="admin-panel"
+    id="panel-inspections"
+  >
 
-    <header class="admin-header">
+    <div class="panel-head">
 
-      <a
-        href="index.html"
-        class="admin-brand"
+      <h2>Inspection Requests</h2>
+
+      <span
+        class="panel-count"
+        id="inspectionPanelCount"
       >
-        <span class="admin-brand-main">FORT-ROYAL</span>
-        <span class="admin-brand-sub">HOMES LIMITED · ADMIN</span>
-      </a>
+        0 requests
+      </span>
 
-      <div class="admin-header-right">
+    </div>
 
-        <span
-          class="admin-user"
-          id="adminUserEmail"
-        ></span>
+    <div class="table-wrap">
 
-        <button
-          class="logout-button"
-          id="logoutButton"
-          type="button"
-        >
-          Sign Out
-        </button>
+      <table>
 
-      </div>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Property</th>
+            <th>Visit</th>
+            <th>Tour</th>
+            <th>Requirements</th>
+            <th>Status</th>
+            <th>Admin Notes</th>
+          </tr>
+        </thead>
 
-    </header>
+        <tbody id="inspectionTableBody">
 
+          <tr>
+            <td
+              colspan="7"
+              class="table-message"
+            >
+              Loading inspection requests...
+            </td>
+          </tr>
 
-    <main class="admin-main">
+        </tbody>
 
-      <div class="admin-heading">
+      </table>
 
-        <div>
+    </div>
 
-          <div class="admin-eyebrow">
-            Administration
-          </div>
-
-          <h1>
-            Dashboard.
-          </h1>
-
-        </div>
-
-        <button
-          class="refresh-button"
-          id="refreshButton"
-          type="button"
-        >
-          Refresh Data
-        </button>
-
-      </div>
+  </section>
 
 
-      <div
-        class="dashboard-error"
-        id="dashboardError"
-        role="alert"
-      ></div>
+  <!-- =====================================================
+       CONTACT
+  ====================================================== -->
 
+  <section
+    class="admin-panel"
+    id="panel-contacts"
+  >
 
-      <section class="stats-grid">
+    <div class="panel-head">
 
-        <div class="stat-card">
-          <span class="stat-label">
-            Inspection Requests
-          </span>
+      <h2>Contact Messages</h2>
 
-          <div
-            class="stat-number"
-            id="inspectionCount"
-          >
-            —
-          </div>
-        </div>
-
-
-        <div class="stat-card">
-          <span class="stat-label">
-            New Enquiries
-          </span>
-
-          <div
-            class="stat-number"
-            id="newEnquiryCount"
-          >
-            —
-          </div>
-        </div>
-
-
-        <div class="stat-card">
-          <span class="stat-label">
-            Contact Messages
-          </span>
-
-          <div
-            class="stat-number"
-            id="contactCount"
-          >
-            —
-          </div>
-        </div>
-
-
-        <div class="stat-card">
-          <span class="stat-label">
-            Newsletter Subscribers
-          </span>
-
-          <div
-            class="stat-number"
-            id="subscriberCount"
-          >
-            —
-          </div>
-        </div>
-
-      </section>
-
-
-      <nav
-        class="admin-tabs"
-        aria-label="Administration sections"
+      <span
+        class="panel-count"
+        id="contactPanelCount"
       >
+        0 messages
+      </span>
 
-        <button
-          class="admin-tab active"
-          type="button"
-          data-tab="inspections"
-        >
-          Inspections
-        </button>
+    </div>
 
-        <button
-          class="admin-tab"
-          type="button"
-          data-tab="contacts"
-        >
-          Contact Messages
-        </button>
+    <div class="table-wrap">
 
-        <button
-          class="admin-tab"
-          type="button"
-          data-tab="newsletter"
-        >
-          Newsletter
-        </button>
+      <table>
 
-      </nav>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Enquiry</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Admin Notes</th>
+          </tr>
+        </thead>
+
+        <tbody id="contactTableBody">
+
+          <tr>
+            <td
+              colspan="6"
+              class="table-message"
+            >
+              Loading contact messages...
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
 
 
-      <section
-        class="admin-panel active"
-        id="panel-inspections"
+  <!-- =====================================================
+       NEWSLETTER
+  ====================================================== -->
+
+  <section
+    class="admin-panel"
+    id="panel-newsletter"
+  >
+
+    <div class="panel-head">
+
+      <h2>Newsletter Subscribers</h2>
+
+      <span
+        class="panel-count"
+        id="newsletterPanelCount"
       >
+        0 subscribers
+      </span>
 
-        <div class="panel-head">
+    </div>
 
-          <h2>
-            Inspection Requests
-          </h2>
+    <div class="table-wrap">
 
-          <span
-            class="panel-count"
-            id="inspectionPanelCount"
-          >
-            0 requests
-          </span>
+      <table>
 
-        </div>
+        <thead>
 
-        <div class="table-wrap">
+          <tr>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Subscribed</th>
+            <th>Action</th>
+          </tr>
 
-          <table>
+        </thead>
 
-            <thead>
-              <tr>
-                <th>Customer</th>
-                <th>Property</th>
-                <th>Visit</th>
-                <th>Tour</th>
-                <th>Requirements</th>
-                <th>Status</th>
-                <th>Admin Notes</th>
-              </tr>
-            </thead>
+        <tbody id="newsletterTableBody">
 
-            <tbody id="inspectionTableBody">
+          <tr>
+            <td
+              colspan="4"
+              class="table-message"
+            >
+              Loading subscribers...
+            </td>
+          </tr>
 
-              <tr>
-                <td
-                  colspan="7"
-                  class="table-message"
-                >
-                  Loading inspection requests...
-                </td>
-              </tr>
+        </tbody>
 
-            </tbody>
+      </table>
 
-          </table>
+    </div>
 
-        </div>
+  </section>
 
-      </section>
+</main>
 
+  </div>  <!-- =======================================================
+       PROPERTY MODAL
+  ======================================================== -->  <div
+    class="modal-overlay"
+    id="propertyModalOverlay"
+  ><div
+  class="property-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="propertyModalTitle"
+>
 
-      <section
-        class="admin-panel"
-        id="panel-contacts"
-      >
+  <div class="modal-header">
 
-        <div class="panel-head">
+    <h2 id="propertyModalTitle">
+      Add Property
+    </h2>
 
-          <h2>
-            Contact Messages
-          </h2>
-
-          <span
-            class="panel-count"
-            id="contactPanelCount"
-          >
-            0 messages
-          </span>
-
-        </div>
-
-        <div class="table-wrap">
-
-          <table>
-
-            <thead>
-              <tr>
-                <th>Customer</th>
-                <th>Enquiry</th>
-                <th>Message</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Admin Notes</th>
-              </tr>
-            </thead>
-
-            <tbody id="contactTableBody">
-
-              <tr>
-                <td
-                  colspan="6"
-                  class="table-message"
-                >
-                  Loading contact messages...
-                </td>
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-      </section>
-
-
-      <section
-        class="admin-panel"
-        id="panel-newsletter"
-      >
-
-        <div class="panel-head">
-
-          <h2>
-            Newsletter Subscribers
-          </h2>
-
-          <span
-            class="panel-count"
-            id="newsletterPanelCount"
-          >
-            0 subscribers
-          </span>
-
-        </div>
-
-        <div class="table-wrap">
-
-          <table>
-
-            <thead>
-
-              <tr>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Subscribed</th>
-                <th>Action</th>
-              </tr>
-
-            </thead>
-
-            <tbody id="newsletterTableBody">
-
-              <tr>
-                <td
-                  colspan="4"
-                  class="table-message"
-                >
-                  Loading subscribers...
-                </td>
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-      </section>
-
-    </main>
+    <button
+      class="modal-close"
+      id="propertyModalClose"
+      type="button"
+      aria-label="Close"
+    >
+      ×
+    </button>
 
   </div>
 
 
-  <!-- =======================================================
+  <form id="propertyForm">
+
+    <div class="modal-body">
+
+      <input
+        type="hidden"
+        id="propertyId"
+      >
+
+
+      <!-- =================================================
+           BASIC INFORMATION
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Property Information
+        </div>
+
+        <div class="form-grid">
+
+          <div class="form-field">
+
+            <label for="propertyName">
+              Property Name
+            </label>
+
+            <input
+              type="text"
+              id="propertyName"
+              required
+              placeholder="e.g. Imperial Villa"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="propertySlug">
+              URL Slug
+            </label>
+
+            <input
+              type="text"
+              id="propertySlug"
+              required
+              placeholder="e.g. imperial-villa"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="houseType">
+              House Type
+            </label>
+
+            <select id="houseType">
+
+              <option value="">
+                Select house type
+              </option>
+
+              <option>Bungalow</option>
+              <option>Detached House</option>
+              <option>Semi-Detached House</option>
+              <option>Terrace House</option>
+              <option>Terrace Duplex</option>
+              <option>Duplex</option>
+              <option>Villa</option>
+              <option>Mansion</option>
+              <option>Townhouse</option>
+              <option>Maisonette</option>
+              <option>Triplex</option>
+              <option>Quadplex</option>
+              <option>Apartment</option>
+              <option>Flat</option>
+              <option>Penthouse</option>
+              <option>Condominium</option>
+              <option>Block of Flats</option>
+              <option>Residential Land</option>
+              <option>Commercial Property</option>
+              <option>Office</option>
+              <option>Shop / Retail</option>
+              <option>Warehouse</option>
+              <option>Mixed-Use Property</option>
+              <option>Hotel / Guest House</option>
+              <option>Estate / Development</option>
+              <option>Farm Property</option>
+              <option>Beach House</option>
+              <option>Other</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="propertyType">
+              Display Property Type
+            </label>
+
+            <input
+              type="text"
+              id="propertyType"
+              placeholder="e.g. Luxury 6 Bedroom Duplex"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="propertyStatus">
+              Status
+            </label>
+
+            <select id="propertyStatus">
+
+              <option value="available">
+                Available
+              </option>
+
+              <option value="reserved">
+                Reserved
+              </option>
+
+              <option value="sold">
+                Sold
+              </option>
+
+              <option value="off_market">
+                Off Market
+              </option>
+
+              <option value="coming_soon">
+                Coming Soon
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="propertyPrice">
+              Price
+            </label>
+
+            <input
+              type="number"
+              id="propertyPrice"
+              min="0"
+              step="0.01"
+              placeholder="250000000"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="priceLabel">
+              Price Display
+            </label>
+
+            <input
+              type="text"
+              id="priceLabel"
+              placeholder="e.g. ₦250,000,000"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="oldPrice">
+              Old Price
+            </label>
+
+            <input
+              type="number"
+              id="oldPrice"
+              min="0"
+              step="0.01"
+              placeholder="Optional"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="priceType">
+              Price Type
+            </label>
+
+            <select id="priceType">
+
+              <option value="fixed">
+                Fixed Price
+              </option>
+
+              <option value="negotiable">
+                Negotiable
+              </option>
+
+              <option value="contact">
+                Contact for Price
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field full">
+
+            <label for="paymentPlan">
+              Payment Plan
+            </label>
+
+            <input
+              type="text"
+              id="paymentPlan"
+              placeholder="e.g. 12-month payment plan available"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           PROPERTY NUMBERS
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Property Specifications
+        </div>
+
+        <div class="form-grid four">
+
+          <div class="form-field">
+
+            <label for="bedrooms">
+              Bedrooms
+            </label>
+
+            <input
+              type="number"
+              id="bedrooms"
+              min="0"
+              step="1"
+              placeholder="6"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="bathrooms">
+              Bathrooms
+            </label>
+
+            <input
+              type="number"
+              id="bathrooms"
+              min="0"
+              step="1"
+              placeholder="6"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="livingRooms">
+              Sitting / Living Rooms
+            </label>
+
+            <input
+              type="number"
+              id="livingRooms"
+              min="0"
+              step="1"
+              placeholder="2"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="diningRooms">
+              Dining Rooms
+            </label>
+
+            <input
+              type="number"
+              id="diningRooms"
+              min="0"
+              step="1"
+              placeholder="1"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="kitchens">
+              Kitchens
+            </label>
+
+            <input
+              type="number"
+              id="kitchens"
+              min="0"
+              step="1"
+              placeholder="1"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="bqBedrooms">
+              BQ Bedrooms
+            </label>
+
+            <input
+              type="number"
+              id="bqBedrooms"
+              min="0"
+              step="1"
+              placeholder="2"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="floors">
+              Floors / Levels
+            </label>
+
+            <input
+              type="number"
+              id="floors"
+              min="0"
+              step="1"
+              placeholder="2"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="parkingSpaces">
+              Parking Spaces
+            </label>
+
+            <input
+              type="number"
+              id="parkingSpaces"
+              min="0"
+              step="1"
+              placeholder="4"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="sizeSqm">
+              Property Size (m²)
+            </label>
+
+            <input
+              type="number"
+              id="sizeSqm"
+              min="0"
+              step="0.01"
+              placeholder="700"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="landSize">
+              Land Size
+            </label>
+
+            <input
+              type="number"
+              id="landSize"
+              min="0"
+              step="0.01"
+              placeholder="1000"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="landSizeUnit">
+              Land Size Unit
+            </label>
+
+            <select id="landSizeUnit">
+
+              <option value="sqm">
+                m²
+              </option>
+
+              <option value="hectares">
+                Hectares
+              </option>
+
+              <option value="acres">
+                Acres
+              </option>
+
+              <option value="plots">
+                Plots
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="yearBuilt">
+              Year Built
+            </label>
+
+            <input
+              type="number"
+              id="yearBuilt"
+              min="1800"
+              max="2100"
+              placeholder="2026"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           LOCATION
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Location
+        </div>
+
+        <div class="form-grid">
+
+          <div class="form-field">
+
+            <label for="estateName">
+              Estate / Community
+            </label>
+
+            <input
+              type="text"
+              id="estateName"
+              placeholder="Fort-Royal Homes Estate"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="district">
+              District / Area
+            </label>
+
+            <input
+              type="text"
+              id="district"
+              placeholder="Kyami District"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="city">
+              City
+            </label>
+
+            <input
+              type="text"
+              id="city"
+              placeholder="Abuja"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="state">
+              State
+            </label>
+
+            <input
+              type="text"
+              id="state"
+              placeholder="FCT"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="country">
+              Country
+            </label>
+
+            <input
+              type="text"
+              id="country"
+              value="Nigeria"
+            >
+
+          </div>
+
+
+          <div class="form-field">
+
+            <label for="mapsUrl">
+              Google Maps Link
+            </label>
+
+            <input
+              type="url"
+              id="mapsUrl"
+              placeholder="https://maps.google.com/..."
+            >
+
+          </div>
+
+
+          <div class="form-field full">
+
+            <label for="location">
+              Full Location Display
+            </label>
+
+            <input
+              type="text"
+              id="location"
+              placeholder="Fort-Royal Homes Estate, Kyami District, Abuja"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           DESCRIPTION
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Descriptions
+        </div>
+
+        <div class="form-grid two">
+
+          <div class="form-field full">
+
+            <label for="shortDescription">
+              Short Description
+            </label>
+
+            <textarea
+              id="shortDescription"
+              placeholder="Short property summary..."
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-field full">
+
+            <label for="description">
+              Full Description
+            </label>
+
+            <textarea
+              id="description"
+              placeholder="Full property description..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           FEATURES
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Features & Amenities
+        </div>
+
+        <div class="checkbox-grid">
+
+          <label class="check-item">
+            <input type="checkbox" id="featurePool">
+            <span>Swimming Pool</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureGym">
+            <span>Gym / Fitness Centre</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureCinema">
+            <span>Home Cinema</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureElevator">
+            <span>Elevator</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureGarden">
+            <span>Garden</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureCCTV">
+            <span>CCTV</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureSecurity">
+            <span>24/7 Security</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureGenerator">
+            <span>Generator</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureSolar">
+            <span>Solar Power</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureSmartHome">
+            <span>Smart Home</span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" id="featureFurnished">
+            <span>Furnished</span>
+          </label>
+
+        </div>
+
+
+        <div class="custom-feature-row">
+
+          <input
+            type="text"
+            id="customFeatureInput"
+            placeholder="Add another feature..."
+          >
+
+          <button
+            type="button"
+            class="small-button"
+            id="addCustomFeatureButton"
+          >
+            Add Feature
+          </button>
+
+        </div>
+
+
+        <div
+          class="custom-feature-list"
+          id="customFeatureList"
+        ></div>
+
+      </section>
+
+
+      <!-- =================================================
+           MEDIA
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Photos & Documents
+        </div>
+
+        <div class="media-placeholder">
+
+          <strong>
+            Photo & Document Upload
+          </strong>
+
+          Supabase Storage will be connected here next.
+          This will allow the administrator to upload multiple
+          property photos, select a cover image, upload brochures,
+          floor plans and other documents.
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           PUBLISHING
+      ================================================== -->
+
+      <section class="form-section">
+
+        <div class="form-section-title">
+          Publishing
+        </div>
+
+        <div class="form-grid two">
+
+          <label class="check-item">
+
+            <input
+              type="checkbox"
+              id="isFeatured"
+            >
+
+            <span>
+              Feature this property on the website
+            </span>
+
+          </label>
+
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <div class="modal-footer">
+
+      <button
+        type="button"
+        class="modal-button"
+        id="cancelPropertyButton"
+      >
+        Cancel
+      </button>
+
+      <button
+        type="submit"
+        class="modal-button primary"
+        id="savePropertyButton"
+      >
+        Save Property
+      </button>
+
+    </div>
+
+  </form>
+
+</div>
+
+  </div>  <!-- =======================================================
        SUPABASE
-  ======================================================== -->
-
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
-  <script>
+  ======================================================== -->  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>  <script>
 
     /* =======================================================
        SUPABASE CONNECTION
-    ======================================================= */
+    ======================================================== */
 
     const SUPABASE_URL =
       "https://hcawxwwkvwbtdemavfht.supabase.co";
@@ -1105,7 +2518,7 @@
 
     /* =======================================================
        ELEMENTS
-    ======================================================= */
+    ======================================================== */
 
     const loginScreen =
       document.getElementById("loginScreen");
@@ -1140,38 +2553,105 @@
     const dashboardError =
       document.getElementById("dashboardError");
 
+    const successMessage =
+      document.getElementById("successMessage");
+
+    const propertyModalOverlay =
+      document.getElementById(
+        "propertyModalOverlay"
+      );
+
+    const propertyForm =
+      document.getElementById(
+        "propertyForm"
+      );
+
+    const propertyModalTitle =
+      document.getElementById(
+        "propertyModalTitle"
+      );
+
+    const propertyId =
+      document.getElementById(
+        "propertyId"
+      );
+
+    const propertyGrid =
+      document.getElementById(
+        "propertyGrid"
+      );
+
+    const savePropertyButton =
+      document.getElementById(
+        "savePropertyButton"
+      );
+
 
     /* =======================================================
-       HELPER FUNCTIONS
+       HELPERS
     ======================================================== */
 
     function showLoginError(message) {
 
-      loginStatus.textContent = message;
-      loginStatus.className = "login-status error";
+      loginStatus.textContent =
+        message;
+
+      loginStatus.className =
+        "login-status error";
 
     }
 
 
     function showDashboardError(message) {
 
-      dashboardError.textContent = message;
-      dashboardError.classList.add("visible");
+      dashboardError.textContent =
+        message;
+
+      dashboardError.classList.add(
+        "visible"
+      );
 
     }
 
 
     function clearDashboardError() {
 
-      dashboardError.textContent = "";
-      dashboardError.classList.remove("visible");
+      dashboardError.textContent =
+        "";
+
+      dashboardError.classList.remove(
+        "visible"
+      );
+
+    }
+
+
+    function showSuccess(message) {
+
+      successMessage.textContent =
+        message;
+
+      successMessage.classList.add(
+        "visible"
+      );
+
+      setTimeout(() => {
+
+        successMessage.classList.remove(
+          "visible"
+        );
+
+      }, 3500);
 
     }
 
 
     function escapeHTML(value) {
 
-      if (value === null || value === undefined) {
+      if (
+        value === null ||
+        value === undefined
+      ) {
         return "";
       }
 
@@ -1191,10 +2671,17 @@
         return "—";
       }
 
-      const date = new Date(dateValue);
+      const date =
+        new Date(dateValue);
 
-      if (Number.isNaN(date.getTime())) {
-        return escapeHTML(dateValue);
+      if (
+        Number.isNaN(
+          date.getTime()
+        )
+      ) {
+        return escapeHTML(
+          dateValue
+        );
       }
 
       return date.toLocaleDateString(
@@ -1219,7 +2706,9 @@
         String(timeValue).split(":");
 
       if (parts.length < 2) {
-        return escapeHTML(timeValue);
+        return escapeHTML(
+          timeValue
+        );
       }
 
       let hour =
@@ -1229,11 +2718,15 @@
         parts[1];
 
       if (Number.isNaN(hour)) {
-        return escapeHTML(timeValue);
+        return escapeHTML(
+          timeValue
+        );
       }
 
       const suffix =
-        hour >= 12 ? "PM" : "AM";
+        hour >= 12
+          ? "PM"
+          : "AM";
 
       hour =
         hour % 12 || 12;
@@ -1245,7 +2738,9 @@
 
     function formatStatus(status) {
 
-      return String(status || "new")
+      return String(
+        status || "new"
+      )
         .replace(/_/g, " ")
         .replace(/\b\w/g, letter =>
           letter.toUpperCase()
@@ -1254,23 +2749,65 @@
     }
 
 
+    function formatPrice(property) {
+
+      if (
+        property.price_label &&
+        property.price_label !== "Contact for Price"
+      ) {
+        return escapeHTML(
+          property.price_label
+        );
+      }
+
+      if (
+        property.price_type === "contact" ||
+        !property.price
+      ) {
+        return "Contact for Price";
+      }
+
+      return "₦" +
+        Number(
+          property.price
+        ).toLocaleString(
+          "en-NG"
+        );
+
+    }
+
+
+    function slugify(value) {
+
+      return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+    }
+
+
     /* =======================================================
        ADMIN VERIFICATION
-       USES verify_admin RPC
     ======================================================== */
 
     async function verifyAdmin(user) {
 
-      if (!user || !user.id) {
+      if (
+        !user ||
+        !user.id
+      ) {
         return false;
       }
 
       const {
         data,
         error
-      } = await supabaseClient.rpc(
-        "verify_admin"
-      );
+      } =
+        await supabaseClient.rpc(
+          "verify_admin"
+        );
 
       if (error) {
 
@@ -1294,9 +2831,12 @@
 
     function showDashboard(user) {
 
-      loginScreen.style.display = "none";
+      loginScreen.style.display =
+        "none";
 
-      dashboard.classList.add("visible");
+      dashboard.classList.add(
+        "visible"
+      );
 
       adminUserEmail.textContent =
         user.email || "";
@@ -1306,11 +2846,15 @@
 
     function showLogin() {
 
-      dashboard.classList.remove("visible");
+      dashboard.classList.remove(
+        "visible"
+      );
 
-      loginScreen.style.display = "flex";
+      loginScreen.style.display =
+        "flex";
 
-      adminUserEmail.textContent = "";
+      adminUserEmail.textContent =
+        "";
 
     }
 
@@ -1323,12 +2867,16 @@
 
       clearDashboardError();
 
-      refreshButton.disabled = true;
-      refreshButton.textContent = "Refreshing...";
+      refreshButton.disabled =
+        true;
+
+      refreshButton.textContent =
+        "Refreshing...";
 
       try {
 
         await Promise.all([
+          loadProperties(),
           loadInspections(),
           loadContacts(),
           loadNewsletter()
@@ -1348,14 +2896,1284 @@
           "Unknown dashboard error";
 
         showDashboardError(
-          "Dashboard error: " + message
+          "Dashboard error: " +
+          message
         );
 
       } finally {
 
-        refreshButton.disabled = false;
+        refreshButton.disabled =
+          false;
+
         refreshButton.textContent =
           "Refresh Data";
+
+      }
+
+    }
+
+
+    /* =======================================================
+       LOAD PROPERTIES
+    ======================================================== */
+
+    async function loadProperties() {
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient
+          .from("properties")
+          .select("*")
+          .order("created_at", {
+            ascending: false
+          });
+
+      if (error) {
+        throw error;
+      }
+
+      const properties =
+        data || [];
+
+      document.getElementById(
+        "propertyCount"
+      ).textContent =
+        properties.length;
+
+      if (!properties.length) {
+
+        propertyGrid.innerHTML = `
+          <div class="table-message">
+            No properties found.
+          </div>
+        `;
+
+        return;
+
+      }
+
+
+      propertyGrid.innerHTML =
+        properties.map(
+          property => {
+
+            const statusClass =
+              String(
+                property.status ||
+                "available"
+              ).replace(
+                /_/g,
+                "-"
+              );
+
+            return `
+              <article
+                class="property-card"
+              >
+
+                <div
+                  class="property-card-top"
+                >
+
+                  <div>
+
+                    <h3>
+                      ${escapeHTML(
+                        property.name
+                      )}
+                    </h3>
+
+                    <div
+                      class="property-type"
+                    >
+                      ${escapeHTML(
+                        property.property_type ||
+                        property.house_type ||
+                        "Property"
+                      )}
+                    </div>
+
+                  </div>
+
+                  <span
+                    class="property-status ${statusClass}"
+                  >
+                    ${escapeHTML(
+                      formatStatus(
+                        property.status
+                      )
+                    )}
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="property-card-body"
+                >
+
+                  ${
+                    property.is_featured
+                      ? `
+                        <span
+                          class="featured-badge"
+                        >
+                          ★ Featured Property
+                        </span>
+                      `
+                      : ""
+                  }
+
+
+                  <div
+                    class="property-price"
+                  >
+                    ${formatPrice(
+                      property
+                    )}
+                  </div>
+
+
+                  <div
+                    class="property-meta"
+                  >
+
+                    <div
+                      class="property-meta-item"
+                    >
+                      <span
+                        class="property-meta-number"
+                      >
+                        ${property.bedrooms ?? "—"}
+                      </span>
+
+                      <span
+                        class="property-meta-label"
+                      >
+                        Bedrooms
+                      </span>
+                    </div>
+
+
+                    <div
+                      class="property-meta-item"
+                    >
+                      <span
+                        class="property-meta-number"
+                      >
+                        ${property.bathrooms ?? "—"}
+                      </span>
+
+                      <span
+                        class="property-meta-label"
+                      >
+                        Bathrooms
+                      </span>
+                    </div>
+
+
+                    <div
+                      class="property-meta-item"
+                    >
+                      <span
+                        class="property-meta-number"
+                      >
+                        ${property.living_rooms ?? "—"}
+                      </span>
+
+                      <span
+                        class="property-meta-label"
+                      >
+                        Living Rooms
+                      </span>
+                    </div>
+
+
+                    <div
+                      class="property-meta-item"
+                    >
+                      <span
+                        class="property-meta-number"
+                      >
+                        ${property.floors ?? "—"}
+                      </span>
+
+                      <span
+                        class="property-meta-label"
+                      >
+                        Floors
+                      </span>
+                    </div>
+
+                  </div>
+
+
+                  <div
+                    class="property-location"
+                  >
+                    ${escapeHTML(
+                      property.location ||
+                      "Location not specified"
+                    )}
+
+                    ${
+                      property.size_sqm
+                        ? `
+                          <br>
+                          ${escapeHTML(
+                            property.size_sqm
+                          )} m²
+                        `
+                        : ""
+                    }
+
+                  </div>
+
+
+                  <div
+                    class="property-actions"
+                  >
+
+                    <button
+                      type="button"
+                      class="property-action primary"
+                      data-edit-property="${escapeHTML(
+                        property.id
+                      )}"
+                    >
+                      Edit Property
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="property-action"
+                      data-duplicate-property="${escapeHTML(
+                        property.id
+                      )}"
+                    >
+                      Duplicate
+                    </button>
+
+
+                    <button
+                      type="button"
+                      class="property-action danger"
+                      data-delete-property="${escapeHTML(
+                        property.id
+                      )}"
+                    >
+                      Delete
+                    </button>
+
+                  </div>
+
+                </div>
+
+              </article>
+            `;
+
+          }
+        ).join("");
+
+    }
+
+
+    /* =======================================================
+       PROPERTY FORM HELPERS
+    ======================================================== */
+
+    const featureMap = {
+
+      featurePool:
+        "Swimming pool",
+
+      featureGym:
+        "Gym",
+
+      featureCinema:
+        "Home cinema",
+
+      featureElevator:
+        "Elevator",
+
+      featureGarden:
+        "Garden",
+
+      featureCCTV:
+        "CCTV",
+
+      featureSecurity:
+        "24/7 security",
+
+      featureGenerator:
+        "Generator",
+
+      featureSolar:
+        "Solar power",
+
+      featureSmartHome:
+        "Smart home",
+
+      featureFurnished:
+        "Furnished"
+
+    };
+
+
+    let customFeatures = [];
+
+
+    function resetPropertyForm() {
+
+      propertyForm.reset();
+
+      propertyId.value =
+        "";
+
+      propertyModalTitle.textContent =
+        "Add Property";
+
+      customFeatures = [];
+
+      renderCustomFeatures();
+
+      document.getElementById(
+        "country"
+      ).value =
+        "Nigeria";
+
+      document.getElementById(
+        "propertyStatus"
+      ).value =
+        "available";
+
+      document.getElementById(
+        "priceType"
+      ).value =
+        "fixed";
+
+    }
+
+
+    function populatePropertyForm(
+      property
+    ) {
+
+      propertyId.value =
+        property.id || "";
+
+      propertyModalTitle.textContent =
+        "Edit Property";
+
+      document.getElementById(
+        "propertyName"
+      ).value =
+        property.name || "";
+
+      document.getElementById(
+        "propertySlug"
+      ).value =
+        property.slug || "";
+
+      document.getElementById(
+        "houseType"
+      ).value =
+        property.house_type || "";
+
+      document.getElementById(
+        "propertyType"
+      ).value =
+        property.property_type || "";
+
+      document.getElementById(
+        "propertyStatus"
+      ).value =
+        property.status || "available";
+
+      document.getElementById(
+        "propertyPrice"
+      ).value =
+        property.price ?? "";
+
+      document.getElementById(
+        "priceLabel"
+      ).value =
+        property.price_label || "";
+
+      document.getElementById(
+        "oldPrice"
+      ).value =
+        property.old_price ?? "";
+
+      document.getElementById(
+        "priceType"
+      ).value =
+        property.price_type || "fixed";
+
+      document.getElementById(
+        "paymentPlan"
+      ).value =
+        property.payment_plan || "";
+
+      document.getElementById(
+        "bedrooms"
+      ).value =
+        property.bedrooms ?? "";
+
+      document.getElementById(
+        "bathrooms"
+      ).value =
+        property.bathrooms ?? "";
+
+      document.getElementById(
+        "livingRooms"
+      ).value =
+        property.living_rooms ?? "";
+
+      document.getElementById(
+        "diningRooms"
+      ).value =
+        property.dining_rooms ?? "";
+
+      document.getElementById(
+        "kitchens"
+      ).value =
+        property.kitchens ?? "";
+
+      document.getElementById(
+        "bqBedrooms"
+      ).value =
+        property.bq_bedrooms ?? "";
+
+      document.getElementById(
+        "floors"
+      ).value =
+        property.floors ?? "";
+
+      document.getElementById(
+        "parkingSpaces"
+      ).value =
+        property.parking_spaces ?? "";
+
+      document.getElementById(
+        "sizeSqm"
+      ).value =
+        property.size_sqm ?? "";
+
+      document.getElementById(
+        "landSize"
+      ).value =
+        property.land_size ?? "";
+
+      document.getElementById(
+        "landSizeUnit"
+      ).value =
+        property.land_size_unit || "sqm";
+
+      document.getElementById(
+        "yearBuilt"
+      ).value =
+        property.year_built ?? "";
+
+      document.getElementById(
+        "estateName"
+      ).value =
+        property.estate_name || "";
+
+      document.getElementById(
+        "district"
+      ).value =
+        property.district || "";
+
+      document.getElementById(
+        "city"
+      ).value =
+        property.city || "";
+
+      document.getElementById(
+        "state"
+      ).value =
+        property.state || "";
+
+      document.getElementById(
+        "country"
+      ).value =
+        property.country || "Nigeria";
+
+      document.getElementById(
+        "mapsUrl"
+      ).value =
+        property.maps_url || "";
+
+      document.getElementById(
+        "location"
+      ).value =
+        property.location || "";
+
+      document.getElementById(
+        "shortDescription"
+      ).value =
+        property.short_description || "";
+
+      document.getElementById(
+        "description"
+      ).value =
+        property.description || "";
+
+      document.getElementById(
+        "isFeatured"
+      ).checked =
+        Boolean(
+          property.is_featured
+        );
+
+
+      Object.keys(featureMap)
+        .forEach(id => {
+
+          const checkbox =
+            document.getElementById(id);
+
+          const featureName =
+            featureMap[id];
+
+          checkbox.checked =
+            Array.isArray(
+              property.features
+            ) &&
+            property.features.some(
+              feature =>
+                String(feature)
+                  .toLowerCase()
+                  .includes(
+                    featureName
+                      .toLowerCase()
+                  )
+            );
+
+        });
+
+
+      customFeatures =
+        Array.isArray(
+          property.custom_features
+        )
+          ? [
+              ...property.custom_features
+            ]
+          : [];
+
+      renderCustomFeatures();
+
+    }
+
+
+    function collectFeatures() {
+
+      const features = [];
+
+      Object.keys(featureMap)
+        .forEach(id => {
+
+          const checkbox =
+            document.getElementById(id);
+
+          if (
+            checkbox &&
+            checkbox.checked
+          ) {
+
+            features.push(
+              featureMap[id]
+            );
+
+          }
+
+        });
+
+
+      customFeatures.forEach(
+        feature => {
+
+          if (
+            !features.includes(
+              feature
+            )
+          ) {
+            features.push(
+              feature
+            );
+          }
+
+        }
+      );
+
+
+      return features;
+
+    }
+
+
+    function renderCustomFeatures() {
+
+      const container =
+        document.getElementById(
+          "customFeatureList"
+        );
+
+      if (!customFeatures.length) {
+
+        container.innerHTML =
+          "";
+
+        return;
+
+      }
+
+
+      container.innerHTML =
+        customFeatures.map(
+          (feature, index) => `
+            <span
+              class="custom-feature-tag"
+            >
+
+              ${escapeHTML(
+                feature
+              )}
+
+              <button
+                type="button"
+                class="custom-feature-remove"
+                data-remove-feature="${index}"
+                aria-label="Remove feature"
+              >
+                ×
+              </button>
+
+            </span>
+          `
+        ).join("");
+
+    }
+
+
+    function openAddPropertyModal() {
+
+      resetPropertyForm();
+
+      propertyModalOverlay.classList.add(
+        "visible"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+
+      setTimeout(() => {
+
+        document.getElementById(
+          "propertyName"
+        ).focus();
+
+      }, 100);
+
+    }
+
+
+    async function openEditPropertyModal(
+      id
+    ) {
+
+      clearDashboardError();
+
+      try {
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("properties")
+            .select("*")
+            .eq("id", id)
+            .single();
+
+        if (error) {
+          throw error;
+        }
+
+        populatePropertyForm(
+          data
+        );
+
+        propertyModalOverlay.classList.add(
+          "visible"
+        );
+
+        document.body.style.overflow =
+          "hidden";
+
+      } catch (error) {
+
+        console.error(
+          "Property loading error:",
+          error
+        );
+
+        showDashboardError(
+          "The property could not be loaded: " +
+          (
+            error.message ||
+            "Unknown error"
+          )
+        );
+
+      }
+
+    }
+
+
+    function closePropertyModal() {
+
+      propertyModalOverlay.classList.remove(
+        "visible"
+      );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    /* =======================================================
+       SAVE PROPERTY
+    ======================================================== */
+
+    async function saveProperty(
+      event
+    ) {
+
+      event.preventDefault();
+
+      clearDashboardError();
+
+      savePropertyButton.disabled =
+        true;
+
+      savePropertyButton.textContent =
+        "Saving...";
+
+
+      const id =
+        propertyId.value.trim();
+
+      const name =
+        document.getElementById(
+          "propertyName"
+        ).value.trim();
+
+      let slug =
+        document.getElementById(
+          "propertySlug"
+        ).value.trim();
+
+      if (!slug) {
+        slug =
+          slugify(name);
+      }
+
+
+      const propertyData = {
+
+        name:
+
+          name,
+
+        slug:
+
+          slug,
+
+        house_type:
+
+          document.getElementById(
+            "houseType"
+          ).value.trim() || null,
+
+        property_type:
+
+          document.getElementById(
+            "propertyType"
+          ).value.trim() || null,
+
+        status:
+
+          document.getElementById(
+            "propertyStatus"
+          ).value,
+
+        price:
+
+          document.getElementById(
+            "propertyPrice"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "propertyPrice"
+                ).value
+              )
+            : null,
+
+        price_label:
+
+          document.getElementById(
+            "priceLabel"
+          ).value.trim() || null,
+
+        old_price:
+
+          document.getElementById(
+            "oldPrice"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "oldPrice"
+                ).value
+              )
+            : null,
+
+        price_type:
+
+          document.getElementById(
+            "priceType"
+          ).value,
+
+        payment_plan:
+
+          document.getElementById(
+            "paymentPlan"
+          ).value.trim() || null,
+
+        bedrooms:
+
+          document.getElementById(
+            "bedrooms"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "bedrooms"
+                ).value
+              )
+            : null,
+
+        bathrooms:
+
+          document.getElementById(
+            "bathrooms"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "bathrooms"
+                ).value
+              )
+            : null,
+
+        living_rooms:
+
+          document.getElementById(
+            "livingRooms"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "livingRooms"
+                ).value
+              )
+            : null,
+
+        dining_rooms:
+
+          document.getElementById(
+            "diningRooms"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "diningRooms"
+                ).value
+              )
+            : null,
+
+        kitchens:
+
+          document.getElementById(
+            "kitchens"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "kitchens"
+                ).value
+              )
+            : null,
+
+        bq_bedrooms:
+
+          document.getElementById(
+            "bqBedrooms"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "bqBedrooms"
+                ).value
+              )
+            : null,
+
+        floors:
+
+          document.getElementById(
+            "floors"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "floors"
+                ).value
+              )
+            : null,
+
+        parking_spaces:
+
+          document.getElementById(
+            "parkingSpaces"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "parkingSpaces"
+                ).value
+              )
+            : null,
+
+        size_sqm:
+
+          document.getElementById(
+            "sizeSqm"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "sizeSqm"
+                ).value
+              )
+            : null,
+
+        land_size:
+
+          document.getElementById(
+            "landSize"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "landSize"
+                ).value
+              )
+            : null,
+
+        land_size_unit:
+
+          document.getElementById(
+            "landSizeUnit"
+          ).value,
+
+        year_built:
+
+          document.getElementById(
+            "yearBuilt"
+          ).value
+            ? Number(
+                document.getElementById(
+                  "yearBuilt"
+                ).value
+              )
+            : null,
+
+        estate_name:
+
+          document.getElementById(
+            "estateName"
+          ).value.trim() || null,
+
+        district:
+
+          document.getElementById(
+            "district"
+          ).value.trim() || null,
+
+        city:
+
+          document.getElementById(
+            "city"
+          ).value.trim() || null,
+
+        state:
+
+          document.getElementById(
+            "state"
+          ).value.trim() || null,
+
+        country:
+
+          document.getElementById(
+            "country"
+          ).value.trim() || "Nigeria",
+
+        maps_url:
+
+          document.getElementById(
+            "mapsUrl"
+          ).value.trim() || null,
+
+        location:
+
+          document.getElementById(
+            "location"
+          ).value.trim() || null,
+
+        short_description:
+
+          document.getElementById(
+            "shortDescription"
+          ).value.trim() || null,
+
+        description:
+
+          document.getElementById(
+            "description"
+          ).value.trim() || null,
+
+        features:
+
+          collectFeatures(),
+
+        custom_features:
+
+          [
+            ...customFeatures
+          ],
+
+        is_featured:
+
+          document.getElementById(
+            "isFeatured"
+          ).checked,
+
+        updated_at:
+
+          new Date().toISOString()
+
+      };
+
+
+      try {
+
+        let response;
+
+        if (id) {
+
+          response =
+            await supabaseClient
+              .from("properties")
+              .update(
+                propertyData
+              )
+              .eq("id", id);
+
+        } else {
+
+          response =
+            await supabaseClient
+              .from("properties")
+              .insert(
+                propertyData
+              );
+
+        }
+
+
+        if (response.error) {
+          throw response.error;
+        }
+
+
+        closePropertyModal();
+
+        await loadProperties();
+
+        showSuccess(
+          id
+            ? "Property updated successfully."
+            : "Property added successfully."
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Property save error:",
+          error
+        );
+
+        showDashboardError(
+          "The property could not be saved: " +
+          (
+            error.message ||
+            "Unknown error"
+          )
+        );
+
+      } finally {
+
+        savePropertyButton.disabled =
+          false;
+
+        savePropertyButton.textContent =
+          "Save Property";
+
+      }
+
+    }
+
+
+    /* =======================================================
+       DELETE PROPERTY
+    ======================================================== */
+
+    async function deleteProperty(
+      id
+    ) {
+
+      const confirmed =
+        window.confirm(
+          "Delete this property? This cannot be undone."
+        );
+
+      if (!confirmed) {
+        return;
+      }
+
+
+      try {
+
+        const {
+          error
+        } =
+          await supabaseClient
+            .from("properties")
+            .delete()
+            .eq("id", id);
+
+        if (error) {
+          throw error;
+        }
+
+        await loadProperties();
+
+        showSuccess(
+          "Property deleted successfully."
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Property deletion error:",
+          error
+        );
+
+        showDashboardError(
+          "The property could not be deleted: " +
+          (
+            error.message ||
+            "Unknown error"
+          )
+        );
+
+      }
+
+    }
+
+
+    /* =======================================================
+       DUPLICATE PROPERTY
+    ======================================================== */
+
+    async function duplicateProperty(
+      id
+    ) {
+
+      try {
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient
+            .from("properties")
+            .select("*")
+            .eq("id", id)
+            .single();
+
+        if (error) {
+          throw error;
+        }
+
+
+        const copy = {
+          ...data
+        };
+
+        delete copy.id;
+        delete copy.created_at;
+        delete copy.updated_at;
+
+        copy.name =
+          `${copy.name} Copy`;
+
+        copy.slug =
+          `${copy.slug}-copy-${Date.now()}`;
+
+        copy.is_featured =
+          false;
+
+
+        const {
+          error: insertError
+        } =
+          await supabaseClient
+            .from("properties")
+            .insert(
+              copy
+            );
+
+        if (insertError) {
+          throw insertError;
+        }
+
+        await loadProperties();
+
+        showSuccess(
+          "Property duplicated successfully."
+        );
+
+      } catch (error) {
+
+        console.error(
+          "Property duplication error:",
+          error
+        );
+
+        showDashboardError(
+          "The property could not be duplicated: " +
+          (
+            error.message ||
+            "Unknown error"
+          )
+        );
 
       }
 
@@ -1371,12 +4189,13 @@
       const {
         data,
         error
-      } = await supabaseClient
-        .from("inspection_requests")
-        .select("*")
-        .order("created_at", {
-          ascending: false
-        });
+      } =
+        await supabaseClient
+          .from("inspection_requests")
+          .select("*")
+          .order("created_at", {
+            ascending: false
+          });
 
       if (error) {
         throw error;
@@ -1404,6 +4223,7 @@
           "inspectionTableBody"
         );
 
+
       if (!requests.length) {
 
         tbody.innerHTML = `
@@ -1425,1005 +4245,1557 @@
 
 
       tbody.innerHTML =
-        requests.map(request => {
+        requests.map(
+          request => {
 
-          const requirements =
-            request.special_requirements
-              ? escapeHTML(
-                  request.special_requirements
-                )
-              : "—";
+            const requirements =
+              request.special_requirements
+                ? escapeHTML(
+                    request.special_requirements
+                  )
+                : "—";
 
-          return `
-            <tr>
 
-              <td>
-                <div class="customer-name">
-                  ${escapeHTML(request.full_name)}
-                </div>
+            return `
+              <tr>
 
-                <div class="customer-contact">
-                  ${escapeHTML(request.email)}
-                </div>
+                <td>
 
-                <div class="customer-contact">
-                  ${escapeHTML(request.phone)}
-                </div>
-              </td>
-
-              <td>
-                ${escapeHTML(request.property_type)}
-              </td>
-
-              <td>
-                <strong>
-                  ${formatDate(request.preferred_date)}
-                </strong>
-
-                <br>
-
-                ${formatTime(request.preferred_time)}
-
-                <br>
-
-                <span class="customer-contact">
-                  ${request.visitors || 1}
-                  ${
-                    Number(request.visitors) === 1
-                      ? "visitor"
-                      : "visitors"
-                  }
-                </span>
-              </td>
-
-              <td>
-                ${formatStatus(request.tour_type)}
-              </td>
-
-              <td class="message-cell">
-                ${requirements}
-              </td>
-
-              <td>
-
-                <select
-                  class="status-select ${
-                    request.status === "new"
-                      ? "status-new"
-                      : ""
-                  }"
-                  data-type="inspection"
-                  data-id="${escapeHTML(request.id)}"
-                >
-
-                  <option
-                    value="new"
-                    ${
-                      request.status === "new"
-                        ? "selected"
-                        : ""
-                    }
+                  <div
+                    class="customer-name"
                   >
-                    New
-                  </option>
+                    ${escapeHTML(
+                      request.full_name
+                    )}
+                  </div>
 
-                  <option
-                    value="contacted"
-                    ${
-                      request.status === "contacted"
-                        ? "selected"
-                        : ""
-                    }
+                  <div
+                    class="customer-contact"
                   >
-                    Contacted
-                  </option>
+                    ${escapeHTML(
+                      request.email
+                    )}
+                  </div>
 
-                  <option
-                    value="confirmed"
-                    ${
-                      request.status === "confirmed"
-                        ? "selected"
-                        : ""
-                    }
+                  <div
+                    class="customer-contact"
                   >
-                    Confirmed
-                  </option>
+                    ${escapeHTML(
+                      request.phone
+                    )}
+                  </div>
 
-                  <option
-                    value="completed"
-                    ${
-                      request.status === "completed"
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    Completed
-                  </option>
+                </td>
 
-                  <option
-                    value="cancelled"
-                    ${
-                      request.status === "cancelled"
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    Cancelled
-                  </option>
 
-                </select>
-
-              </td>
-
-              <td>
-
-                <textarea
-                  class="notes-input"
-                  data-type="inspection"
-                  data-id="${escapeHTML(request.id)}"
-                  placeholder="Add admin note..."
-                >${escapeHTML(request.admin_notes || "")}</textarea>
-
-                <br>
-
-                <button
-                  type="button"
-                  class="save-button"
-                  data-save="inspection"
-                  data-id="${escapeHTML(request.id)}"
-                >
-                  Save Note
-                </button>
-
-              </td>
-
-            </tr>
-          `;
-
-        }).join("");
-
-      updateNewEnquiryCount();
-
-    }
-
-
-    /* =======================================================
-       LOAD CONTACT MESSAGES
-    ======================================================== */
-
-    async function loadContacts() {
-
-      const {
-        data,
-        error
-      } = await supabaseClient
-        .from("contact_messages")
-        .select("*")
-        .order("created_at", {
-          ascending: false
-        });
-
-      if (error) {
-        throw error;
-      }
-
-      const messages =
-        data || [];
-
-      document.getElementById(
-        "contactCount"
-      ).textContent =
-        messages.length;
-
-      document.getElementById(
-        "contactPanelCount"
-      ).textContent =
-        `${messages.length} ${
-          messages.length === 1
-            ? "message"
-            : "messages"
-        }`;
-
-      const tbody =
-        document.getElementById(
-          "contactTableBody"
-        );
-
-      if (!messages.length) {
-
-        tbody.innerHTML = `
-          <tr>
-            <td
-              colspan="6"
-              class="table-message"
-            >
-              No contact messages yet.
-            </td>
-          </tr>
-        `;
-
-        updateNewEnquiryCount();
-
-        return;
-
-      }
-
-
-      tbody.innerHTML =
-        messages.map(message => {
-
-          return `
-            <tr>
-
-              <td>
-                <div class="customer-name">
-                  ${escapeHTML(message.full_name)}
-                </div>
-
-                <div class="customer-contact">
-                  ${escapeHTML(message.email)}
-                </div>
-
-                <div class="customer-contact">
-                  ${escapeHTML(message.phone || "")}
-                </div>
-              </td>
-
-              <td>
-                ${escapeHTML(message.enquiry_type || "General")}
-              </td>
-
-              <td class="message-cell">
-                ${escapeHTML(message.message)}
-              </td>
-
-              <td>
-                ${formatDate(message.created_at)}
-              </td>
-
-              <td>
-
-                <select
-                  class="status-select"
-                  data-type="contact"
-                  data-id="${escapeHTML(message.id)}"
-                >
-
-                  <option
-                    value="new"
-                    ${
-                      message.status === "new"
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    New
-                  </option>
-
-                  <option
-                    value="contacted"
-                    ${
-                      message.status === "contacted"
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    Contacted
-                  </option>
-
-                  <option
-                    value="resolved"
-                    ${
-                      message.status === "resolved"
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    Resolved
-                  </option>
-
-                  <option
-                    value="closed"
-                    ${
-                      message.status === "closed"
-                        ? "selected"
-                        : ""
-                    }
-                  >
-                    Closed
-                  </option>
-
-                </select>
-
-              </td>
-
-              <td>
-
-                <textarea
-                  class="notes-input"
-                  data-type="contact"
-                  data-id="${escapeHTML(message.id)}"
-                  placeholder="Add admin note..."
-                >${escapeHTML(message.admin_notes || "")}</textarea>
-
-                <br>
-
-                <button
-                  type="button"
-                  class="save-button"
-                  data-save="contact"
-                  data-id="${escapeHTML(message.id)}"
-                >
-                  Save Note
-                </button>
-
-              </td>
-
-            </tr>
-          `;
-
-        }).join("");
-
-      updateNewEnquiryCount();
-
-    }
-
-
-    /* =======================================================
-       LOAD NEWSLETTER
-    ======================================================== */
-
-    async function loadNewsletter() {
-
-      const {
-        data,
-        error
-      } = await supabaseClient
-        .from("newsletter_subscribers")
-        .select("*")
-        .order("subscribed_at", {
-          ascending: false
-        });
-
-      if (error) {
-        throw error;
-      }
-
-      const subscribers =
-        data || [];
-
-      document.getElementById(
-        "subscriberCount"
-      ).textContent =
-        subscribers.length;
-
-      document.getElementById(
-        "newsletterPanelCount"
-      ).textContent =
-        `${subscribers.length} ${
-          subscribers.length === 1
-            ? "subscriber"
-            : "subscribers"
-        }`;
-
-      const tbody =
-        document.getElementById(
-          "newsletterTableBody"
-        );
-
-      if (!subscribers.length) {
-
-        tbody.innerHTML = `
-          <tr>
-            <td
-              colspan="4"
-              class="table-message"
-            >
-              No newsletter subscribers yet.
-            </td>
-          </tr>
-        `;
-
-        return;
-
-      }
-
-
-      tbody.innerHTML =
-        subscribers.map(subscriber => {
-
-          const isActive =
-            subscriber.status === "active";
-
-          return `
-            <tr>
-
-              <td>
-                <strong>
-                  ${escapeHTML(subscriber.email)}
-                </strong>
-              </td>
-
-              <td>
-
-                <span
-                  class="subscriber-status ${
-                    isActive
-                      ? ""
-                      : "inactive"
-                  }"
-                >
+                <td>
                   ${escapeHTML(
-                    formatStatus(
-                      subscriber.status
-                    )
+                    request.property_type
                   )}
-                </span>
+                </td>
 
-              </td>
 
-              <td>
-                ${formatDate(
-                  subscriber.subscribed_at
-                )}
-              </td>
+                <td>
 
-              <td>
+                  <strong>
+                    ${formatDate(
+                      request.preferred_date
+                    )}
+                  </strong>
 
-                <button
-                  type="button"
-                  class="delete-button"
-                  data-delete-subscriber="${escapeHTML(
-                    subscriber.id
-                  )}"
+                  <br>
+
+                  ${formatTime(
+                    request.preferred_time
+                  )}
+
+                  <br>
+
+                  <span
+                    class="customer-contact"
+                  >
+                    ${request.visitors || 1}
+                    ${
+                      Number(
+                        request.visitors
+                      ) === 1
+                        ? "visitor"
+                        : "visitors"
+                    }
+                  </span>
+
+                </td>
+
+
+                <td>
+                  ${formatStatus(
+                    request.tour_type
+                  )}
+                </td>
+
+
+                <td
+                  class="message-cell"
                 >
-                  Delete
-                </button>
+                  ${requirements}
+                </td>
 
-              </td>
 
-            </tr>
-          `;
+                <td>
 
-        }).join("");
+                  <select
+                    class="status-select ${
+                      request.status === "new"
+                        ? "status-new"
+                        : ""
+                    }"
+                    data-type="inspection"
+                    data-id="${escapeHTML(
+                      request.id
+                    )}"
+                  >
+
+                    <option
+                      value="new"
+                      ${
+                        request.status === "new"
+                          ? "selected"
+                          : ""
+                      }
+                    >
+                      New
+                    </option>
+
+                    <option
+                      value="contacted"
+                      ${
+                        request.status === "contacted"
+                          ? "selected"
+                          : ""
+                      }
+                    >
+                      Contacted
+                    </option>
+
+                    <option
+                      value="confirmed"
+                      ${
+                        request.status === "confirmed"
+                          ? "selected"
+                          : ""
+                      }
+                    >
+                      Confirmed
+                    </option>
+
+                    <option
+                      value="completed"
+                      ${
+                        request.status === "completed"
+                          ? "selected"
+                          : ""
+                      }
+                    >
+                      Completed
+                    </option>
+
+                    <option
+                      value="cancelled"
+                      ${
+                        request.status === "cancelled"
+                          ? "selected"
+                          : ""
+                      }
+                    >
+                      Cancelled
+                    </option>
+
+                  </select>
+
+                </td>
+
+
+                <td>
+
+                  <textarea
+                    class="notes-input"
+                    data-type="inspection"
+                    data-id="${escapeHTML(
+                      request.id
+                    )}"
+                    placeholder="Add admin note..."
+                  >${escapeHTML(
+                    request.admin_notes || ""
+                  )}</textarea>              <br>
+
+              <button
+                type="button"
+                class="save-button"
+                data-save="inspection"
+                data-id="${escapeHTML(
+                  request.id
+                )}"
+              >
+                Save Note
+              </button>
+
+            </td>
+
+          </tr>
+        `;
+
+      }
+    ).join("");
+
+  updateNewEnquiryCount();
+
+}
+
+
+/* =======================================================
+   LOAD CONTACTS
+======================================================== */
+
+async function loadContacts() {
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from("contact_messages")
+      .select("*")
+      .order("created_at", {
+        ascending: false
+      });
+
+  if (error) {
+    throw error;
+  }
+
+  const messages =
+    data || [];
+
+  document.getElementById(
+    "contactCount"
+  ).textContent =
+    messages.length;
+
+  document.getElementById(
+    "contactPanelCount"
+  ).textContent =
+    `${messages.length} ${
+      messages.length === 1
+        ? "message"
+        : "messages"
+    }`;
+
+  const tbody =
+    document.getElementById(
+      "contactTableBody"
+    );
+
+
+  if (!messages.length) {
+
+    tbody.innerHTML = `
+      <tr>
+        <td
+          colspan="6"
+          class="table-message"
+        >
+          No contact messages yet.
+        </td>
+      </tr>
+    `;
+
+    updateNewEnquiryCount();
+
+    return;
+
+  }
+
+
+  tbody.innerHTML =
+    messages.map(
+      message => {
+
+        return `
+          <tr>
+
+            <td>
+
+              <div
+                class="customer-name"
+              >
+                ${escapeHTML(
+                  message.full_name
+                )}
+              </div>
+
+              <div
+                class="customer-contact"
+              >
+                ${escapeHTML(
+                  message.email
+                )}
+              </div>
+
+              <div
+                class="customer-contact"
+              >
+                ${escapeHTML(
+                  message.phone || ""
+                )}
+              </div>
+
+            </td>
+
+
+            <td>
+              ${escapeHTML(
+                message.enquiry_type ||
+                "General"
+              )}
+            </td>
+
+
+            <td
+              class="message-cell"
+            >
+              ${escapeHTML(
+                message.message
+              )}
+            </td>
+
+
+            <td>
+              ${formatDate(
+                message.created_at
+              )}
+            </td>
+
+
+            <td>
+
+              <select
+                class="status-select"
+                data-type="contact"
+                data-id="${escapeHTML(
+                  message.id
+                )}"
+              >
+
+                <option
+                  value="new"
+                  ${
+                    message.status === "new"
+                      ? "selected"
+                      : ""
+                  }
+                >
+                  New
+                </option>
+
+                <option
+                  value="contacted"
+                  ${
+                    message.status === "contacted"
+                      ? "selected"
+                      : ""
+                  }
+                >
+                  Contacted
+                </option>
+
+                <option
+                  value="resolved"
+                  ${
+                    message.status === "resolved"
+                      ? "selected"
+                      : ""
+                  }
+                >
+                  Resolved
+                </option>
+
+                <option
+                  value="closed"
+                  ${
+                    message.status === "closed"
+                      ? "selected"
+                      : ""
+                  }
+                >
+                  Closed
+                </option>
+
+              </select>
+
+            </td>
+
+
+            <td>
+
+              <textarea
+                class="notes-input"
+                data-type="contact"
+                data-id="${escapeHTML(
+                  message.id
+                )}"
+                placeholder="Add admin note..."
+              >${escapeHTML(
+                message.admin_notes || ""
+              )}</textarea>
+
+              <br>
+
+              <button
+                type="button"
+                class="save-button"
+                data-save="contact"
+                data-id="${escapeHTML(
+                  message.id
+                )}"
+              >
+                Save Note
+              </button>
+
+            </td>
+
+          </tr>
+        `;
+
+      }
+    ).join("");
+
+  updateNewEnquiryCount();
+
+}
+
+
+/* =======================================================
+   LOAD NEWSLETTER
+======================================================== */
+
+async function loadNewsletter() {
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+      .from("newsletter_subscribers")
+      .select("*")
+      .order("subscribed_at", {
+        ascending: false
+      });
+
+  if (error) {
+    throw error;
+  }
+
+  const subscribers =
+    data || [];
+
+  document.getElementById(
+    "subscriberCount"
+  ).textContent =
+    subscribers.length;
+
+  document.getElementById(
+    "newsletterPanelCount"
+  ).textContent =
+    `${subscribers.length} ${
+      subscribers.length === 1
+        ? "subscriber"
+        : "subscribers"
+    }`;
+
+  const tbody =
+    document.getElementById(
+      "newsletterTableBody"
+    );
+
+
+  if (!subscribers.length) {
+
+    tbody.innerHTML = `
+      <tr>
+        <td
+          colspan="4"
+          class="table-message"
+        >
+          No newsletter subscribers yet.
+        </td>
+      </tr>
+    `;
+
+    return;
+
+  }
+
+
+  tbody.innerHTML =
+    subscribers.map(
+      subscriber => {
+
+        const isActive =
+          subscriber.status ===
+          "active";
+
+        return `
+          <tr>
+
+            <td>
+              <strong>
+                ${escapeHTML(
+                  subscriber.email
+                )}
+              </strong>
+            </td>
+
+
+            <td>
+
+              <span
+                class="subscriber-status ${
+                  isActive
+                    ? ""
+                    : "inactive"
+                }"
+              >
+                ${escapeHTML(
+                  formatStatus(
+                    subscriber.status
+                  )
+                )}
+              </span>
+
+            </td>
+
+
+            <td>
+              ${formatDate(
+                subscriber.subscribed_at
+              )}
+            </td>
+
+
+            <td>
+
+              <button
+                type="button"
+                class="delete-button"
+                data-delete-subscriber="${escapeHTML(
+                  subscriber.id
+                )}"
+              >
+                Delete
+              </button>
+
+            </td>
+
+          </tr>
+        `;
+
+      }
+    ).join("");
+
+}
+
+
+/* =======================================================
+   NEW ENQUIRY COUNT
+======================================================== */
+
+async function updateNewEnquiryCount() {
+
+  try {
+
+    const [
+      inspectionResult,
+      contactResult
+    ] =
+      await Promise.all([
+
+        supabaseClient
+          .from(
+            "inspection_requests"
+          )
+          .select(
+            "id",
+            {
+              count: "exact",
+              head: true
+            }
+          )
+          .eq(
+            "status",
+            "new"
+          ),
+
+        supabaseClient
+          .from(
+            "contact_messages"
+          )
+          .select(
+            "id",
+            {
+              count: "exact",
+              head: true
+            }
+          )
+          .eq(
+            "status",
+            "new"
+          )
+
+      ]);
+
+
+    const inspectionNew =
+      inspectionResult.count ||
+      0;
+
+    const contactNew =
+      contactResult.count ||
+      0;
+
+    document.getElementById(
+      "newEnquiryCount"
+    ).textContent =
+      inspectionNew +
+      contactNew;
+
+  } catch (error) {
+
+    console.error(
+      "New enquiry count error:",
+      error
+    );
+
+  }
+
+}
+
+
+/* =======================================================
+   UPDATE STATUS
+======================================================== */
+
+async function updateRecordStatus(
+  type,
+  id,
+  status,
+  selectElement
+) {
+
+  selectElement.disabled =
+    true;
+
+  let table = "";
+
+  if (
+    type === "inspection"
+  ) {
+    table =
+      "inspection_requests";
+  }
+
+  if (
+    type === "contact"
+  ) {
+    table =
+      "contact_messages";
+  }
+
+  if (!table) {
+    return;
+  }
+
+
+  try {
+
+    const {
+      error
+    } =
+      await supabaseClient
+        .from(table)
+        .update({
+          status:
+            status
+        })
+        .eq(
+          "id",
+          id
+        );
+
+    if (error) {
+      throw error;
+    }
+
+    await loadDashboard();
+
+  } catch (error) {
+
+    console.error(
+      "Status update error:",
+      error
+    );
+
+    showDashboardError(
+      "The status could not be updated. Please try again."
+    );
+
+  } finally {
+
+    selectElement.disabled =
+      false;
+
+  }
+
+}
+
+
+/* =======================================================
+   SAVE ADMIN NOTE
+======================================================== */
+
+async function saveAdminNote(
+  type,
+  id,
+  note,
+  button
+) {
+
+  let table = "";
+
+  if (
+    type === "inspection"
+  ) {
+    table =
+      "inspection_requests";
+  }
+
+  if (
+    type === "contact"
+  ) {
+    table =
+      "contact_messages";
+  }
+
+  if (!table) {
+    return;
+  }
+
+  button.disabled =
+    true;
+
+  button.textContent =
+    "Saving...";
+
+
+  try {
+
+    const {
+      error
+    } =
+      await supabaseClient
+        .from(table)
+        .update({
+          admin_notes:
+            note
+        })
+        .eq(
+          "id",
+          id
+        );
+
+    if (error) {
+      throw error;
+    }
+
+    button.textContent =
+      "Saved";
+
+    setTimeout(() => {
+
+      button.textContent =
+        "Save Note";
+
+    }, 1200);
+
+  } catch (error) {
+
+    console.error(
+      "Admin note error:",
+      error
+    );
+
+    showDashboardError(
+      "The admin note could not be saved."
+    );
+
+    button.textContent =
+      "Try Again";
+
+  } finally {
+
+    button.disabled =
+      false;
+
+  }
+
+}
+
+
+/* =======================================================
+   DELETE SUBSCRIBER
+======================================================== */
+
+async function deleteSubscriber(
+  id,
+  button
+) {
+
+  const confirmed =
+    window.confirm(
+      "Delete this newsletter subscriber?"
+    );
+
+  if (!confirmed) {
+    return;
+  }
+
+  button.disabled =
+    true;
+
+  button.textContent =
+    "Deleting...";
+
+
+  try {
+
+    const {
+      error
+    } =
+      await supabaseClient
+        .from(
+          "newsletter_subscribers"
+        )
+        .delete()
+        .eq(
+          "id",
+          id
+        );
+
+    if (error) {
+      throw error;
+    }
+
+    await loadNewsletter();
+
+  } catch (error) {
+
+    console.error(
+      "Subscriber deletion error:",
+      error
+    );
+
+    showDashboardError(
+      "The subscriber could not be deleted."
+    );
+
+    button.disabled =
+      false;
+
+    button.textContent =
+      "Delete";
+
+  }
+
+}
+
+
+/* =======================================================
+   LOGIN
+======================================================== */
+
+loginForm.addEventListener(
+  "submit",
+  async function(event) {
+
+    event.preventDefault();
+
+    loginStatus.textContent =
+      "";
+
+    loginButton.disabled =
+      true;
+
+    loginButton.textContent =
+      "Signing In...";
+
+    const email =
+      loginEmail.value.trim();
+
+    const password =
+      loginPassword.value;
+
+
+    try {
+
+      const {
+        data,
+        error
+      } =
+        await supabaseClient.auth
+          .signInWithPassword({
+            email:
+              email,
+            password:
+              password
+          });
+
+      if (error) {
+        throw error;
+      }
+
+
+      const isAdmin =
+        await verifyAdmin(
+          data.user
+        );
+
+      if (!isAdmin) {
+
+        await supabaseClient
+          .auth
+          .signOut();
+
+        throw new Error(
+          "This account does not have administrator access."
+        );
+
+      }
+
+
+      showDashboard(
+        data.user
+      );
+
+      loginForm.reset();
+
+      await loadDashboard();
+
+    } catch (error) {
+
+      console.error(
+        "Login error:",
+        error
+      );
+
+      showLoginError(
+        error.message ||
+        "Unable to sign in. Please check your credentials."
+      );
+
+    } finally {
+
+      loginButton.disabled =
+        false;
+
+      loginButton.textContent =
+        "Sign In";
 
     }
 
+  }
+);
 
-    /* =======================================================
-       NEW ENQUIRY COUNT
-    ======================================================== */
 
-    async function updateNewEnquiryCount() {
+/* =======================================================
+   LOGOUT
+======================================================== */
 
-      try {
+logoutButton.addEventListener(
+  "click",
+  async function() {
 
-        const [
-          inspectionResult,
-          contactResult
-        ] = await Promise.all([
+    logoutButton.disabled =
+      true;
 
-          supabaseClient
-            .from("inspection_requests")
-            .select("id", {
-              count: "exact",
-              head: true
-            })
-            .eq("status", "new"),
+    try {
 
-          supabaseClient
-            .from("contact_messages")
-            .select("id", {
-              count: "exact",
-              head: true
-            })
-            .eq("status", "new")
+      await supabaseClient
+        .auth
+        .signOut();
 
-        ]);
+    } finally {
 
-        const inspectionNew =
-          inspectionResult.count || 0;
+      logoutButton.disabled =
+        false;
 
-        const contactNew =
-          contactResult.count || 0;
+      showLogin();
+
+    }
+
+  }
+);
+
+
+/* =======================================================
+   REFRESH
+======================================================== */
+
+refreshButton.addEventListener(
+  "click",
+  loadDashboard
+);
+
+
+/* =======================================================
+   TAB SWITCHING
+======================================================== */
+
+document
+  .querySelectorAll(
+    ".admin-tab"
+  )
+  .forEach(tab => {
+
+    tab.addEventListener(
+      "click",
+      function() {
+
+        const target =
+          this.dataset.tab;
+
+        document
+          .querySelectorAll(
+            ".admin-tab"
+          )
+          .forEach(item => {
+
+            item.classList.remove(
+              "active"
+            );
+
+          });
+
+
+        document
+          .querySelectorAll(
+            ".admin-panel"
+          )
+          .forEach(panel => {
+
+            panel.classList.remove(
+              "active"
+            );
+
+          });
+
+
+        this.classList.add(
+          "active"
+        );
+
+
+        document
+          .getElementById(
+            `panel-${target}`
+          )
+          .classList.add(
+            "active"
+          );
+
+      }
+    );
+
+  });
+
+
+/* =======================================================
+   ADD PROPERTY
+======================================================== */
+
+document
+  .getElementById(
+    "addPropertyButton"
+  )
+  .addEventListener(
+    "click",
+    openAddPropertyModal
+  );
+
+
+/* =======================================================
+   PROPERTY FORM
+======================================================== */
+
+propertyForm.addEventListener(
+  "submit",
+  saveProperty
+);
+
+
+document
+  .getElementById(
+    "propertyModalClose"
+  )
+  .addEventListener(
+    "click",
+    closePropertyModal
+  );
+
+
+document
+  .getElementById(
+    "cancelPropertyButton"
+  )
+  .addEventListener(
+    "click",
+    closePropertyModal
+  );
+
+
+propertyModalOverlay.addEventListener(
+  "click",
+  function(event) {
+
+    if (
+      event.target ===
+      propertyModalOverlay
+    ) {
+
+      closePropertyModal();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  function(event) {
+
+    if (
+      event.key === "Escape" &&
+      propertyModalOverlay.classList.contains(
+        "visible"
+      )
+    ) {
+
+      closePropertyModal();
+
+    }
+
+  }
+);
+
+
+/* =======================================================
+   AUTO SLUG
+======================================================== */
+
+document
+  .getElementById(
+    "propertyName"
+  )
+  .addEventListener(
+    "input",
+    function() {
+
+      if (
+        !propertyId.value
+      ) {
 
         document.getElementById(
-          "newEnquiryCount"
-        ).textContent =
-          inspectionNew + contactNew;
-
-      } catch (error) {
-
-        console.error(
-          "New enquiry count error:",
-          error
-        );
+          "propertySlug"
+        ).value =
+          slugify(
+            this.value
+          );
 
       }
 
     }
+  );
 
 
-    /* =======================================================
-       UPDATE STATUS
-    ======================================================== */
+/* =======================================================
+   CUSTOM FEATURES
+======================================================== */
 
-    async function updateRecordStatus(
-      type,
-      id,
-      status,
-      selectElement
-    ) {
+document
+  .getElementById(
+    "addCustomFeatureButton"
+  )
+  .addEventListener(
+    "click",
+    function() {
 
-      selectElement.disabled = true;
+      const input =
+        document.getElementById(
+          "customFeatureInput"
+        );
 
-      let table = "";
+      const value =
+        input.value.trim();
 
-      if (type === "inspection") {
-        table = "inspection_requests";
-      }
-
-      if (type === "contact") {
-        table = "contact_messages";
-      }
-
-      if (!table) {
+      if (!value) {
         return;
       }
 
+      if (
+        !customFeatures.includes(
+          value
+        )
+      ) {
 
-      try {
-
-        const {
-          error
-        } = await supabaseClient
-          .from(table)
-          .update({
-            status: status
-          })
-          .eq("id", id);
-
-        if (error) {
-          throw error;
-        }
-
-        await loadDashboard();
-
-      } catch (error) {
-
-        console.error(
-          "Status update error:",
-          error
+        customFeatures.push(
+          value
         );
-
-        showDashboardError(
-          "The status could not be updated. Please try again."
-        );
-
-      } finally {
-
-        selectElement.disabled = false;
 
       }
+
+      input.value =
+        "";
+
+      renderCustomFeatures();
 
     }
+  );
 
 
-    /* =======================================================
-       SAVE ADMIN NOTE
-    ======================================================== */
+document
+  .getElementById(
+    "customFeatureInput"
+  )
+  .addEventListener(
+    "keydown",
+    function(event) {
 
-    async function saveAdminNote(
-      type,
-      id,
-      note,
-      button
-    ) {
-
-      let table = "";
-
-      if (type === "inspection") {
-        table = "inspection_requests";
-      }
-
-      if (type === "contact") {
-        table = "contact_messages";
-      }
-
-      if (!table) {
-        return;
-      }
-
-      button.disabled = true;
-      button.textContent = "Saving...";
-
-
-      try {
-
-        const {
-          error
-        } = await supabaseClient
-          .from(table)
-          .update({
-            admin_notes: note
-          })
-          .eq("id", id);
-
-        if (error) {
-          throw error;
-        }
-
-        button.textContent = "Saved";
-
-        setTimeout(() => {
-          button.textContent = "Save Note";
-        }, 1200);
-
-      } catch (error) {
-
-        console.error(
-          "Admin note error:",
-          error
-        );
-
-        showDashboardError(
-          "The admin note could not be saved."
-        );
-
-        button.textContent =
-          "Try Again";
-
-      } finally {
-
-        button.disabled = false;
-
-      }
-
-    }
-
-
-    /* =======================================================
-       DELETE SUBSCRIBER
-    ======================================================== */
-
-    async function deleteSubscriber(
-      id,
-      button
-    ) {
-
-      const confirmed =
-        window.confirm(
-          "Delete this newsletter subscriber?"
-        );
-
-      if (!confirmed) {
-        return;
-      }
-
-      button.disabled = true;
-      button.textContent = "Deleting...";
-
-
-      try {
-
-        const {
-          error
-        } = await supabaseClient
-          .from("newsletter_subscribers")
-          .delete()
-          .eq("id", id);
-
-        if (error) {
-          throw error;
-        }
-
-        await loadNewsletter();
-
-      } catch (error) {
-
-        console.error(
-          "Subscriber deletion error:",
-          error
-        );
-
-        showDashboardError(
-          "The subscriber could not be deleted."
-        );
-
-        button.disabled = false;
-        button.textContent = "Delete";
-
-      }
-
-    }
-
-
-    /* =======================================================
-       LOGIN
-    ======================================================== */
-
-    loginForm.addEventListener(
-      "submit",
-      async function(event) {
+      if (
+        event.key === "Enter"
+      ) {
 
         event.preventDefault();
 
-        loginStatus.textContent = "";
-
-        loginButton.disabled = true;
-        loginButton.textContent =
-          "Signing In...";
-
-        const email =
-          loginEmail.value.trim();
-
-        const password =
-          loginPassword.value;
-
-
-        try {
-
-          const {
-            data,
-            error
-          } = await supabaseClient.auth.signInWithPassword({
-            email: email,
-            password: password
-          });
-
-          if (error) {
-            throw error;
-          }
-
-          const isAdmin =
-            await verifyAdmin(data.user);
-
-          if (!isAdmin) {
-
-            await supabaseClient.auth.signOut();
-
-            throw new Error(
-              "This account does not have administrator access."
-            );
-
-          }
-
-          showDashboard(data.user);
-
-          loginForm.reset();
-
-          await loadDashboard();
-
-        } catch (error) {
-
-          console.error(
-            "Login error:",
-            error
-          );
-
-          showLoginError(
-            error.message ||
-            "Unable to sign in. Please check your credentials."
-          );
-
-        } finally {
-
-          loginButton.disabled = false;
-          loginButton.textContent =
-            "Sign In";
-
-        }
+        document
+          .getElementById(
+            "addCustomFeatureButton"
+          )
+          .click();
 
       }
-    );
+
+    }
+  );
 
 
-    /* =======================================================
-       LOGOUT
-    ======================================================== */
+/* =======================================================
+   TABLE / PROPERTY ACTIONS
+======================================================== */
 
-    logoutButton.addEventListener(
-      "click",
-      async function() {
+document.addEventListener(
+  "click",
+  function(event) {
 
-        logoutButton.disabled = true;
+    const editButton =
+      event.target.closest(
+        "[data-edit-property]"
+      );
 
-        try {
+    if (editButton) {
 
-          await supabaseClient.auth.signOut();
+      openEditPropertyModal(
+        editButton.dataset
+          .editProperty
+      );
 
-        } finally {
+      return;
 
-          logoutButton.disabled = false;
-
-          showLogin();
-
-        }
-
-      }
-    );
-
-
-    /* =======================================================
-       REFRESH
-    ======================================================== */
-
-    refreshButton.addEventListener(
-      "click",
-      loadDashboard
-    );
+    }
 
 
-    /* =======================================================
-       TAB SWITCHING
-    ======================================================== */
+    const deletePropertyButton =
+      event.target.closest(
+        "[data-delete-property]"
+      );
 
-    document
-      .querySelectorAll(".admin-tab")
-      .forEach(tab => {
+    if (deletePropertyButton) {
 
-        tab.addEventListener(
-          "click",
-          function() {
+      deleteProperty(
+        deletePropertyButton
+          .dataset
+          .deleteProperty
+      );
 
-            const target =
-              this.dataset.tab;
+      return;
 
-            document
-              .querySelectorAll(".admin-tab")
-              .forEach(item => {
-                item.classList.remove("active");
-              });
+    }
 
-            document
-              .querySelectorAll(".admin-panel")
-              .forEach(panel => {
-                panel.classList.remove("active");
-              });
 
-            this.classList.add("active");
+    const duplicateButton =
+      event.target.closest(
+        "[data-duplicate-property]"
+      );
 
-            document
-              .getElementById(
-                `panel-${target}`
-              )
-              .classList.add("active");
+    if (duplicateButton) {
 
-          }
+      duplicateProperty(
+        duplicateButton.dataset
+          .duplicateProperty
+      );
+
+      return;
+
+    }
+
+
+    const removeFeatureButton =
+      event.target.closest(
+        "[data-remove-feature]"
+      );
+
+    if (
+      removeFeatureButton
+    ) {
+
+      const index =
+        Number(
+          removeFeatureButton
+            .dataset
+            .removeFeature
         );
 
-      });
+      customFeatures.splice(
+        index,
+        1
+      );
+
+      renderCustomFeatures();
+
+      return;
+
+    }
 
 
-    /* =======================================================
-       TABLE ACTIONS
-    ======================================================== */
+    const saveButton =
+      event.target.closest(
+        ".save-button"
+      );
 
-    document.addEventListener(
-      "change",
-      function(event) {
+    if (saveButton) {
 
-        const element =
-          event.target;
+      const type =
+        saveButton.dataset.save;
 
-        if (
-          element.classList.contains(
-            "status-select"
-          )
-        ) {
+      const id =
+        saveButton.dataset.id;
 
-          const type =
-            element.dataset.type;
+      const textarea =
+        document.querySelector(
+          `.notes-input[data-type="${type}"][data-id="${id}"]`
+        );
 
-          const id =
-            element.dataset.id;
+      if (textarea) {
 
-          const status =
-            element.value;
-
-          updateRecordStatus(
-            type,
-            id,
-            status,
-            element
-          );
-
-        }
-
-      }
-    );
-
-
-    document.addEventListener(
-      "click",
-      function(event) {
-
-        const button =
-          event.target.closest(
-            ".save-button"
-          );
-
-        if (button) {
-
-          const type =
-            button.dataset.save;
-
-          const id =
-            button.dataset.id;
-
-          const textarea =
-            document.querySelector(
-              `.notes-input[data-type="${type}"][data-id="${id}"]`
-            );
-
-          if (textarea) {
-
-            saveAdminNote(
-              type,
-              id,
-              textarea.value.trim(),
-              button
-            );
-
-          }
-
-          return;
-
-        }
-
-
-        const deleteButton =
-          event.target.closest(
-            "[data-delete-subscriber]"
-          );
-
-        if (deleteButton) {
-
-          deleteSubscriber(
-            deleteButton.dataset.deleteSubscriber,
-            deleteButton
-          );
-
-        }
+        saveAdminNote(
+          type,
+          id,
+          textarea.value.trim(),
+          saveButton
+        );
 
       }
+
+      return;
+
+    }
+
+
+    const deleteButton =
+      event.target.closest(
+        "[data-delete-subscriber]"
+      );
+
+    if (deleteButton) {
+
+      deleteSubscriber(
+        deleteButton.dataset
+          .deleteSubscriber,
+        deleteButton
+      );
+
+    }
+
+  }
+);
+
+
+/* =======================================================
+   STATUS ACTIONS
+======================================================== */
+
+document.addEventListener(
+  "change",
+  function(event) {
+
+    const element =
+      event.target;
+
+    if (
+      element.classList.contains(
+        "status-select"
+      )
+    ) {
+
+      const type =
+        element.dataset.type;
+
+      const id =
+        element.dataset.id;
+
+      const status =
+        element.value;
+
+      updateRecordStatus(
+        type,
+        id,
+        status,
+        element
+      );
+
+    }
+
+  }
+);
+
+
+/* =======================================================
+   AUTH SESSION CHECK
+======================================================== */
+
+async function checkExistingSession() {
+
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth
+        .getSession();
+
+    if (error) {
+      throw error;
+    }
+
+    const session =
+      data.session;
+
+
+    if (
+      !session ||
+      !session.user
+    ) {
+
+      showLogin();
+
+      return;
+
+    }
+
+
+    const isAdmin =
+      await verifyAdmin(
+        session.user
+      );
+
+
+    if (!isAdmin) {
+
+      await supabaseClient
+        .auth
+        .signOut();
+
+      showLogin();
+
+      showLoginError(
+        "This account does not have administrator access."
+      );
+
+      return;
+
+    }
+
+
+    showDashboard(
+      session.user
     );
 
+    await loadDashboard();
 
-    /* =======================================================
-       AUTH SESSION CHECK
-    ======================================================== */
+  } catch (error) {
 
-    async function checkExistingSession() {
+    console.error(
+      "Session check error:",
+      error
+    );
 
-      try {
+    showLogin();
 
-        const {
-          data,
-          error
-        } = await supabaseClient.auth.getSession();
+  }
 
-        if (error) {
-          throw error;
-        }
+}
 
-        const session =
-          data.session;
 
-        if (!session || !session.user) {
+/* =======================================================
+   AUTH STATE LISTENER
+======================================================== */
 
-          showLogin();
+supabaseClient.auth
+  .onAuthStateChange(
+    async function(
+      event,
+      session
+    ) {
 
-          return;
+      if (
+        event ===
+        "SIGNED_OUT"
+      ) {
 
-        }
+        showLogin();
+
+        return;
+
+      }
+
+
+      if (
+        event ===
+          "SIGNED_IN" &&
+        session &&
+        session.user
+      ) {
 
         const isAdmin =
-          await verifyAdmin(session.user);
+          await verifyAdmin(
+            session.user
+          );
+
 
         if (!isAdmin) {
 
-          await supabaseClient.auth.signOut();
+          await supabaseClient
+            .auth
+            .signOut();
 
           showLogin();
 
@@ -2431,79 +5803,19 @@
             "This account does not have administrator access."
           );
 
-          return;
-
         }
-
-        showDashboard(session.user);
-
-        await loadDashboard();
-
-      } catch (error) {
-
-        console.error(
-          "Session check error:",
-          error
-        );
-
-        showLogin();
 
       }
 
     }
+  );
 
 
-    /* =======================================================
-       AUTH STATE LISTENER
-    ======================================================== */
+/* =======================================================
+   START
+======================================================== */
 
-    supabaseClient.auth.onAuthStateChange(
-      async function(event, session) {
+checkExistingSession();
 
-        if (
-          event === "SIGNED_OUT"
-        ) {
-
-          showLogin();
-
-          return;
-
-        }
-
-        if (
-          event === "SIGNED_IN" &&
-          session &&
-          session.user
-        ) {
-
-          const isAdmin =
-            await verifyAdmin(session.user);
-
-          if (!isAdmin) {
-
-            await supabaseClient.auth.signOut();
-
-            showLogin();
-
-            showLoginError(
-              "This account does not have administrator access."
-            );
-
-          }
-
-        }
-
-      }
-    );
-
-
-    /* =======================================================
-       START
-    ======================================================== */
-
-    checkExistingSession();
-
-  </script>
-
-</body>
+  </script></body>
 </html>
