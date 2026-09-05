@@ -221,6 +221,11 @@
             cursor: pointer;
         }
 
+        .contact-submit:disabled {
+            opacity: .65;
+            cursor: not-allowed;
+        }
+
         .contact-status {
             display: none;
             padding: 15px 17px;
@@ -233,6 +238,14 @@
 
         .contact-status.show {
             display: block;
+        }
+
+        .contact-status.success {
+            border-color: #b9c9b8;
+        }
+
+        .contact-status.error {
+            border-color: #d2aaaa;
         }
 
         /* OFFICES */
@@ -820,6 +833,7 @@
                             class="contact-status"
                             id="contactStatus"
                             role="status"
+                            aria-live="polite"
                         ></div>
 
                     </form>
@@ -1117,16 +1131,31 @@
     </footer>
 
 
-    <script src="js/main.js"></script>
-
+    <!-- SUPABASE -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <script>
-        /*
-         * TEMPORARY CONTACT FORM UX
-         *
-         * The form is not connected to a database yet.
-         * We will connect this to Supabase + admin + email later.
-         */
+
+        /* =========================================================
+           SUPABASE CONNECTION
+        ========================================================= */
+
+        const SUPABASE_URL =
+            "https://hcawxwwkvwbtdemavfht.supabase.co";
+
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_bHS0rVIDGAcRk-IWEKI5wA_bbvAvmYx";
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_PUBLISHABLE_KEY
+            );
+
+
+        /* =========================================================
+           CONTACT FORM
+        ========================================================= */
 
         const contactForm =
             document.getElementById("contactForm");
@@ -1134,29 +1163,157 @@
         const contactStatus =
             document.getElementById("contactStatus");
 
+        const contactSubmit =
+            contactForm
+                ? contactForm.querySelector(".contact-submit")
+                : null;
+
+
+        function showContactStatus(message, type) {
+
+            if (!contactStatus) return;
+
+            contactStatus.textContent = message;
+
+            contactStatus.className =
+                "contact-status show " + type;
+
+            contactStatus.scrollIntoView({
+                behavior: "smooth",
+                block: "nearest"
+            });
+        }
+
 
         if (contactForm) {
 
-            contactForm.addEventListener("submit", function(event) {
+            contactForm.addEventListener("submit", async function(event) {
 
                 event.preventDefault();
 
-                contactStatus.classList.add("show");
 
-                contactStatus.textContent =
-                    "Your enquiry has been prepared successfully. " +
-                    "Online submission will be connected to the " +
-                    "Fort-Royal enquiry system in the next stage.";
+                if (contactSubmit) {
 
-                contactStatus.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest"
-                });
+                    contactSubmit.disabled = true;
+
+                    contactSubmit.textContent =
+                        "Sending Enquiry...";
+
+                }
+
+
+                if (contactStatus) {
+
+                    contactStatus.className =
+                        "contact-status";
+
+                    contactStatus.textContent = "";
+
+                }
+
+
+                const fullName =
+                    document
+                        .getElementById("contactName")
+                        .value
+                        .trim();
+
+                const email =
+                    document
+                        .getElementById("contactEmail")
+                        .value
+                        .trim();
+
+                const phone =
+                    document
+                        .getElementById("contactPhone")
+                        .value
+                        .trim();
+
+                const enquiryType =
+                    document
+                        .getElementById("enquiryType")
+                        .value;
+
+                const message =
+                    document
+                        .getElementById("contactMessage")
+                        .value
+                        .trim();
+
+
+                const contactData = {
+
+                    full_name: fullName,
+
+                    email: email,
+
+                    phone: phone,
+
+                    enquiry_type: enquiryType,
+
+                    message: message
+
+                };
+
+
+                try {
+
+                    const { error } =
+                        await supabaseClient
+                            .from("contact_messages")
+                            .insert([contactData]);
+
+
+                    if (error) {
+                        throw error;
+                    }
+
+
+                    showContactStatus(
+                        "Your enquiry has been received successfully. Fort-Royal Homes will contact you as soon as possible.",
+                        "success"
+                    );
+
+
+                    contactForm.reset();
+
+
+                } catch (error) {
+
+                    console.error(
+                        "Contact form error:",
+                        error
+                    );
+
+
+                    showContactStatus(
+                        "We couldn't submit your enquiry right now. Please try again or call Fort-Royal Homes on +234 807 819 1111.",
+                        "error"
+                    );
+
+                } finally {
+
+                    if (contactSubmit) {
+
+                        contactSubmit.disabled = false;
+
+                        contactSubmit.textContent =
+                            "Send Enquiry";
+
+                    }
+
+                }
 
             });
 
         }
+
     </script>
+
+
+    <!-- MAIN SITE JAVASCRIPT -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
