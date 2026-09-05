@@ -454,10 +454,31 @@
       padding: 17px 0 17px 20px;
     }
 
+    .newsletter-form button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
     .newsletter-note {
       margin-top: 16px;
       font-size: .65rem;
       color: rgba(255,255,255,.35);
+    }
+
+    .newsletter-status {
+      max-width: 540px;
+      margin: 18px auto 0;
+      font-size: .75rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,.75);
+    }
+
+    .newsletter-status.success {
+      color: #c7d6c0;
+    }
+
+    .newsletter-status.error {
+      color: #e1b7b7;
     }
 
 
@@ -616,9 +637,7 @@
 
 <body>
 
-  <!-- =======================================================
-       HEADER
-  ======================================================== -->
+  <!-- HEADER -->
 
   <header class="site-header">
 
@@ -650,9 +669,7 @@
   </header>
 
 
-  <!-- =======================================================
-       MOBILE MENU
-  ======================================================== -->
+  <!-- MOBILE MENU -->
 
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
 
@@ -693,9 +710,7 @@
 
   <main>
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- HERO -->
 
     <section class="journal-hero">
 
@@ -723,9 +738,7 @@
     </section>
 
 
-    <!-- =====================================================
-         INTRO
-    ====================================================== -->
+    <!-- INTRO -->
 
     <section class="journal-intro">
 
@@ -748,7 +761,6 @@
             investment, family, community and the future.
             The Fort-Royal Journal brings together insights
             and stories around those ideas.
-
           </p>
 
         </div>
@@ -758,9 +770,7 @@
     </section>
 
 
-    <!-- =====================================================
-         FEATURED
-    ====================================================== -->
+    <!-- FEATURED -->
 
     <section class="journal-featured">
 
@@ -805,9 +815,7 @@
     </section>
 
 
-    <!-- =====================================================
-         ARTICLES
-    ====================================================== -->
+    <!-- ARTICLES -->
 
     <section class="journal-articles">
 
@@ -835,8 +843,6 @@
 
 
       <div class="article-grid">
-
-        <!-- ARTICLE 01 -->
 
         <article class="article-card">
 
@@ -867,8 +873,6 @@
         </article>
 
 
-        <!-- ARTICLE 02 -->
-
         <article class="article-card">
 
           <div class="article-image">
@@ -897,8 +901,6 @@
 
         </article>
 
-
-        <!-- ARTICLE 03 -->
 
         <article class="article-card">
 
@@ -929,8 +931,6 @@
         </article>
 
 
-        <!-- ARTICLE 04 -->
-
         <article class="article-card">
 
           <div class="article-image">
@@ -960,8 +960,6 @@
         </article>
 
 
-        <!-- ARTICLE 05 -->
-
         <article class="article-card">
 
           <div class="article-image">
@@ -990,8 +988,6 @@
 
         </article>
 
-
-        <!-- ARTICLE 06 -->
 
         <article class="article-card">
 
@@ -1026,9 +1022,7 @@
     </section>
 
 
-    <!-- =====================================================
-         TOPICS
-    ====================================================== -->
+    <!-- TOPICS -->
 
     <section class="journal-topics">
 
@@ -1093,9 +1087,7 @@
     </section>
 
 
-    <!-- =====================================================
-         NEWSLETTER
-    ====================================================== -->
+    <!-- NEWSLETTER -->
 
     <section class="journal-newsletter">
 
@@ -1116,7 +1108,10 @@
           real estate perspectives.
         </p>
 
-        <form class="newsletter-form" id="newsletterForm">
+        <form
+          class="newsletter-form"
+          id="newsletterForm"
+        >
 
           <input
             type="email"
@@ -1127,11 +1122,21 @@
             required
           >
 
-          <button type="submit">
+          <button
+            type="submit"
+            id="newsletterSubmit"
+          >
             Subscribe
           </button>
 
         </form>
+
+        <div
+          class="newsletter-status"
+          id="newsletterStatus"
+          role="status"
+          aria-live="polite"
+        ></div>
 
         <div class="newsletter-note">
           No unnecessary emails. Unsubscribe whenever you choose.
@@ -1142,9 +1147,7 @@
     </section>
 
 
-    <!-- =====================================================
-         CTA
-    ====================================================== -->
+    <!-- CTA -->
 
     <section class="journal-cta">
 
@@ -1175,9 +1178,7 @@
   </main>
 
 
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
+  <!-- FOOTER -->
 
   <footer class="footer">
 
@@ -1272,31 +1273,167 @@
   </footer>
 
 
-  <script src="js/main.js"></script>
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
-    /*
-      Newsletter form is intentionally left ready for backend
-      connection. We will connect this to Supabase/email later.
-    */
 
-    const newsletterForm = document.getElementById("newsletterForm");
+    /* =========================================================
+       SUPABASE CONNECTION
+    ========================================================= */
+
+    const SUPABASE_URL =
+      "https://hcawxwwkvwbtdemavfht.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_bHS0rVIDGAcRk-IWEKI5wA_bbvAvmYx";
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    /* =========================================================
+       NEWSLETTER FORM
+    ========================================================= */
+
+    const newsletterForm =
+      document.getElementById("newsletterForm");
+
+    const newsletterEmail =
+      document.getElementById("newsletterEmail");
+
+    const newsletterSubmit =
+      document.getElementById("newsletterSubmit");
+
+    const newsletterStatus =
+      document.getElementById("newsletterStatus");
+
+
+    function showNewsletterStatus(message, type) {
+
+      if (!newsletterStatus) return;
+
+      newsletterStatus.textContent = message;
+
+      newsletterStatus.className =
+        "newsletter-status " + type;
+
+    }
+
 
     if (newsletterForm) {
-      newsletterForm.addEventListener("submit", function(event) {
-        event.preventDefault();
 
-        const email = document.getElementById("newsletterEmail");
+      newsletterForm.addEventListener(
+        "submit",
+        async function(event) {
 
-        if (!email.value.trim()) {
-          return;
+          event.preventDefault();
+
+
+          const email =
+            newsletterEmail.value.trim();
+
+
+          if (!email) {
+            return;
+          }
+
+
+          newsletterSubmit.disabled = true;
+
+          newsletterSubmit.textContent =
+            "Subscribing...";
+
+
+          newsletterStatus.className =
+            "newsletter-status";
+
+          newsletterStatus.textContent = "";
+
+
+          try {
+
+            const { error } =
+              await supabaseClient
+                .from("newsletter_subscribers")
+                .insert([
+                  {
+                    email: email
+                  }
+                ]);
+
+
+            if (error) {
+
+              /*
+               * PostgreSQL unique violation:
+               * This normally means the email is already
+               * subscribed.
+               */
+
+              if (error.code === "23505") {
+
+                showNewsletterStatus(
+                  "This email is already subscribed to the Fort-Royal mailing list.",
+                  "success"
+                );
+
+              } else {
+
+                throw error;
+
+              }
+
+            } else {
+
+              showNewsletterStatus(
+                "You're subscribed. We'll keep you updated with Fort-Royal property news and insights.",
+                "success"
+              );
+
+              newsletterForm.reset();
+
+            }
+
+
+          } catch (error) {
+
+            console.error(
+              "Newsletter subscription error:",
+              error
+            );
+
+
+            showNewsletterStatus(
+              "We couldn't complete your subscription right now. Please try again shortly.",
+              "error"
+            );
+
+
+          } finally {
+
+            newsletterSubmit.disabled = false;
+
+            newsletterSubmit.textContent =
+              "Subscribe";
+
+          }
+
         }
+      );
 
-        alert("Thank you. Newsletter subscription will be connected shortly.");
-        email.value = "";
-      });
     }
+
   </script>
+
+
+  <!-- MAIN SITE JAVASCRIPT -->
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>
