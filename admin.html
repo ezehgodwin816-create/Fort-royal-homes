@@ -1471,7 +1471,42 @@ content="Fort-Royal Homes Limited administration dashboard."
       </div>
 
     </div>
+<!-- PROPERTY MEDIA MANAGER -->
+<div id="mediaManager" style="display:none; margin-top:25px; padding:20px; border:1px solid #ddd; border-radius:12px;">
 
+    <h3>Manage Property Media</h3>
+
+    <p id="selectedPropertyName">
+        No property selected
+    </p>
+
+    <input type="hidden" id="mediaPropertyId">
+
+    <div style="margin:15px 0;">
+        <label><strong>Photos</strong></label><br>
+        <input type="file" id="propertyPhotos" accept="image/*" multiple>
+    </div>
+
+    <div style="margin:15px 0;">
+        <label><strong>Videos</strong></label><br>
+        <input type="file" id="propertyVideos" accept="video/*" multiple>
+    </div>
+
+    <div style="margin:15px 0;">
+        <label><strong>Brochures / Documents</strong></label><br>
+        <input type="file" id="propertyDocuments" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" multiple>
+    </div>
+
+    <button type="button" onclick="uploadPropertyMedia()">
+        Upload Media
+    </button>
+
+    <p id="mediaUploadStatus"></p>
+
+    <div id="propertyMediaList" style="margin-top:20px;"></div>
+
+</div>
+<!-- END PROPERTY MEDIA MANAGER -->
   </section>
 
 
