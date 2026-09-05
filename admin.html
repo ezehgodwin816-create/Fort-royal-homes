@@ -6273,9 +6273,10 @@ checkExistingSession();
               .from("property_media")
               .insert({
                 property_id: propertyId,
-                media_type: item.mediaType,
-                file_url: fileUrl,
-                file_name: file.name
+                bucket: item.bucket,
+                file_path: storagePath,
+                file_name: file.name,
+                media_type: item.mediaType
               });
 
           if (mediaInsertError) {
@@ -6325,7 +6326,6 @@ checkExistingSession();
 
 
     async function loadPropertyMedia(propertyId) {
-
       propertyMediaList.innerHTML = `
         <div class="table-message">
           Loading media...
@@ -6345,7 +6345,6 @@ checkExistingSession();
           });
 
       if (error) {
-
         console.error(
           "Property media load error:",
           error
@@ -6362,7 +6361,6 @@ checkExistingSession();
       }
 
       if (!data || !data.length) {
-
         propertyMediaList.innerHTML = `
           <div class="table-message">
             No media uploaded for this property yet.
@@ -6374,12 +6372,37 @@ checkExistingSession();
 
       propertyMediaList.innerHTML =
         data.map(media => {
-
           const mediaType =
             String(media.media_type || "").toLowerCase();
 
           const fileName =
             media.file_name || "Media file";
+
+          const mediaBucket =
+            media.bucket || (
+              mediaType === "video"
+                ? "property-videos"
+                : mediaType === "document"
+                  ? "property-documents"
+                  : "property-images"
+            );
+
+          const mediaPath =
+            media.file_path || "";
+
+          let mediaUrl = "";
+
+          if (mediaPath) {
+            const {
+              data: publicUrlData
+            } =
+              supabaseClient.storage
+                .from(mediaBucket)
+                .getPublicUrl(mediaPath);
+
+            mediaUrl =
+              publicUrlData?.publicUrl || "";
+          }
 
           let preview = "";
 
@@ -6387,33 +6410,27 @@ checkExistingSession();
             mediaType === "photo" ||
             mediaType === "image"
           ) {
-
             preview = `
               <img
-                src="${escapeHTML(media.file_url || "")}"
+                src="${escapeHTML(mediaUrl)}"
                 alt="${escapeHTML(fileName)}"
                 loading="lazy"
               >
             `;
-
           } else if (mediaType === "video") {
-
             preview = `
               <video
-                src="${escapeHTML(media.file_url || "")}"
+                src="${escapeHTML(mediaUrl)}"
                 controls
                 preload="metadata"
               ></video>
             `;
-
           } else {
-
             preview = `
               <div class="media-file-icon">
                 📄
               </div>
             `;
-
           }
 
           return `
@@ -6439,7 +6456,7 @@ checkExistingSession();
                 <div class="media-item-actions">
 
                   <a
-                    href="${escapeHTML(media.file_url || "#")}"
+                    href="${escapeHTML(mediaUrl || "#")}"
                     target="_blank"
                     rel="noopener"
                   >
@@ -6450,7 +6467,8 @@ checkExistingSession();
                     type="button"
                     class="danger"
                     data-delete-media="${escapeHTML(media.id)}"
-                    data-media-url="${escapeHTML(media.file_url || "")}"
+                    data-media-bucket="${escapeHTML(mediaBucket)}"
+                    data-media-path="${escapeHTML(mediaPath)}"
                     data-media-type="${escapeHTML(mediaType)}"
                   >
                     Delete
@@ -6468,7 +6486,8 @@ checkExistingSession();
 
     async function deletePropertyMedia(
       mediaId,
-      fileUrl,
+      bucket,
+      filePath,
       mediaType
     ) {
 
@@ -6497,33 +6516,19 @@ checkExistingSession();
           throw deleteRowError;
         }
 
-        if (fileUrl) {
-
-          const bucket =
-            mediaType === "video"
-              ? "property-videos"
-              : mediaType === "document"
-                ? "property-documents"
-                : "property-images";
-
-          const marker =
-            `/storage/v1/object/public/${bucket}/`;
-
-          const markerIndex =
-            fileUrl.indexOf(marker);
-
-          if (markerIndex !== -1) {
-
-            const storagePath =
-              decodeURIComponent(
-                fileUrl.slice(
-                  markerIndex + marker.length
-                )
-              );
-
+        if (bucket && filePath) {
+          const {
+            error: storageDeleteError
+          } =
             await supabaseClient.storage
               .from(bucket)
-              .remove([storagePath]);
+              .remove([filePath]);
+
+          if (storageDeleteError) {
+            console.warn(
+              "Storage file deletion warning:",
+              storageDeleteError
+            );
           }
         }
 
@@ -6581,7 +6586,8 @@ checkExistingSession();
 
         deletePropertyMedia(
           deleteButton.dataset.deleteMedia,
-          deleteButton.dataset.mediaUrl,
+          deleteButton.dataset.mediaBucket,
+          deleteButton.dataset.mediaPath,
           deleteButton.dataset.mediaType
         );
 
